@@ -8,7 +8,7 @@ cloudant faq, the commandline interface from
 [http-server](https://github.com/nodeapps/http-server), the basic
 server I've forgotten where it came from. 
 
-I've adapted it here and there to suit my purposes which is a quick
+I've adapted it here and there to suit my purposes which is to have a quick
 and dirty node html server. You can have this server forward requests
 to a couchdb server, which is handy because now you can interface with
 a couchdb that's from a different origin than your website/app.
@@ -21,7 +21,7 @@ usage: http-server [path] [options]
       -d                 Display directories
       -i                 Show index.htm[l] when present in directory
       -f --forward       Forward url/prefix to target
-      --prefix          [db]
-      --target          [http://localhost:5984]
+      --prefix           [db]
+      --target           [http://localhost:5984]
       -s --silent        Suppress log messages from output
       -h --help          Print this list and exit.
