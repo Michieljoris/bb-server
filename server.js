@@ -240,21 +240,25 @@ StaticServlet.prototype.sendFile_ = function(req, res, path) {
 };
 
 StaticServlet.prototype.sendDirectory_ = function(req, res, path) {
-    var self = this;
-    if (!options.dir) {
-        return  self.sendForbidden_(req,res, path);
+    function send(f) {
+        if (!options.dir) {
+            return  self.sendForbidden_(req,res, path);
+        }
+        else return f();
     }
+    
+    var self = this;
     if (path.match(/[^\/]$/)) {
         req.url.pathname += '/';
             var redirectUrl = url.format(url.parse(url.format(req.url)));
-        return self.sendRedirect_(req, res, redirectUrl);
+        return send(function(){ return self.sendRedirect_(req, res, redirectUrl);});
     }
     fs.readdir(path, function(err, files) {
         if (err)
-            return self.sendError_(req, res, err);
+            return send(function() {return self.sendError_(req, res, err);});
 
         if (!files.length)
-            return self.writeDirectoryIndex_(req, res, path, []);
+            return send(function() {return self.writeDirectoryIndex_(req, res, path, []);});
 
         var remaining = files.length;
         files.forEach(function(fileName, index) {
@@ -272,7 +276,7 @@ StaticServlet.prototype.sendDirectory_ = function(req, res, path) {
                     return self.sendFile_(req, res, path + '/' + fileName);   
                 }
                 if (!(--remaining))
-                    return self.writeDirectoryIndex_(req, res, path, files);
+                    return send(function() {return self.writeDirectoryIndex_(req, res, path, files);});
             });
         });
     });
