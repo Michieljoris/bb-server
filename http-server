@@ -1,0 +1,78 @@
+#!/usr/bin/env node
+
+var sys = require('sys');
+
+var colors = require('colors'),
+    httpServer = require('./server.js'),
+    argv = require('optimist').argv,
+    portfinder = require('portfinder');
+
+if (argv.h || argv.help) {
+    console.log([
+        "usage: http-server [path] [options]",
+        "",
+        "options:",
+        "  -p                 Port to use [HTTPSERVER_PORT || 8080]",
+        "  -a                 Address to use [HTTPSERVER_IPADDR || 0.0.0.0]",
+        "  -d                 Display directories",
+        "  -i                 Show index.htm[l] when present in directory",
+        "  -f --forward       Forward url/prefix to target",
+        "  --prefix          [db]",
+        "  --target          [http://localhost:5984]",
+        // "  -e          Default file extension if none supplied [none]",
+        // "  -c               Cache control in seconds",
+        // "  -h               Response headers",
+        // "  -g              Gzip if possible",
+        "  -s --silent        Suppress log messages from output",
+        "  -h --help          Print this list and exit."
+    ].join('\n'));
+  process.exit();
+}
+
+var port = argv.p || Number(process.env.HTTPSERVER_PORT),
+    host = argv.a || process.env.HTTPSERVER_IPADDR || '0.0.0.0',
+    log = (argv.s || argv.silent) ? (function () {}) : console.log;
+
+if (!argv.p) {
+    portfinder.basePort = 8080;
+    portfinder.getPort(function (err, port) {
+        if (err) throw err;
+        listen(port);
+    });
+} else {
+  listen(port);
+}
+
+function listen(port) {
+    var server = httpServer.createServer({
+        root: argv._[0],
+        dir: argv.d,
+        index: argv.i,
+        forward: (argv.f || argv.forward),
+        prefix: argv.prefix,
+        target: argv.target,
+        gzip: argv.g,
+        // headers
+        cache: argv.c,
+        ext: argv.e || argv.ext,
+	silent: argv.s || argv.silent
+    });
+    
+    server.listen(port, host, function() {
+        log('Starting up http-server, serving '.yellow
+            + server.root.cyan
+            + ' on: '.yellow +
+            (host + ':' + port).cyan);
+        // log('Hit CTRL-C to stop the server');
+    });
+}
+
+if (process.platform !== 'win32') {
+  //
+  // Signal handlers don't work on Windows.
+  //
+  process.on('SIGINT', function () {
+    log('http-server stopped.'.red);
+    process.exit();
+  });
+}
