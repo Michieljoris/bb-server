@@ -1,7 +1,9 @@
 http-server
 ===========
 
-Basic node server with forwarding to couchdb to get around the Access-Control-Allow-Origin.
+Basic node server with forwarding to couchdb to get around the
+Access-Control-Allow-Origin, cobbled together from a few basic html
+servers written by other people,
 
 usage: http-server [path] [options]
 
