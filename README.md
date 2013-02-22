@@ -1,4 +1,4 @@
-http-server
+bb-server
 ===========
 
 Basic node server with forwarding to couchdb to get around the
@@ -14,8 +14,21 @@ to a couchdb server, which is handy because now you can interface with
 a couchdb that's from a different origin than your website/app.
 
 This server is a raw server, it only requires the http and url network modules
-to function. The commandline interface requires the colors, optimist
-and portfinder modules.
+to function. The commandline interface requires a few more utility
+modules.
+
+To install clone it, cd into the directory and do:
+ 
+	npm install
+
+Then ./bb-server to run it.
+
+Or do:
+
+	npm install -g
+	
+Then bb-server to run.
+	
 
 usage: http-server [path] [options]
 
