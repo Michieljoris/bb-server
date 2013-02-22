@@ -10,7 +10,7 @@ var sys = require('sys'),
 ;
 
 var options;
-var log;
+var log = console.log;
 
 function escapeHtml(value) {
   return value.toString().
@@ -333,7 +333,9 @@ exports.createServer = function (someOptions) {
     
     // options.target = options.target ? options.target : 'http://localhost:5984';
     result.root = options.root;
-    log =  options.silent ?  function () {}: console.log;
+    log =  options.silent ?  function () {}: function() {
+        console.log.apply(console, arguments);
+    };
   
     // if (options.headers) {
     //     result.headers = options.headers; 
