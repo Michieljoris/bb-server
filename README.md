@@ -13,6 +13,10 @@ and dirty node html server. You can have this server forward requests
 to a couchdb server, which is handy because now you can interface with
 a couchdb that's from a different origin than your website/app.
 
+This server is a raw server, it only requires the http and url network modules
+to function. The commandline interface requires the colors, optimist
+and portfinder modules.
+
 usage: http-server [path] [options]
 
     options:
