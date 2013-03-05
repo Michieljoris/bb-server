@@ -98,6 +98,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
     req.url = this.parseUrl_(req.url);
     var u = url.parse(req.url);
     if ((options.forward || options.f) &&
+        
         u.pathname.substring(0, options.prefix.length) === options.prefix) {
         u = options.target + u.pathname.substring(options.prefix.length-1) + (u.search||'');
         forwardRequest(req, res, u);
@@ -128,7 +129,8 @@ StaticServlet.MimeMap = {
   'jpeg': 'image/jpeg',
   'gif': 'image/gif',
   'png': 'image/png',
-  'appcache': 'text/cache-manifest'
+  'appcache': 'text/cache-manifest',
+  'woff': 'application/x-font-woff' 
 };
 
 StaticServlet.prototype.handleRequest = function(req, res) {
@@ -332,10 +334,10 @@ exports.createServer = function (someOptions) {
             options.root = './';
         }
     }
-    options.prefix = options.prefix ? options.prefix : 'db';
-    options.prefix = '/' + options.prefix + '/';
+    // options.prefix = options.prefix || 'db';
+    // options.prefix = '/' + options.prefix + '/';
     
-    // options.target = options.target ? options.target : 'http://localhost:5984';
+    // options.target = options.target || 'http://localhost:5984';
     result.root = options.root;
     log =  options.silent ?  function () {}: function() {
         console.log.apply(console, arguments);

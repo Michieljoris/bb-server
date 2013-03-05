@@ -6,6 +6,7 @@ var colors = require('colors'),
     httpServer = require('./server.js'),
     argv = require('optimist').argv,
     portfinder = require('portfinder');
+// console.log(colors);
 
 if (argv.h || argv.help) {
     console.log([
@@ -14,7 +15,7 @@ if (argv.h || argv.help) {
         "options:",
         "  -p                 Port to use [HTTPSERVER_PORT || 8080]",
         "  -a                 Address to use [HTTPSERVER_IPADDR || 0.0.0.0]",
-        "  -d                 Display directories",
+        "  -d                 Don't show directory contents",
         "  -i                 Show index.htm[l] when present in directory",
         "  -f --forward       Forward url/prefix to target",
         "  --prefix          [db]",
@@ -43,26 +44,38 @@ if (!argv.p) {
   listen(port);
 }
 
+function getOptionString(o) {
+    return (o ? 'yes'.green : 'no'.red) ;
+}
+
 function listen(port) {
-    var server = httpServer.createServer({
+    var prefix = argv.prefix || 'db';
+    prefix = '/' + prefix + '/';
+    argv = {
         root: argv._[0],
-        dir: argv.d,
+        dir: !argv.d,
         index: argv.i,
         forward: (argv.f || argv.forward),
-        prefix: argv.prefix,
-        target: argv.target,
+        prefix: prefix ,
+        target: argv.target || 'http://localhost:5984',
         gzip: argv.g,
         // headers
         cache: argv.c,
         ext: argv.e || argv.ext,
-	silent: argv.s || argv.silent
-    });
+	silent: argv.s || argv.silent};
+            
+    var server = httpServer.createServer(argv);
     
     server.listen(port, host, function() {
         log('Starting up http-server, serving '.yellow
             + server.root.cyan
             + ' on: '.yellow +
             (host + ':' + port).cyan);
+        log('Listing dir contents : '.grey + getOptionString(argv.dir));
+        log('Auto show index.htm[l]: '.grey + getOptionString(argv.index));
+        log('Forward '.grey + argv.prefix.cyan + ' to '.grey + argv.target.cyan +
+            ': ' + getOptionString(argv.forward));
+        
         // log('Hit CTRL-C to stop the server');
     });
 }
