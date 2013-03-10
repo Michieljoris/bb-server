@@ -3,10 +3,11 @@
 	{ "prefix": "local",
 	  "target": "http://localhost:5984" },
 	{ "prefix": "iris",
-          "target": "http://michieljoris.iriscouch.com"}
+          "target": "https://michieljoris.iriscouch.com"}
 ]
 
-    ,"dir": true
+    ,"dir": false
     ,"index": false
     ,"silent": false
+    ,"port": 7090
 }
