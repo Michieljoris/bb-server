@@ -78,7 +78,7 @@ function getOptionString(o) {
 function listen(port) {
     argv = {
         root: (argv._ && argv._[0]) || argv.root || './',
-        dir: !argv.d || !argv.dir,
+        dir: !(argv.d || !argv.dir),
         index: argv.i || argv.index,
         gzip: argv.g || argv.gzip,
         forward: argv.forward,
