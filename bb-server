@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 var sys = require('sys');
 
 var colors = require('colors'),
@@ -13,10 +12,10 @@ if (argv.h || argv.help) {
         "usage: http-server [path] [options]",
         "",
         "options:",
-        "  -p                 Port to use [HTTPSERVER_PORT || 8080]",
-        "  -a                 Address to use [HTTPSERVER_IPADDR || 0.0.0.0]",
-        "  -d                 Don't show directory contents",
-        "  -i                 Show index.htm[l] when present in directory",
+        "  -p --port          Port to use [HTTPSERVER_PORT || 8080]",
+        "  -a --address       Address to use [HTTPSERVER_IPADDR || 0.0.0.0]",
+        "  -d --dir           Don't show directory contents",
+        "  -i --index         Show index.htm[l] when present in directory",
         "  -f --forward       Forward url/prefix to target",
         "  --prefix          [db]",
         "  --target          [http://localhost:5984]",
@@ -30,8 +29,35 @@ if (argv.h || argv.help) {
   process.exit();
 }
 
-var port = argv.p || Number(process.env.HTTPSERVER_PORT),
-    host = argv.a || process.env.HTTPSERVER_IPADDR || '0.0.0.0',
+function readConfigFile(fileName) {
+    var parsedJSON;
+    try { parsedJSON = require(fileName);
+          // console.log('Config file read.', parsedJSON);
+        } catch (e) {
+            console.log('Error reading config file: ', e);
+        }
+    return parsedJSON;
+} 
+
+// function slashit(str) {
+//     str = '/' + str + '/';
+// }
+
+if (argv.file) {
+    argv = readConfigFile(argv.file);
+    console.log(argv);
+}
+else {
+    if (argv.f || argv.forward) {
+        argv.forward = [ {
+            prefix: argv.prefix || 'db',
+            target: argv.target || 'http://localhost:5984'
+        } ];
+    } 
+}
+
+var port = argv.p || argv.port || Number(process.env.HTTPSERVER_PORT),
+    host = argv.a || argv.address || process.env.HTTPSERVER_IPADDR || '0.0.0.0',
     log = (argv.s || argv.silent) ? (function () {}) : console.log;
 
 if (!argv.p) {
@@ -48,19 +74,16 @@ function getOptionString(o) {
     return (o ? 'yes'.green : 'no'.red) ;
 }
 
+
 function listen(port) {
-    var prefix = argv.prefix || 'db';
-    prefix = '/' + prefix + '/';
     argv = {
-        root: argv._[0],
-        dir: !argv.d,
-        index: argv.i,
-        forward: (argv.f || argv.forward),
-        prefix: prefix ,
-        target: argv.target || 'http://localhost:5984',
-        gzip: argv.g,
+        root: (argv._ && argv._[0]) || argv.root || './',
+        dir: !argv.d || !argv.dir,
+        index: argv.i || argv.index,
+        gzip: argv.g || argv.gzip,
+        forward: argv.forward,
         // headers
-        cache: argv.c,
+        cache: argv.c || argv.cache,
         ext: argv.e || argv.ext,
 	silent: argv.s || argv.silent};
             
@@ -73,9 +96,8 @@ function listen(port) {
             (host + ':' + port).cyan);
         log('Listing dir contents : '.grey + getOptionString(argv.dir));
         log('Auto show index.htm[l]: '.grey + getOptionString(argv.index));
-        log('Forward '.grey + argv.prefix.cyan + ' to '.grey + argv.target.cyan +
-            ': ' + getOptionString(argv.forward));
-        
+        log('Forward '.grey + getOptionString(argv.forward));//
+        if (argv.forward) console.log(argv.forward);
         // log('Hit CTRL-C to stop the server');
     });
 }

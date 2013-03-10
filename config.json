@@ -1,0 +1,7 @@
+{ 
+    "forward": [
+	{ "prefix": "local",
+	  "target": "http://localhost:5984" },
+	{ "prefix": "iris",
+          "target": "http://michieljoris.iriscouch.com"}
+]}

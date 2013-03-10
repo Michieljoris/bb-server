@@ -89,6 +89,18 @@ function forwardRequest(inRequest, inResponse, uri) {
     });
 }
 
+function getForwardingUrl(u) {
+    for (var i = 0; i < options.forward.length; i++) { 
+        // console.log(options.forward[i]);
+        var prefix = options.forward[i].prefix;
+        // console.log(u.pathname.substring(1,prefix.length+1));
+        if (u.pathname.substring(1, prefix.length + 1) === prefix)
+            return options.forward[i].target + u.pathname.substring(prefix.length+1) +
+            (u.search||'');
+    }
+    return false;
+}
+
 HttpServer.prototype.handleRequest_ = function(req, res) {
     var logEntry = req.method + ' ' + req.url;
     // if (req.headers['user-agent']) {
@@ -97,12 +109,12 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
     log(logEntry);
     req.url = this.parseUrl_(req.url);
     var u = url.parse(req.url);
-    if ((options.forward || options.f) &&
-        
-        u.pathname.substring(0, options.prefix.length) === options.prefix) {
-        u = options.target + u.pathname.substring(options.prefix.length-1) + (u.search||'');
-        forwardRequest(req, res, u);
-        return;
+    if (options.forward) {
+        u = getForwardingUrl(u);
+        if (u) {
+            forwardRequest(req, res, u);
+            return;
+        }
     }
     var handler = this.handlers[req.method];
     if (!handler) {
@@ -317,6 +329,7 @@ process.on('uncaughtException', function(e) {
 
 
 exports.createServer = function (someOptions) {
+    console.log(someOptions);
     var server = new HttpServer({
         'GET': createServlet(StaticServlet),
         'HEAD': createServlet(StaticServlet)
