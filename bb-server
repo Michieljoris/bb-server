@@ -19,11 +19,13 @@ if (argv.h || argv.help) {
         "  -f --forward       Forward url/prefix to target",
         "  --prefix           [db]",
         "  --target           [http://localhost:5984]",
+        "  --file             load options from .json file",
+        "  --secure           start https server"
         // "  -e          Default file extension if none supplied [none]",
         // "  -c               Cache control in seconds",
         // "  -h               Response headers",
         // "  -g              Gzip if possible",
-        "  -s --silent        Suppress log messages from output",
+        ,"  -s --silent        Suppress log messages from output",
         "  -h --help          Print this list and exit."
     ].join('\n'));
   process.exit();
@@ -31,8 +33,9 @@ if (argv.h || argv.help) {
 
 function readConfigFile(fileName) {
     var parsedJSON;
-    try { parsedJSON = require(fileName);
+    try { parsedJSON = require('fs').readFileSync(fileName);
           // console.log('Config file read.', parsedJSON);
+          parsedJSON = JSON.parse(parsedJSON);
         } catch (e) {
             console.log('Error reading config file: ', e);
         }
@@ -45,7 +48,7 @@ function readConfigFile(fileName) {
 
 if (argv.file) {
     argv = readConfigFile(argv.file);
-    console.log(argv);
+    // console.log(argv);
 }
 else {
     if (argv.f || argv.forward) {
@@ -82,6 +85,7 @@ function listen(port) {
         index: argv.i || argv.index,
         gzip: argv.g || argv.gzip,
         forward: argv.forward,
+        secure: argv.secure,
         // headers
         cache: argv.c || argv.cache,
         ext: argv.e || argv.ext,
@@ -96,6 +100,7 @@ function listen(port) {
             (host + ':' + port).cyan);
         log('Listing dir contents : '.grey + getOptionString(argv.dir));
         log('Auto show index.htm[l]: '.grey + getOptionString(argv.index));
+        log('Https server: '.grey + getOptionString(argv.secure));
         log('Forward '.grey + getOptionString(argv.forward));//
         if (argv.forward) console.log(argv.forward);
         // log('Hit CTRL-C to stop the server');

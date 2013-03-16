@@ -5,9 +5,17 @@
 var sys = require('sys'),
     http = require('http'),
     fs = require('fs'),
-    url = require('url')
+    url = require('url'),
+    https = require('https')
+
 // ,events = require('events')
 ;
+
+
+var ssl = {
+  key: fs.readFileSync('privatekey.pem'),
+  cert: fs.readFileSync('certificate.pem')
+};
 
 var options;
 var log = console.log;
@@ -31,8 +39,10 @@ function createServlet(Class) {
  * @param {Object} Map of method => Handler function
  */
 function HttpServer(handlers) {
+    
   this.handlers = handlers;
-  this.server = http.createServer(this.handleRequest_.bind(this));
+  if (!options.secure) this.server = http.createServer(this.handleRequest_.bind(this));
+  else this.server = https.createServer(ssl, this.handleRequest_.bind(this));
 }
 
 
@@ -329,12 +339,6 @@ process.on('uncaughtException', function(e) {
 
 
 exports.createServer = function (someOptions) {
-    console.log(someOptions);
-    var server = new HttpServer({
-        'GET': createServlet(StaticServlet),
-        'HEAD': createServlet(StaticServlet)
-    });
-    var result = server.server;
     
     options = someOptions || {};
 
@@ -347,6 +351,13 @@ exports.createServer = function (someOptions) {
             options.root = './';
         }
     }
+    // console.log(someOptions);
+    var server = new HttpServer({
+        'GET': createServlet(StaticServlet),
+        'HEAD': createServlet(StaticServlet)
+    });
+    var result = server.server;
+    
     // options.prefix = options.prefix || 'db';
     // options.prefix = '/' + options.prefix + '/';
     
@@ -355,14 +366,13 @@ exports.createServer = function (someOptions) {
     log =  options.silent ?  function () {}: function() {
         console.log.apply(console, arguments);
     };
-  
     // if (options.headers) {
     //     result.headers = options.headers; 
     // }
 
     // result.cache = options.cache || 3600; // in seconds.
     // result.autoIndex = options.autoIndex !== false;
-
+    
     // if (options.ext) {
     //     result.ext = options.ext === true ? 'html' : options.ext;
     // }
