@@ -12,10 +12,6 @@ var sys = require('sys'),
 ;
 
 
-var ssl = {
-  key: fs.readFileSync('privatekey.pem'),
-  cert: fs.readFileSync('certificate.pem')
-};
 
 var options;
 var log = console.log;
@@ -42,7 +38,12 @@ function HttpServer(handlers) {
     
   this.handlers = handlers;
   if (!options.secure) this.server = http.createServer(this.handleRequest_.bind(this));
-  else this.server = https.createServer(ssl, this.handleRequest_.bind(this));
+    else {
+        var ssl = {
+            key: fs.readFileSync('privatekey.pem'),
+            cert: fs.readFileSync('certificate.pem') };
+        this.server = https.createServer(ssl, this.handleRequest_.bind(this));
+    }
 }
 
 
