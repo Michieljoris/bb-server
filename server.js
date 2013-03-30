@@ -145,6 +145,7 @@ function StaticServlet() {}
 StaticServlet.MimeMap = {
     'txt': 'text/plain',
     'html': 'text/html',
+    'htm': 'text/html',
     'css': 'text/css',
     'xml': 'application/xml',
     'json': 'application/json',
@@ -261,7 +262,7 @@ function writeHead(req, res, mimeType, GMTdate) {
 StaticServlet.prototype.sendFile_ = function(req, res, path) {
     var self = this;
     var GMTdate = fs.statSync(path).mtime;
-    var mimeType = StaticServlet.MimeMap[path.split('.').pop()];
+    var mimeType = StaticServlet.MimeMap[path.split('.').pop()] || 'text/plain';
     log(GMTdate, mimeType);
     
     if (options.markdown && mimeType.indexOf('text/x-markdown') === 0) {
