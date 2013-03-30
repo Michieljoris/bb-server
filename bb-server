@@ -20,7 +20,8 @@ if (argv.h || argv.help) {
         "  --prefix           [db]",
         "  --target           [http://localhost:5984]",
         "  --file             load options from .json file",
-        "  --secure           start https server"
+        "  --secure           start https server",
+        "  -h                 Don't convert .md or .markdown files to html"
         // "  -e          Default file extension if none supplied [none]",
         // "  -c               Cache control in seconds",
         // "  -h               Response headers",
@@ -89,7 +90,8 @@ function listen(port) {
         // headers
         cache: argv.c || argv.cache,
         ext: argv.e || argv.ext,
-	silent: argv.s || argv.silent};
+	silent: argv.s || argv.silent,
+        markdown: !argv.h };
             
     var server = httpServer.createServer(argv);
     
@@ -100,6 +102,7 @@ function listen(port) {
             (host + ':' + port).cyan);
         log('Listing dir contents : '.grey + getOptionString(argv.dir));
         log('Auto show index.htm[l]: '.grey + getOptionString(argv.index));
+        log('Convert Markdown: '.grey + getOptionString(argv.markdown));
         log('Https server: '.grey + getOptionString(argv.secure));
         log('Forward '.grey + getOptionString(argv.forward));//
         if (argv.forward) console.log(argv.forward);
