@@ -16,6 +16,8 @@
 	"start": "node ./bb-server"
     },
     "dependencies": {
+	"websocket": "*",
+	"nodemailer": "*",
 	"colors": "*",
 	"optimist": "0.2.x",
 	"portfinder": "~0.2.1",

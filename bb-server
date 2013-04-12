@@ -4,7 +4,8 @@ var sys = require('sys');
 var colors = require('colors'),
     httpServer = require('./server.js'),
     argv = require('optimist').argv,
-    portfinder = require('portfinder');
+    portfinder = require('portfinder'),
+    wsServer = require('./wsServer.js');
 // console.log(colors);
 
 if (argv.h || argv.help) {
@@ -21,7 +22,8 @@ if (argv.h || argv.help) {
         "  --target           [http://localhost:5984]",
         "  --file             load options from .json file",
         "  --secure           start https server",
-        "  -h                 Don't convert .md or .markdown files to html"
+        "  -h                 Don't convert .md or .markdown files to html",
+        "  -w                 Turn on websocket server"
         // "  -e          Default file extension if none supplied [none]",
         // "  -c               Cache control in seconds",
         // "  -h               Response headers",
@@ -91,9 +93,15 @@ function listen(port) {
         cache: argv.c || argv.cache,
         ext: argv.e || argv.ext,
 	silent: argv.s || argv.silent,
-        markdown: !argv.h };
+        markdown: !argv.h,
+        wsServer: argv.w
+    };
             
     var server = httpServer.createServer(argv);
+    
+    if (argv.wsServer) {
+       wsServer.init(server); 
+    }
     
     server.listen(port, host, function() {
         log('Starting up http-server, serving '.yellow
@@ -105,6 +113,7 @@ function listen(port) {
         log('Convert Markdown: '.grey + getOptionString(argv.markdown));
         log('Https server: '.grey + getOptionString(argv.secure));
         log('Forward '.grey + getOptionString(argv.forward));//
+        log('Websocket server '.grey + getOptionString(argv.wsServer));//
         if (argv.forward) console.log(argv.forward);
         // log('Hit CTRL-C to stop the server');
     });

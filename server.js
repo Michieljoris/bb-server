@@ -7,12 +7,11 @@ var sys = require('sys'),
     fs = require('fs'),
     url = require('url'),
     https = require('https'),
-    md = require("node-markdown").Markdown
+    md = require("node-markdown").Markdown,
+    sendEmail = require("./sendMail").send
 
 // ,events = require('events')
 ;
-
-
 
 var options;
 var log = console.log;
@@ -130,6 +129,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
     }
     var handler = this.handlers[req.method];
     if (!handler) {
+    log(req.method);
         res.writeHead(501);
         res.end();
     } else {
@@ -181,7 +181,7 @@ StaticServlet.prototype.handleRequest = function(req, res) {
     });
 };
 
-StaticServlet.prototype.sendError_ = function(req, res, error) {
+function sendError(req, res, error) {
     res.writeHead(500, {
         'Content-Type': 'text/html'
     });
@@ -192,9 +192,13 @@ StaticServlet.prototype.sendError_ = function(req, res, error) {
     res.end();
     log('500 Internal Server Error');
     log(sys.inspect(error));
-};
+}
 
-StaticServlet.prototype.sendMissing_ = function(req, res, path) {
+StaticServlet.prototype.sendError_ = sendError;
+
+
+
+function sendMissing(req, res, path) {
     path = path.substring(1);
     res.writeHead(404, {
         'Content-Type': 'text/html'
@@ -209,7 +213,9 @@ StaticServlet.prototype.sendMissing_ = function(req, res, path) {
     );
     res.end();
     log('404 Not Found: ' + path);
-};
+}
+
+StaticServlet.prototype.sendMissing_ = sendMissing;
 
 StaticServlet.prototype.sendForbidden_ = function(req, res, path) {
     path = path.substring(1);
@@ -263,9 +269,10 @@ StaticServlet.prototype.sendFile_ = function(req, res, path) {
     var self = this;
     var GMTdate = fs.statSync(path).mtime;
     var mimeType = StaticServlet.MimeMap[path.split('.').pop()] || 'text/plain';
+    if (typeof mimeType === 'undefined') mimeType = 'text/plain';
     log(GMTdate, mimeType);
     
-    if (options.markdown && mimeType.indexOf('text/x-markdown') === 0) {
+    if (mimeType && options.markdown && mimeType.indexOf('text/x-markdown') === 0) {
         mimeType = StaticServlet.MimeMap.html;
         if (writeHead(req, res, mimeType, GMTdate)) return;
         fs.readFile(path,'utf8', function (err, data) {
@@ -382,10 +389,40 @@ exports.createServer = function (someOptions) {
             options.root = './';
         }
     }
+    
+    function handleForm(req, res) {
+        console.log("[200] " + req.method + " to " , req.url);
+        var path = req.url.path;
+        if (path === "/contactus_form") {      
+            req.on('data', function(chunk) {
+                try {
+                    console.log("Received body data:");
+                    var data = JSON.parse(chunk);
+                    console.log(data);
+                    res.write('user is:' + data.user + ' pwd is:' + data.pwd);
+                    sendEmail();
+                    // res.write('<tag>mytext</tag>');
+                } catch(e) {
+                    res.write('Failure');
+                }
+            });
+            req.on('end', function() {
+                // empty 200 OK response for now
+                res.writeHead(200, "OK", {'Content-Type': 'text/html'});
+                res.end();
+            });
+            
+        } else {
+            sendMissing(req, res, path);
+        } 
+    }
+    
+    
     // console.log(someOptions);
     var server = new HttpServer({
         'GET': createServlet(StaticServlet),
-        'HEAD': createServlet(StaticServlet)
+        'HEAD': createServlet(StaticServlet),
+        'POST': handleForm
     });
     var result = server.server;
     
