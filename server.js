@@ -157,7 +157,9 @@ StaticServlet.MimeMap = {
     'appcache': 'text/cache-manifest',
     'woff': 'application/x-font-woff',
     'markdown': 'text/x-markdown; charset=UTF-8',
-    'md': 'text/x-markdown; charset=UTF-8'
+    'md': 'text/x-markdown; charset=UTF-8',
+    'mp3': 'audio/mpeg;',
+    'ogg': 'audio/ogg;'
 };
 
 StaticServlet.prototype.handleRequest = function(req, res) {

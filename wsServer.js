@@ -17,7 +17,7 @@ function init(httpServer) {
  
     // websocket and http servers
     var webSocketServer = require('websocket').server;
-    var http = require('http');
+    // var http = require('http');
  
     /**
      * Global variables
@@ -40,6 +40,7 @@ function init(httpServer) {
     var colors = [ 'red', 'green', 'blue', 'magenta', 'purple', 'plum', 'orange' ];
         // ... in random order
     colors.sort(function(a,b) { return Math.random() > 0.5; } );
+   var currentColor = 0; 
  
     // /**
     //  * HTTP server
@@ -59,13 +60,11 @@ function init(httpServer) {
         // an enhanced HTTP request. For more info http://tools.ietf.org/html/rfc6455#page-6
         httpServer: httpServer
     });
- 
     var adminConnection;
     // This callback function is called every time someone
     // tries to connect to the WebSocket server
     wsServer.on('request', function(request) {
         console.log((new Date()) + ' Connection from origin ' + request.origin + '.');
- 
         // accept connection - you should check 'request.origin' to make sure that
         // client is connecting from your website
         // (http://en.wikipedia.org/wiki/Same_origin_policy)
@@ -74,7 +73,6 @@ function init(httpServer) {
         var index = clients.push(connection) - 1;
         var userName = false;
         var userColor = false;
- 
         console.log((new Date()) + ' Connection accepted.');
  
         // send back chat history
@@ -94,8 +92,10 @@ function init(httpServer) {
                         connection.sendUTF(JSON.stringify( { type: 'history', data: history} ));
                     }
                     // get random color and send it back to the user
-                    userColor = colors.shift();
-                    connection.sendUTF(JSON.stringify({ type:'color', data: userColor }));
+                    // userColor = colors.shift();
+                    userColor = colors[++currentColor%7];
+                    console.log('Returning username', userName);
+                    connection.sendUTF(JSON.stringify({ type:'color', data: userColor , userName: userName}));
                     console.log((new Date()) + ' User is known as: ' + userName
                                 + ' with ' + userColor + ' color.');
  
@@ -109,11 +109,11 @@ function init(httpServer) {
                         author: userName,
                         color: userColor
                     };
-                    var to,colonLoc;
+                        var to,colonLoc;
                     if (userName === 'admin') {
                         colonLoc = obj.text.indexOf(':');
                         if (colonLoc !== -1)
-                         to = obj.text.slice(0,colonLoc);
+                            to = obj.text.slice(0,colonLoc);
                         console.log('TO', to);
                     }
                     history.push(obj);
@@ -131,13 +131,15 @@ function init(httpServer) {
                         
                     }
                     else if (!to && userName === 'admin') {
-                        for (var i=0; i < clients.length; i++) {
-                            clients[i].sendUTF(json);
-                        }
-                       } 
-                   else {
                         if (adminConnection) adminConnection.sendUTF(json);
-                   } 
+                        for (var i=0; i < clients.length; i++) {
+                            if (clients[i] !== adminConnection)
+                                clients[i].sendUTF(json);
+                        }
+                    } 
+                    else {
+                        if (adminConnection) adminConnection.sendUTF(json);
+                    } 
                 }
             }
         });
