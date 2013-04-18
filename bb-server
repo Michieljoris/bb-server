@@ -22,7 +22,7 @@ if (argv.h || argv.help) {
         "  --target           [http://localhost:5984]",
         "  --file             load options from .json file",
         "  --secure           start https server",
-        "  -h                 Don't convert .md or .markdown files to html",
+        "  -m                 Don't convert .md or .markdown files to html",
         "  -w                 Turn on websocket server"
         // "  -e          Default file extension if none supplied [none]",
         // "  -c               Cache control in seconds",
@@ -93,7 +93,7 @@ function listen(port) {
         cache: argv.c || argv.cache,
         ext: argv.e || argv.ext,
 	silent: argv.s || argv.silent,
-        markdown: !argv.h,
+        markdown: !argv.m,
         wsServer: argv.w
     };
             
