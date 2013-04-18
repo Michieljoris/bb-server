@@ -10,7 +10,7 @@ var colors = require('colors'),
 
 if (argv.h || argv.help) {
     console.log([
-        "usage: http-server [path] [options]",
+        "usage: bb-server [path] [options]",
         "",
         "options:",
         "  -p --port          Port to use [HTTPSERVER_PORT || 8080]",
