@@ -29,15 +29,17 @@ function sendMail(mailOptions) {
     
 }
 
-exports.send = function () {
+exports.send = function (data) {
     console.log("Sending email!!!!");
+    var text = data.username + " with email address " + "<a href='mailto:" + data.email + "'>" + data.email + "</a>" +
+        " sent the following message: <p>" + data.textmessage;
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: "Firstdoor  <firstdoortraining@gmail.com>", // sender address
         to: "michieljoris@gmail.com", // list of receivers
-        subject: "Test of sendMail!!!  Hello ✔", // Subject line
-        text: "Hello world", // plaintext body
-        html: "<b>Hello world ✔</b>" // html body
+        subject: data.username + " has used the Greendoor contact us form!", // Subject line
+        // text: data.message // plaintext body
+        html: text // html body
     };
     sendMail(mailOptions);
 };

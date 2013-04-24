@@ -401,8 +401,8 @@ exports.createServer = function (someOptions) {
                     console.log("Received body data:");
                     var data = JSON.parse(chunk);
                     console.log(data);
-                    res.write('user is:' + data.user + ' pwd is:' + data.pwd);
-                    sendEmail();
+                    res.write(JSON.stringify(data));
+                    sendEmail(data);
                     // res.write('<tag>mytext</tag>');
                 } catch(e) {
                     res.write('Failure');
