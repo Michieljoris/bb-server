@@ -35,8 +35,8 @@ exports.send = function (data) {
         " sent the following message: <p>" + data.textmessage;
     // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: "Firstdoor  <firstdoortraining@gmail.com>", // sender address
-        to: "michieljoris@gmail.com", // list of receivers
+        from: "Firstdoor Server", // sender address
+        to: "firstdoortraining@gmail.com", // list of receivers
         subject: data.username + " has used the Greendoor contact us form!", // Subject line
         // text: data.message // plaintext body
         html: text // html body
