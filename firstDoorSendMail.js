@@ -1,4 +1,4 @@
-/*global process:false require:false exports:false*/
+/*global  require:false exports:false*/
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
@@ -29,7 +29,9 @@ function sendMail(mailOptions) {
     
 }
 
-exports.send = function (data) {
+
+
+var sendEmail = function (data) {
     console.log("Sending email!!!!");
     var text = data.username + " with email address " + "<a href='mailto:" + data.email + "'>" + data.email + "</a>" +
         " sent the following message: <p>" + data.textmessage;
@@ -43,3 +45,24 @@ exports.send = function (data) {
     };
     sendMail(mailOptions);
 };
+
+exports.handlePost = function(req, res) {
+    console.log('Firstdoor is handling post!!');
+    req.on('data', function(chunk) {
+        try {
+            console.log("Received body data:");
+            var data = JSON.parse(chunk);
+            console.log(data);
+            res.write(JSON.stringify(data));
+            sendEmail(data);
+        } catch(e) {
+            res.write('Failure');
+        }
+    });
+    req.on('end', function() {
+        // empty 200 OK response for now
+        res.writeHead(200, "OK", {'Content-Type': 'text/html'});
+        res.end();
+    });
+            
+}; 

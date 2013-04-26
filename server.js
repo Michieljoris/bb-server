@@ -7,8 +7,10 @@ var sys = require('sys'),
     fs = require('fs'),
     url = require('url'),
     https = require('https'),
-    md = require("node-markdown").Markdown,
-    sendEmail = require("./sendMail").send
+    md = require("node-markdown").Markdown
+    // firstdoor = require("./firstDoorSendMail"),
+    // greenglass = require("./greenglass")
+
 
 // ,events = require('events')
 ;
@@ -392,39 +394,32 @@ exports.createServer = function (someOptions) {
         }
     }
     
-    function handleForm(req, res) {
+    if (!options.postHandlers) options.postHandlers = {};
+    
+    function handlePost(req, res) {
         console.log("[200] " + req.method + " to " , req.url);
         var path = req.url.path;
-        if (path === "/contactus_form") {      
-            req.on('data', function(chunk) {
-                try {
-                    console.log("Received body data:");
-                    var data = JSON.parse(chunk);
-                    console.log(data);
-                    res.write(JSON.stringify(data));
-                    sendEmail(data);
-                    // res.write('<tag>mytext</tag>');
-                } catch(e) {
-                    res.write('Failure');
-                }
-            });
-            req.on('end', function() {
-                // empty 200 OK response for now
-                res.writeHead(200, "OK", {'Content-Type': 'text/html'});
-                res.end();
-            });
+        var postHandler = options.postHandlers[path];
+        if (postHandler) postHandler.handlePost(req, res);
+        // Object.keys(options.handlePost
+        // switch (path) {
+        //   case "/contactus_form":       
+        //     firstdoor.handlePost(req, res);
+        //     break;
+        //   case "/greenglass" :
+        //     greenglass.handlePost(req, res);
+        //     break;
+        // default: 
+        else sendMissing(req, res, path);
+    // } 
             
-        } else {
-            sendMissing(req, res, path);
-        } 
     }
-    
-    
+
     // console.log(someOptions);
     var server = new HttpServer({
         'GET': createServlet(StaticServlet),
         'HEAD': createServlet(StaticServlet),
-        'POST': handleForm
+        'POST': handlePost
     });
     var result = server.server;
     
