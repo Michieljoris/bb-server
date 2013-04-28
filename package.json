@@ -1,9 +1,9 @@
 {
     "name": "bb-server",
     "version": "0.1.1",
-    "author": "Michiel van Oosten",
+    "auth": "Michiel van Oosten",
+    "email": "michieljoris@gmail.com"
     "description": "A bare bones http server, with forwarding to couchdb.",
-    "main": ".//http-server",
     "repository": {
 	"type": "git",
 	"url": "git://github.com/michieljoris/http-server.git"
@@ -12,9 +12,6 @@
 	"cli",
 	"command"
     ],
-    "scripts": {
-	"start": "node ./bb-server"
-    },
     "dependencies": {
 	"websocket": "*",
 	"nodemailer": "*",
@@ -29,7 +26,11 @@
     },
     "analyze": false,
     "preferGlobal": "true",
+    "main": "./lib/bb-server",
+    "scripts": {
+	"start": "./bin/bb-server"
+    },
     "bin": {
-	"bb-server": "./bb-server"
+	"bb-server": "./bin/bb-server"
     }
 }
