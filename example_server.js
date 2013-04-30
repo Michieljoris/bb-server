@@ -2,9 +2,10 @@
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
-var server = require('./bb-server.js'),
-    testMail = require("./testSendMail"),
-    greenglass = require("./greenglass")
+var server = require('./lib/bb-server.js'),
+    // testMail = require("./testSendMail"),
+    // greenglass = require("./greenglass"),
+    testGet = require("./testGet")
 ;
 
  
@@ -20,8 +21,13 @@ var options = {
     ,"silent": false
     ,"port": 7090
     ,postHandlers: {
-        "/greenglass" : greenglass,
-        "/sendmail" : testMail
+        // "/greenglass" : greenglass,
+        // "/sendmail" : testMail
+        }
+    
+    ,getHandlers: {
+        "/testget" : testGet,
+        "/testGet" : testGet
         }
 };
 
