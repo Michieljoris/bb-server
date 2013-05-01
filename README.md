@@ -34,6 +34,8 @@ Then bb-server to run.
 You can also install it directly from npm:
 
 	nmp install bb-server
+	
+Though that might not be the most recent version.	
 	  
 Commandline usage: 
 
