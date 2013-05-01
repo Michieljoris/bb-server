@@ -3,8 +3,7 @@
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
 var server = require('./lib/bb-server.js'),
-    // testMail = require("./testSendMail"),
-    // greenglass = require("./greenglass"),
+    testMail = require("./testSendMail"),
     testGet = require("./testGet")
 ;
 
@@ -14,15 +13,14 @@ var options = {
 	{ "prefix": "local",
 	  "target": "http://localhost:5984" },
 	{ "prefix": "iris",
-          "target": "https://michieljoris.iriscouch.com"}
+          "target": "https://somedb.iriscouch.com"}
 ]
     ,"dir": false
     ,"index": false
     ,"silent": false
     ,"port": 7090
     ,postHandlers: {
-        // "/greenglass" : greenglass,
-        // "/sendmail" : testMail
+        "/sendmail" : testMail
         }
     
     ,getHandlers: {
