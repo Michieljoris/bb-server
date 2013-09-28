@@ -1,3 +1,4 @@
 * modularize the server
 * caching, gzipping, uglify, concatenate
   https://developers.google.com/speed/docs/best-practices/caching
+* rewrite sessions to not use this or prototype etc  and to use vows
