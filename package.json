@@ -1,6 +1,6 @@
 {
     "name": "bb-server",
-    "version": "0.3.5",
+    "version": "0.3.6",
     "auth": "Michiel van Oosten",
     "email": "michieljoris@gmail.com",
     "description": "A bare bones http server, with forwarding to couchdb.",
