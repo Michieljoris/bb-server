@@ -13,19 +13,18 @@ if (argv.h || argv.help) {
         "  -p --port          Port to use [HTTPSERVER_PORT || 8080]",
         "  -a --address       Address to use [HTTPSERVER_IPADDR || 0.0.0.0]",
         "  -b --block         Block directory contents",
-        "  -i --index         Show index.htm[l] when present in directory",
+        "  -i --index         Send index.htm[l] when present in directory",
         "  -f --forward       Forward url/prefix to target",
         "  --prefix           [db]",
         "  --target           [http://localhost:5984]",
+        "  --https            Start https server",
+        "  --sessions         Enable sessions (adds sessions to req)",
+        "  -ws --websocket    Turn on websocket server",
+        "  -nm --nomarkdown   Don't convert .md or .markdown files to html",
+        "  -c --cache         Enable cache (instead of Cache-Control:No-store)",
+        "  -g --gzip          Gzip if possible",
+        ,"  -s --silent       Suppress log messages from output",
         "  --file             load options from .json file",
-        "  --secure           start https server",
-        "  -m                 Don't convert .md or .markdown files to html",
-        "  -w                 Turn on websocket server"
-        // "  -e          Default file extension if none supplied [none]",
-        // "  -c               Cache control in seconds",
-        // "  -h               Response headers",
-        // "  -g              Gzip if possible",
-        ,"  -s --silent        Suppress log messages from output",
         "  -h --help          Print this list and exit."
     ].join('\n'));
   process.exit();
