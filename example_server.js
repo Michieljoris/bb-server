@@ -14,19 +14,29 @@ var options = {
 	  "target": "http://localhost:5984" },
 	{ "prefix": "iris",
           "target": "https://somedb.iriscouch.com"}
-]
+    ]
     ,"dir": false
     ,"index": false
     ,"silent": false
     ,"port": 7090
+    ,cacheSettings: {
+        mimeType: {
+            'js': { "max-age": "1m" }
+            ,'css': { "max-age": "0m" }
+            ,'json': { "max-age": "0m" }
+            ,'png': { "max-age": "0m" }
+            ,'jpeg': { "max-age": "0m" }
+            ,'txt': { "max-age": "0m" }
+            ,'ico': { "max-age": "0m" }
+    }}
     ,postHandlers: {
         // "/sendmail" : testMail
-        }
+    }
     
     ,getHandlers: {
         "/testget" : testGet,
         "/testGet" : testGet
-        }
+    }
     ,sessions: {
         expires: 30
         // ,store: 'mysql'

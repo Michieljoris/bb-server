@@ -20,9 +20,9 @@ if (argv.h || argv.help) {
         "  --https            Start https server",
         "  --sessions         Enable sessions (adds sessions to req)",
         "  -ws --websocket    Turn on websocket server",
-        "  -nm --nomarkdown   Don't convert .md or .markdown files to html",
         "  -c --cache         Enable cache (instead of Cache-Control:No-store)",
-        "  -g --gzip          Gzip if possible",
+        "  -g --gzip          Regular expression of types to gzip  (true =[/text/javascript/json/])",
+        "  -nm --nomarkdown   Don't convert .md or .markdown files to html",
         ,"  -s --silent       Suppress log messages from output",
         "  --file             load options from .json file",
         "  -h --help          Print this list and exit."
