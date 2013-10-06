@@ -20,7 +20,7 @@
 	"portfinder": "~0.2.1",
 	"node-markdown": "0.1.x",
 	"forever-monitor": "1.2.x",
-	"mime": "1.2.x"
+	"mime": "1.2.x",
 	"mysql": "0.9.6"
     },
     "bugs": {
