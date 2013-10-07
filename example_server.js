@@ -45,6 +45,12 @@ var options = {
         //     //options for mysql, memory doesn't need any
         // }
     }
+    ,log: {
+        'format': '',  //Format string, see below for tokens,
+        'stream': '',  //Output stream, defaults to _stdout_
+        'buffer': '', //Buffer duration, defaults to 1000ms when _true_
+        'immediate': ''  //Write log line on request instead of response (for response times)
+    }
 };
 
 server.go(options);

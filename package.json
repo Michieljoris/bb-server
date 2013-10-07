@@ -1,6 +1,6 @@
 {
     "name": "bb-server",
-    "version": "0.3.6",
+    "version": "0.4.0",
     "auth": "Michiel van Oosten",
     "email": "michieljoris@gmail.com",
     "description": "A bare bones http server, with forwarding to couchdb.",
@@ -21,7 +21,8 @@
 	"node-markdown": "0.1.x",
 	"forever-monitor": "1.2.x",
 	"mime": "1.2.x",
-	"mysql": "0.9.6"
+	"mysql": "0.9.6",
+	"bytes": "*"
     },
     "bugs": {
 	"url": "https://github.com/michieljoris/http-server/issues"

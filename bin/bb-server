@@ -24,11 +24,14 @@ if (argv.h || argv.help) {
         "  -ns --nostrip      Don't try to strip 48 chars from filename (cache signing)",
         "  -g --gzip          Regular expression of types to gzip  (true =[/text/javascript/json/])",
         "  -e- --escaped      Serve static content when asked, assign bot to serve static content to all bots",
-        "  -l --log           Write log to the pwd, or follow with desired path",
+        "  -l --log           Write log to path [stdout]",
         "  -nm --nomarkdown   Don't convert .md or .markdown files to html",
         "  -s --silent        Suppress messages from output",
         "  --file             load options from .json file",
-        "  -h --help          Print this list and exit."
+        "  -h --help          Print this list and exit.",
+	"",
+        "Load options from file for more flexibility, see example_server.js.",
+	
     ].join('\n'));
   process.exit();
 }
