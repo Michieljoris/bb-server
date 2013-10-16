@@ -1,0 +1,488 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:ng="http://angularjs.org" lang="en"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" xmlns:ng="http://angularjs.org" lang="en"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9" xmlns:ng="http://angularjs.org" lang="en"> <![endif]--><!--[if gt IE 8]><!--><html class=" js no-flexbox canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js" xmlns:ng="http://angularjs.org" lang="en"><!--<![endif]--><head id="head"><title>Firstdoor - Leaders in developing capability</title><meta charset="utf-8"><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"><meta content="First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. " name="description"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--[if lte IE 8]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script>
+      // The ieshiv takes care of our ui.directives, bootstrap module directives and 
+      // AngularJS's ng-view, ng-include, ng-pluralize and ng-switch directives.
+      // However, IF you have custom directives (yours or someone else's) then
+      // enumerate the list of tags in window.myCustomTags
+
+      window.myCustomTags = [ 'yourDirective', 'somebodyElsesDirective' ]; // optional
+    </script>
+    <script src="js/angular-ui-ieshiv.js"></script>
+    <![endif]-->						    
+
+<script async="" src="//www.google-analytics.com/analytics.js"></script><script src="http://localhost:9090/skewer"></script><script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher: "014e0e6b-5c75-4f02-aa39-abe6833f9f4d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<link rel="stylesheet" type="text/css" href="css/normalize.css"><link rel="stylesheet" type="text/css" href="css/h5bp.css"><link rel="stylesheet" type="text/css" href="css/bootstrap.css"><link rel="stylesheet" type="text/css" href="css/font-awesome.css"><link rel="stylesheet" type="text/css" href="css/reset.css"><link rel="stylesheet" type="text/css" href="css/message-top.css"><link rel="stylesheet" type="text/css" href="css/social.css"><link rel="stylesheet" type="text/css" href="css/contact.css"><link rel="stylesheet" type="text/css" href="css/main.css"><link rel="stylesheet" type="text/css" href="css/cslider.css"><link rel="stylesheet" type="text/css" href="css/chat.css">
+<link rel="stylesheet" type="text/css" href="css/flexslider.css">
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link rel="stylesheet" type="text/css" href="css/showhide.css">
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style><script type="text/javascript" src="http://wd-edge.sharethis.com/button/getAppDefault.esi?cb=stLight.allDefault&amp;app=all&amp;publisher=014e0e6b-5c75-4f02-aa39-abe6833f9f4d&amp;domain=localhost"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5&amp;ajax=1&amp;cachestop=0.9814522198867053"></script><style type="text/css">.recaptchatable td img{display:block}.recaptchatable .recaptcha_r1_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') 0 -63px no-repeat;width:318px;height:9px}.recaptchatable .recaptcha_r2_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -18px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r2_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -27px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r3_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') 0 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r3_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -18px -57px no-repeat;width:300px;height:6px}.recaptchatable .recaptcha_r3_c3{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -9px 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r4_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px 0 no-repeat;width:171px;height:49px}.recaptchatable .recaptcha_r4_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -36px 0 no-repeat;width:7px;height:57px}.recaptchatable .recaptcha_r4_c4{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -214px 0 no-repeat;width:97px;height:57px}.recaptchatable .recaptcha_r7_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:171px;height:8px}.recaptchatable .recaptcha_r8_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:25px;height:8px}.recaptchatable .recaptcha_image_cell center img{height:57px}.recaptchatable .recaptcha_image_cell center{height:57px}.recaptchatable .recaptcha_image_cell{background-color:white;height:57px}#recaptcha_area,#recaptcha_table{width:318px!important}.recaptchatable,#recaptcha_area tr,#recaptcha_area td,#recaptcha_area th{margin:0!important;border:0!important;padding:0!important;border-collapse:collapse!important;vertical-align:middle!important}.recaptchatable *{margin:0;padding:0;border:0;font-family:helvetica,sans-serif;font-size:8pt;color:black;position:static;top:auto;left:auto;right:auto;bottom:auto}.recaptchatable #recaptcha_image{margin:auto}.recaptchatable img{border:0!important;margin:0!important;padding:0!important}.recaptchatable a,.recaptchatable a:hover{outline:none;border:0!important;padding:0!important;text-decoration:none;color:blue;background:none!important;font-weight:normal}.recaptcha_input_area{position:relative!important;width:153px!important;height:45px!important;margin-left:7px!important;margin-right:7px!important;background:none!important}.recaptchatable label.recaptcha_input_area_text{margin:0!important;padding:0!important;position:static!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;background:none!important;height:auto!important;width:auto!important}.recaptcha_theme_red label.recaptcha_input_area_text,.recaptcha_theme_white label.recaptcha_input_area_text{color:black!important}.recaptcha_theme_blackglass label.recaptcha_input_area_text{color:white!important}.recaptchatable #recaptcha_response_field{width:153px!important;position:relative!important;bottom:7px!important;padding:0!important;margin:15px 0 0 0!important;font-size:10pt}.recaptcha_theme_blackglass #recaptcha_response_field,.recaptcha_theme_white #recaptcha_response_field{border:1px solid gray}.recaptcha_theme_red #recaptcha_response_field{border:1px solid #cca940}.recaptcha_audio_cant_hear_link{font-size:7pt;color:black}.recaptchatable{line-height:1em}#recaptcha_instructions_error{color:red!important}.recaptcha_only_if_privacy{float:right;text-align:right}
+
+.recaptcha_is_showing_audio .recaptcha_only_if_image,.recaptcha_isnot_showing_audio .recaptcha_only_if_audio,.recaptcha_had_incorrect_sol .recaptcha_only_if_no_incorrect_sol,.recaptcha_nothad_incorrect_sol .recaptcha_only_if_incorrect_sol{display:none !important}</style><script type="text/javascript" src="http://wd-edge.sharethis.com/button/checkOAuth.esi"></script><link rel="stylesheet" type="text/css" href="http://w.sharethis.com/button/css/buttons.b53d53949b67e7ea0adacde4c2838c6a.css"><style type="text/css">.a2a_menu, .a2a_menu *{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;float:none;margin:0;padding:0;height:auto;width:auto;}.a2a_menu{width: 300px;}.a2a_menu table{border-collapse:collapse;border-spacing:0;width:auto}.a2a_menu table,.a2a_menu tbody,.a2a_menu td,.a2a_menu tr{border:0;margin:0;padding:0;background-color:#FFF} .a2a_menu td{vertical-align:top}.a2a_menu,.a2a_menu_inside{border-radius:16px;-webkit-border-radius:16px;-moz-border-radius:16px}.a2a_menu{display:none;z-index:9999999;position:absolute;direction:ltr;min-width:200px;background:#EEE;background:rgba(238,238,238,.6);font:12px Arial,Helvetica,sans-serif;color:#000;line-height:12px;border:1px solid transparent;_border:1px solid #EEE;padding:7px;vertical-align:baseline;overflow:hidden}.a2a_menu_inside{background-color:#FFF;border: 1px solid #CCC;padding:8px}.a2a_menu a span, .a2a_tabs .a2a_tab_selected span{color:#00F}.a2a_menu a:hover span, .a2a_tabs div span,.a2a_tabs a span{color:#000}.a2a_menu a,#a2a_hist_list a,.a2a_tabs div{color:#00F;text-decoration:none;font:12px Arial,Helvetica,sans-serif;line-height:12px;height:auto;width:auto;outline:none;-moz-outline:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px}.a2a_menu a:visited,#a2a_hist_list a:visited{color:#00F}.a2a_menu a:hover,.a2a_menu a:active,.a2a_menu a.a2a_i:focus,.a2a_tabs div:hover{color:#000;border:1px solid #CCC;background-color:#EEE;text-decoration:none}.a2a_menu span,.a2a_img{background:url(http://static.addtoany.com/menu/icons_24.png) no-repeat;border:0;display:block;line-height:16px}.a2a_menu span.a2a_i_find{height:16px;left:5px;position:absolute;top:2px;width:16px}#a2a_menu_container{display:inline-block} #a2a_menu_container{_display:inline} .a2a_menu_title_container{margin-bottom:2px;padding:6px}.a2a_menu_find_container{position:relative;text-align:left;margin:4px 1px;padding:1px 24px 1px 0;border:1px solid #CCC;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px}.a2a_cols_container{border-bottom-right-radius:8px;border-top-right-radius:8px}.a2a_cols_container .a2a_col1{overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}.a2a_menu input, .a2a_menu input[type="text"]{display:block;background-image:none;box-shadow:none;line-height:100%;margin:0;overflow:hidden;padding:0;-moz-box-shadow:none;-webkit-box-shadow:none;-webkit-appearance:none} .a2a_menu_title_container input.a2a_menu_title{color:#000;background-color:#FFF;border:0;margin:0;padding:0;width:99%}.a2a_menu_find_container input.a2a_menu_find{position:relative;left:24px;color:#000;font-size:12px;padding:2px 0;outline:0;border:0;background-color:transparent;_background-color:#FFF;width:99%} .a2a_clear{clear:both} .a2a_default_style a{float:left;line-height:16px;padding:0 2px}.a2a_default_style a:hover .a2a_img, .a2a_default_style a:hover .a2a_svg{opacity:.7}.a2a_default_style .a2a_img, .a2a_default_style .a2a_svg{display:block;overflow:hidden}.a2a_default_style .a2a_img{height:16px;line-height:16px;width:16px}.a2a_default_style .a2a_svg{height:32px;line-height:32px;width:32px;border-radius:4px;} .a2a_default_style .a2a_img, .a2a_default_style .a2a_dd, .a2a_default_style .a2a_svg{float:left}.a2a_default_style .a2a_img_text{margin-right:4px}.a2a_default_style .a2a_divider{border-left:1px solid #000;display:inline;float:left;height:16px;line-height:16px;margin:0 5px}.a2a_kit a{cursor:pointer}.a2a_nowrap{white-space:nowrap}.a2a_note{margin:0 auto;padding:9px;font-size:12px;text-align:center}.a2a_note .a2a_note_note{margin:0;color:#000}.a2a_wide a{display:block;margin-top:3px;border:1px solid #EEE;padding:3px;text-align:center}.a2a_tabs{float:left;margin:0 0 3px} .a2a_tabs a,.a2a_tabs div{margin:1px;background-color:#EEE; border:1px solid #EEE; font-size:11px; padding:6px 12px ; white-space:nowrap} .a2a_tabs a span, .a2a_tabs div span{display:inline-block;padding-left:20px;height:auto;width:auto} .a2a_tabs_default a span, .a2a_tabs_default div span{height:auto;max-width:99px;overflow:hidden;padding-left:20px;width:auto;_width:expression(this.clientWidth > 99? "97px" : "auto");}.a2a_tabs a, .a2a_tabs a:visited, .a2a_tabs a:hover, .a2a_tabs div, .a2a_tabs div:hover{cursor:pointer;border-bottom:1px solid #EEE;color:#000;border-bottom-left-radius:0;-webkit-border-bottom-left-radius:0;-moz-border-radius-bottomleft:0;border-bottom-right-radius:0;-webkit-border-bottom-right-radius:0;-moz-border-radius-bottomright:0}a.a2a_tab_selected, a.a2a_tab_selected:visited,a.a2a_tab_selected:hover,a.a2a_tab_selected:active,a.a2a_tab_selected:focus, div.a2a_tab_selected,div.a2a_tab_selected:hover{color:#00F;background-color:#FFF;border:1px solid #CCC;border-bottom:1px solid #FFF}a.a2a_i{display:block;float:left;border:1px solid #FFF;padding:4px 6px;text-align:left;white-space:nowrap;width:126px;}a.a2a_i span{padding-left:20px}.a2a_x_shorten a.a2a_i{width:116px}a.a2a_sss{font-weight:700}a.a2a_ind{display:inline;margin:0;padding:0} a.a2a_email_client span{display:inline-block;height:16px;line-height:16px;margin:0 2px;padding-left:0;width:16px;}a.a2a_menu_show_more_less{margin:4px 0 8px;padding:0}a.a2a_menu_show_more_less span{display:inline-block;height:14px;margin:0 auto;vertical-align:baseline;width:16px} div.a2a_menu_powered_by{background-color:#EEE;font-size:9px;color:#999;text-align:center;margin-top:4px;padding:3px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px}div.a2a_menu_powered_by a,div.a2a_menu_powered_by a:visited{display:inline;font-size:9px;color:#999}div.a2a_menu_powered_by a:hover{border:0;text-decoration:underline}iframe.a2a_shim{border:0;position:absolute;z-index:999999;}.a2a_dd img {border:0;-ms-touch-action:manipulation;}.a2a_i_a2a{background-position:0 0!important}.a2a_i_a2a_bw{background-position:0 -17px!important}.a2a_i_agregator{background-position:0 -34px!important}.a2a_i_aim{background-position:0 -51px!important}.a2a_i_allvoices{background-position:0 -68px!important}.a2a_i_amazon{background-position:0 -85px!important}.a2a_i_aol{background-position:0 -102px!important}.a2a_i_apple_mail{background-position:0 -119px!important}.a2a_i_arto{background-position:0 -136px!important}.a2a_i_ask{background-position:0 -153px!important}.a2a_i_backflip{background-position:0 -170px!important}.a2a_i_bebo{background-position:0 -187px!important}.a2a_i_bibsonomy{background-position:0 -204px!important}.a2a_i_bitty{background-position:0 -221px!important}.a2a_i_blinklist{background-position:0 -238px!important}.a2a_i_blogger{background-position:0 -255px!important}.a2a_i_bloglines{background-position:0 -272px!important}.a2a_i_blogmarks{background-position:0 -289px!important}.a2a_i_bookmark{background-position:0 -306px!important}.a2a_i_bookmarks_fr{background-position:0 -323px!important}.a2a_i_box{background-position:0 -340px!important}.a2a_i_buddymarks{background-position:0 -357px!important}.a2a_i_buffer{background-position:0 -374px!important}.a2a_i_business_exchange{background-position:0 -391px!important}.a2a_i_care2{background-position:0 -408px!important}.a2a_i_chrome{background-position:0 -425px!important}.a2a_i_citeulike{background-position:0 -442px!important}.a2a_i_clear{background-position:0 -459px!important}.a2a_i_connotea{background-position:0 -476px!important}.a2a_i_current{background-position:0 -493px!important}.a2a_i_dailyrotation{background-position:0 -510px!important}.a2a_i_darr{background-position:0 -527px!important}.a2a_i_darr_wt{background-position:0 -544px!important}.a2a_i_default{background-position:0 -561px!important}.a2a_i_delicious{background-position:0 -578px!important}.a2a_i_designfloat{background-position:0 -595px!important}.a2a_i_diaspora{background-position:0 -612px!important}.a2a_i_digg{background-position:0 -629px!important}.a2a_i_diglog{background-position:0 -646px!important}.a2a_i_diigo{background-position:0 -663px!important}.a2a_i_dzone{background-position:0 -680px!important}.a2a_i_email{background-position:0 -697px!important}.a2a_i_email_bw{background-position:0 -714px!important}.a2a_i_evernote{background-position:0 -731px!important}.a2a_i_facebook{background-position:0 -748px!important}.a2a_i_fark{background-position:0 -765px!important}.a2a_i_faves{background-position:0 -782px!important}.a2a_i_feed{background-position:0 -799px!important}.a2a_i_feedblitz{background-position:0 -816px!important}.a2a_i_feedbucket{background-position:0 -833px!important}.a2a_i_feedly{background-position:0 -850px!important}.a2a_i_feedmailer{background-position:0 -867px!important}.a2a_i_find{background-position:0 -884px!important}.a2a_i_fireant{background-position:0 -901px!important}.a2a_i_firefox{background-position:0 -918px!important}.a2a_i_folkd{background-position:0 -935px!important}.a2a_i_friendfeed{background-position:0 -952px!important}.a2a_i_funp{background-position:0 -969px!important}.a2a_i_gabbr{background-position:0 -986px!important}.a2a_i_gmail{background-position:0 -1003px!important}.a2a_i_google{background-position:0 -1020px!important}.a2a_i_google_plus{background-position:0 -1037px!important}.a2a_i_hatena{background-position:0 -1054px!important}.a2a_i_hellotxt{background-position:0 -1071px!important}.a2a_i_hemidemi{background-position:0 -1088px!important}.a2a_i_hugg{background-position:0 -1105px!important}.a2a_i_hyves{background-position:0 -1122px!important}.a2a_i_identica{background-position:0 -1139px!important}.a2a_i_imera{background-position:0 -1156px!important}.a2a_i_instapaper{background-position:0 -1173px!important}.a2a_i_itunes{background-position:0 -1190px!important}.a2a_i_jamespot{background-position:0 -1207px!important}.a2a_i_jumptags{background-position:0 -1224px!important}.a2a_i_khabbr{background-position:0 -1241px!important}.a2a_i_kindle{background-position:0 -1258px!important}.a2a_i_kledy{background-position:0 -1275px!important}.a2a_i_klipfolio{background-position:0 -1292px!important}.a2a_i_linkagogo{background-position:0 -1309px!important}.a2a_i_linkatopia{background-position:0 -1326px!important}.a2a_i_linkedin{background-position:0 -1343px!important}.a2a_i_live{background-position:0 -1360px!important}.a2a_i_livejournal{background-position:0 -1377px!important}.a2a_i_mail_ru{background-position:0 -1394px!important}.a2a_i_maple{background-position:0 -1411px!important}.a2a_i_meneame{background-position:0 -1428px!important}.a2a_i_messenger{background-position:0 -1445px!important}.a2a_i_miro{background-position:0 -1462px!important}.a2a_i_mister-wong{background-position:0 -1479px!important}.a2a_i_mozillaca{background-position:0 -1496px!important}.a2a_i_multiply{background-position:0 -1513px!important}.a2a_i_my_msn{background-position:0 -1530px!important}.a2a_i_mylinkvault{background-position:0 -1547px!important}.a2a_i_myspace{background-position:0 -1564px!important}.a2a_i_netlog{background-position:0 -1581px!important}.a2a_i_netvibes{background-position:0 -1598px!important}.a2a_i_netvouz{background-position:0 -1615px!important}.a2a_i_newsalloy{background-position:0 -1632px!important}.a2a_i_newsisfree{background-position:0 -1649px!important}.a2a_i_newstrust{background-position:0 -1666px!important}.a2a_i_newsvine{background-position:0 -1683px!important}.a2a_i_nowpublic{background-position:0 -1700px!important}.a2a_i_odnoklassniki{background-position:0 -1717px!important}.a2a_i_oknotizie{background-position:0 -1734px!important}.a2a_i_oldreader{background-position:0 -1751px!important}.a2a_i_oneview{background-position:0 -1768px!important}.a2a_i_orkut{background-position:0 -1785px!important}.a2a_i_outlook{background-position:0 -1802px!important}.a2a_i_pdf{background-position:0 -1819px!important}.a2a_i_phonefavs{background-position:0 -1836px!important}.a2a_i_pinboard{background-position:0 -1853px!important}.a2a_i_ping{background-position:0 -1870px!important}.a2a_i_pinterest{background-position:0 -1887px!important}.a2a_i_plaxo{background-position:0 -1904px!important}.a2a_i_plurk{background-position:0 -1921px!important}.a2a_i_podnova{background-position:0 -1938px!important}.a2a_i_print{background-position:0 -1955px!important}.a2a_i_printfriendly{background-position:0 -1972px!important}.a2a_i_protopage{background-position:0 -1989px!important}.a2a_i_pusha{background-position:0 -2006px!important}.a2a_i_rapidfeeds{background-position:0 -2023px!important}.a2a_i_read_it_later{background-position:0 -2040px!important}.a2a_i_reddit{background-position:0 -2057px!important}.a2a_i_rediff{background-position:0 -2074px!important}.a2a_i_segnalo{background-position:0 -2091px!important}.a2a_i_share{background-position:0 -2108px!important}.a2a_i_simpy{background-position:0 -2125px!important}.a2a_i_sina_weibo{background-position:0 -2142px!important}.a2a_i_sitejot{background-position:0 -2159px!important}.a2a_i_slashdot{background-position:0 -2176px!important}.a2a_i_smaknews{background-position:0 -2193px!important}.a2a_i_sphinn{background-position:0 -2210px!important}.a2a_i_spurl{background-position:0 -2227px!important}.a2a_i_squidoo{background-position:0 -2244px!important}.a2a_i_startaid{background-position:0 -2261px!important}.a2a_i_strands{background-position:0 -2278px!important}.a2a_i_stumbleupon{background-position:0 -2295px!important}.a2a_i_stumpedia{background-position:0 -2312px!important}.a2a_i_symbaloo{background-position:0 -2329px!important}.a2a_i_tagza{background-position:0 -2346px!important}.a2a_i_tailrank{background-position:0 -2363px!important}.a2a_i_technorati{background-position:0 -2380px!important}.a2a_i_technotizie{background-position:0 -2397px!important}.a2a_i_thefreedictionary{background-position:0 -2414px!important}.a2a_i_thefreelibrary{background-position:0 -2431px!important}.a2a_i_thunderbird{background-position:0 -2448px!important}.a2a_i_tipd{background-position:0 -2465px!important}.a2a_i_tuenti{background-position:0 -2482px!important}.a2a_i_tumblr{background-position:0 -2499px!important}.a2a_i_twiddla{background-position:0 -2516px!important}.a2a_i_twitter{background-position:0 -2533px!important}.a2a_i_typepad{background-position:0 -2550px!important}.a2a_i_uarr{background-position:0 -2567px!important}.a2a_i_uarr_wt{background-position:0 -2584px!important}.a2a_i_unalog{background-position:0 -2601px!important}.a2a_i_viadeo{background-position:0 -2618px!important}.a2a_i_vk{background-position:0 -2635px!important}.a2a_i_webnews{background-position:0 -2652px!important}.a2a_i_windows_mail{background-position:0 -2670px!important}.a2a_i_wink{background-position:0 -2687px!important}.a2a_i_winksite{background-position:0 -2704px!important}.a2a_i_wists{background-position:0 -2721px!important}.a2a_i_wordpress{background-position:0 -2738px!important}.a2a_i_xerpi{background-position:0 -2755px!important}.a2a_i_xing{background-position:0 -2772px!important}.a2a_i_yahoo{background-position:0 -2789px!important}.a2a_i_yample{background-position:0 -2806px!important}.a2a_i_yigg{background-position:0 -2823px!important}.a2a_i_yim{background-position:0 -2840px!important}.a2a_i_yoolink{background-position:0 -2857px!important}.a2a_i_youmob{background-position:0 -2874px!important}</style></head>
+  <body id="ng:app" ng:app="myApp" class="ng-scope"><div style="position: static; "><iframe id="a2apage_sm_ifr" height="1" width="1" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; left: 0px; top: 0px; position: absolute; z-index: 100000; display: none; " transparency="true" allowtransparency="true" frameborder="0" src="http://static.addtoany.com/menu/sm11.html#type=page&amp;event=load&amp;url=http%3A%2F%2Flocalhost%3A6001%2F&amp;referrer="></iframe><div id="a2apage_dropdown" class="a2a_menu" onmouseover="a2a.onMouseOver_stay()"><div class="a2a_menu_inside"><div id="a2apage_title_container" class="a2a_menu_title_container" style="display:none"><input id="a2apage_title" class="a2a_menu_title"></div><div class="a2apage_wide a2a_wide"><div class="a2a_tabs a2a_tabs_default"><div id="a2apage_DEFAULT" class="a2a_tab_selected" style="margin-right:1px"><span class="a2a_i_a2a">Share</span></div></div><div class="a2a_tabs"><div title="Share via email" id="a2apage_EMAIL" style="margin-right:1px"><span class="a2a_i_email_bw">Email</span></div></div></div><div class="a2a_clear"></div><div id="a2apage_find_container" class="a2a_menu_find_container"><input id="a2apage_find" class="a2a_menu_find" type="text" onclick="a2a.focus_find()" onkeyup="a2a.do_find()" autocomplete="off" onfocus="a2a['page'].find_focused=true;a2a.onMouseOver_stay()" title="Instantly find any service"><span id="a2apage_find_icon" class="a2a_i_find" onclick="a2a.focus_find()"></span></div><div id="a2apage_cols_container" class="a2a_cols_container"><div class="a2a_col1" id="a2apage_col1"><a id="a2apage_facebook" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_facebook">Facebook</span></a><a id="a2apage_twitter" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_twitter">Twitter</span></a><a id="a2apage_google_plus" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_google_plus">Google+</span></a><a id="a2apage_pinterest" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_pinterest">Pinterest</span></a><a id="a2apage_linkedin" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_linkedin">LinkedIn</span></a><a id="a2apage_stumbleupon" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_stumbleupon">StumbleUpon</span></a><a id="a2apage_reddit" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_reddit">Reddit</span></a><a id="a2apage_google_bookmarks" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_google">Google Bookmarks</span></a><a id="a2apage_wordpress" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_wordpress">WordPress</span></a><a id="a2apage_tumblr" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_tumblr">Tumblr</span></a><a id="a2apage_delicious" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_delicious">Delicious</span></a><a id="a2apage_digg" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_digg">Digg</span></a><a id="a2apage_myspace" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_myspace">MySpace</span></a><a id="a2apage_yahoo_bookmarks" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_yahoo">Yahoo Bookmarks</span></a><a id="a2apage_bebo" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_bebo">Bebo</span></a><a id="a2apage_mister_wong" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_mister-wong">Mister-Wong</span></a><a id="a2apage_app_net" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_app_net">App.net</span></a><a id="a2apage_orkut" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_orkut">Orkut</span></a><a id="a2apage_xing" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_xing">XING</span></a><a id="a2apage_buffer" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_buffer">Buffer</span></a><a id="a2apage_evernote" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_evernote">Evernote</span></a><a id="a2apage_pocket" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_pocket">Pocket</span></a><a id="a2apage_pinboard" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_pinboard">Pinboard</span></a><a id="a2apage_arto" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_arto">Arto</span></a><a id="a2apage_aim" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_aim">AIM</span></a><a id="a2apage_yahoo_messenger" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_yim">Yahoo Messenger</span></a><a id="a2apage_plurk" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_plurk">Plurk</span></a><a id="a2apage_diaspora" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_diaspora">Diaspora</span></a><a id="a2apage_blogger_post" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_blogger">Blogger Post</span></a><a id="a2apage_typepad_post" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_typepad">TypePad Post</span></a><a id="a2apage_box_net" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_box">Box.net</span></a><a id="a2apage_kindle_it" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_kindle">Kindle It</span></a><a id="a2apage_netlog" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_netlog">Netlog</span></a><a id="a2apage_citeulike" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_citeulike">CiteULike</span></a><a id="a2apage_jumptags" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_jumptags">Jumptags</span></a><a id="a2apage_funp" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_funp">FunP</span></a><a id="a2apage_instapaper" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_instapaper">Instapaper</span></a><a id="a2apage_phonefavs" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_phonefavs">PhoneFavs</span></a><a id="a2apage_xerpi" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_xerpi">Xerpi</span></a><a id="a2apage_netvouz" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_netvouz">Netvouz</span></a><a id="a2apage_diigo" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_diigo">Diigo</span></a><a id="a2apage_bibsonomy" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_bibsonomy">BibSonomy</span></a><a id="a2apage_blogmarks" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_blogmarks">BlogMarks</span></a><a id="a2apage_startaid" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_startaid">StartAid</span></a><a id="a2apage_khabbr" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_khabbr">Khabbr</span></a><a id="a2apage_meneame" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_meneame">Meneame</span></a><a id="a2apage_yoolink" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_yoolink">Yoolink</span></a><a id="a2apage_bookmarks_fr" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_bookmarks_fr">Bookmarks.fr</span></a><a id="a2apage_technotizie" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_technotizie">Technotizie</span></a><a id="a2apage_newsvine" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_newsvine">NewsVine</span></a><a id="a2apage_friendfeed" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_friendfeed">FriendFeed</span></a><a id="a2apage_protopage_bookmarks" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_protopage">Protopage Bookmarks</span></a><a id="a2apage_blinklist" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_blinklist">Blinklist</span></a><a id="a2apage_yigg" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_yigg">YiGG</span></a><a id="a2apage_webnews" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_webnews">Webnews</span></a><a id="a2apage_segnalo" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_segnalo">Segnalo</span></a><a id="a2apage_pusha" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_pusha">Pusha</span></a><a id="a2apage_youmob" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_youmob">YouMob</span></a><a id="a2apage_slashdot" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_slashdot">Slashdot</span></a><a id="a2apage_fark" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_fark">Fark</span></a><a id="a2apage_allvoices" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_allvoices">Allvoices</span></a><a id="a2apage_jamespot" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_jamespot">Jamespot</span></a><a id="a2apage_twiddla" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_twiddla">Twiddla</span></a><a id="a2apage_linkagogo" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_linkagogo">LinkaGoGo</span></a><a id="a2apage_nowpublic" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_nowpublic">NowPublic</span></a><a id="a2apage_livejournal" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_livejournal">LiveJournal</span></a><a id="a2apage_linkatopia" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_linkatopia">Linkatopia</span></a><a id="a2apage_buddymarks" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_buddymarks">BuddyMarks</span></a><a id="a2apage_viadeo" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_viadeo">Viadeo</span></a><a id="a2apage_wists" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_wists">Wists</span></a><a id="a2apage_sitejot" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_sitejot">SiteJot</span></a><a id="a2apage_dzone" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_dzone">DZone</span></a><a id="a2apage_care2_news" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_care2">Care2 News</span></a><a id="a2apage_hyves" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_hyves">Hyves</span></a><a id="a2apage_bitty_browser" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_bitty">Bitty Browser</span></a><a id="a2apage_odnoklassniki" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_odnoklassniki">Odnoklassniki</span></a><a id="a2apage_mail_ru" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_mail_ru">Mail.Ru</span></a><a id="a2apage_symbaloo_feeds" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_symbaloo">Symbaloo Feeds</span></a><a id="a2apage_folkd" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_folkd">Folkd</span></a><a id="a2apage_newstrust" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_newstrust">NewsTrust</span></a><a id="a2apage_amazon_wish_list" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_amazon">Amazon Wish List</span></a><a id="a2apage_printfriendly" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_printfriendly">PrintFriendly</span></a><a id="a2apage_tuenti" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_tuenti">Tuenti</span></a><a id="a2apage_email" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_email">Email</span></a><a id="a2apage_rediff" rel="nofollow" class="a2a_i" href="/" target="_blank" style="display: none; "><span class="a2a_i_rediff">Rediff MyPage</span></a></div><div id="a2apage_2_col1" style="display:none"><a id="a2apage_google_gmail" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_gmail">Google Gmail</span></a><a id="a2apage_yahoo_mail" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_yahoo">Yahoo Mail</span></a><a id="a2apage_outlook_com" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_outlook_com">Outlook.com</span></a><a id="a2apage_aol_mail" rel="nofollow" class="a2a_i" href="/" target="_blank"><span class="a2a_i_aol">AOL Mail</span></a><a id="a2apage_any_email" rel="nofollow" class="a2a_i a2a_emailer" href="/" target="_blank"><span class="a2a_i_email">Any email</span></a><a id="a2apage_email_client" rel="nofollow" class="a2a_i a2a_emailer a2a_email_client" href="/" target=""><span class="a2a_i_outlook">&nbsp;</span><span class="a2a_i_windows_mail">&nbsp;</span><span class="a2a_i_apple_mail">&nbsp;</span><span class="a2a_i_thunderbird">&nbsp;</span></a></div><div class="a2a_clear"></div></div><div class="a2apage_wide a2a_wide"><a href="" id="a2apage_show_more_less" class="a2a_menu_show_more_less" onmouseover="img=this.firstChild;if(a2a.c.color_arrow_hover=='fff'){if(img.className.indexOf('_wt')==-1)img.className+='_wt'}else img.className=img.className.replace(/_wt/,'')" onmouseout="img=this.firstChild;if(a2a.c.color_arrow=='fff'){if(img.className.indexOf('_wt')==-1)img.className+='_wt'}else img.className=img.className.replace(/_wt/,'')" title="Show all"><span class="a2a_i_darr"></span></a></div><div class="a2a_menu_powered_by" id="a2apage_powered_by" onmouseover="if(this.innerHTML!=this.orig&amp;&amp;!window.opera)this.innerHTML=this.orig;this.style.textAlign='center'">By <a href="http://www.addtoany.com/" target="_blank" title="Share Buttons">AddToAny</a></div></div></div></div><!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+<div id="container">
+
+  <div id="wrapper" class="container ng-scope" ng-controller="MainCntl">
+    <div id="header" class="row">
+
+      <div id="logo--" class="span5"><a href="#"><img src="images/logo.jpg" alt="logo"></a>
+</div>
+      <div id="header-right" class="pull-right span6">
+        <div id="social--"><div class="pull-right">
+  <ul style="list-style-type:none;">
+    <li style=""><h2 style="margin-bottom:10px;
+			    padding-right:0px;">Connect with us</h2></li>
+    <li>
+      <ul class="social-icons">
+	<li class="facebook"><a href="https://www.facebook.com/firstdoortraining">Facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/FIRSTDOOR1" target="_blank">Twitter</a></li>
+	<!-- <li class="skype"><a href="#" target="_blank">Skype</a></li> -->
+	<!-- <li class="googleplus"><a href="#" target="_blank">Google+</a></li> -->
+	<li class="linkedin"><a href="http://www.linkedin.com/company/first-door-training-&amp;-development-pty-ltd?report%2Esuccess=se2U8YjzSfSLqmrvJWfkzmUYKl6uKkphatxlAbbto9OkvCyhhsMCP1nNWIEQv6pq2D50iVxJ" target="_blank">Linkedin</a></li>
+	<li class="pintrest"><a href="http://pinterest.com/firstdoor" target="_blank">Pintrest</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="pull-right">
+  <ul style="list-style-type:none;">
+    <li style=""><h2 style="float:left; margin-bottom:10px; padding-right:0px;">Phone us</h2></li>
+    <li><h2 style="color:gray;float:left">07 3103 2336 </h2></li>
+  </ul>
+</div>
+</div>
+      </div>
+    </div>
+
+    <div class="menubar row">
+      <div id="menu--" class="span10"><div class="ie-dropdown-fix"> <div id="navigation"><ul id="nav" class="menu"><li><a href="index.html#!/home#welcome" id="home#welcome" class="active">Home</a><ul class=""><li><a href="index.html#!/home#specialists" class="scroll" id="home#specialists">Specialists in Early Childhood training and development</a></li><li><a href="index.html#!/home#engaging" class="scroll" id="home#engaging">Engaging resources and environments</a></li><li><a href="index.html#!/home#mentor" class="scroll" id="home#mentor">Your personal mentor </a></li><li><a href="index.html#!/home#constructive" class="scroll" id="home#constructive">Constructive and timely assessment</a></li><li><a href="index.html#!/home#quiz" class="scroll" id="home#quiz">Quiz: discover your preferred learning style</a></li></ul></li><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">About us</a><ul class=""><li><a href="index.html#!/aboutus#vision" class="scroll" id="aboutus#vision">Our company</a><ul class=""><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">Vision</a></li><li><a href="index.html#!/aboutus#mission" id="aboutus#mission">Mission</a></li><li><a href="index.html#!/aboutus#approach" id="aboutus#approach">Our student approach</a></li><li><a href="index.html#!/aboutus#values" id="aboutus#values">Values</a></li></ul></li><li><a href="index.html#!/aboutus#namelogo" class="scroll" id="aboutus#namelogo">Our name and logo</a></li><li><a href="index.html#!/aboutus#people" class="scroll" id="aboutus#people">Our people</a></li><li><a href="index.html#!/aboutus#policies" class="scroll" id="aboutus#policies">First door policies</a></li></ul></li><li><a href="index.html#!/pd#intro" id="pd#intro">Professional development</a><ul class=""><li><a href="index.html#!/pd#inspired" class="scroll" id="pd#inspired">The inspired educator</a></li><li><a href="index.html#!/pd#observing" class="scroll" id="pd#observing">Observation, documentation, planning and evaluating</a></li><li><a href="index.html#!/pd#environment" class="scroll" id="pd#environment">Environment and experiences</a></li><li><a href="index.html#!/pd#coop" class="scroll" id="pd#coop">Developing cooperative behaviour</a></li><li><a href="index.html#!/pd#evaluation" class="scroll" id="pd#evaluation">Evaluation and reflective practice</a></li><li><a href="index.html#!/pd#children" class="scroll" id="pd#children">Children at risk</a></li><li><a href="index.html#!/pd#risk" class="scroll" id="pd#risk">Identify and manage risk</a></li><li><a href="index.html#!/pd#customised" class="scroll" id="pd#customised">Customised workshop</a></li></ul></li><li><a href="index.html#!/courses#intro" id="courses#intro">Accredited training</a><ul class=""><li><a href="index.html#!/courses#childrenservices" class="scroll" id="courses#childrenservices">Diploma of Early Childhood Education and Care</a></li><li><a href="index.html#!/courses#diploma_management" class="scroll" id="courses#diploma_management">Diploma of Management </a></li><li><a href="index.html#!/courses#certivtraining" class="scroll" id="courses#certivtraining">Certificate IV in Training and Assessment</a></li></ul></li><li><a href="index.html#!/resources#motivation" id="resources#motivation">Resources</a><ul class=""><li><a href="index.html#!/resources#motivation" class="scroll" id="resources#motivation">Motivation</a></li><li><a href="index.html#!/resources#earlychildhood" class="scroll" id="resources#earlychildhood">Early childhood</a></li><li><a href="index.html#!/resources#learningorganisations" class="scroll" id="resources#learningorganisations">Learning organisations</a></li><li><a href="index.html#!/resources#learning" class="scroll" id="resources#learning">Learning</a></li><li><a href="index.html#!/resources#leadership" class="scroll" id="resources#leadership">Leadership and Management</a></li></ul></li><li><a href="index.html#!/contactus" class="scroll" id="contactus">Contact us</a></li></ul><select class="selectnav span12" id="selectnav1"><option value="">Menu</option><option value="http://localhost:6001/index.html#!/home#welcome">Home</option><option value="http://localhost:6001/index.html#!/home#specialists">- Specialists in Early Childhood training and development</option><option value="http://localhost:6001/index.html#!/home#engaging">- Engaging resources and environments</option><option value="http://localhost:6001/index.html#!/home#mentor">- Your personal mentor </option><option value="http://localhost:6001/index.html#!/home#constructive">- Constructive and timely assessment</option><option value="http://localhost:6001/index.html#!/home#quiz">- Quiz: discover your preferred learning style</option><option value="http://localhost:6001/index.html#!/aboutus#vision">About us</option><option value="http://localhost:6001/index.html#!/aboutus#vision">- Our company</option><option value="http://localhost:6001/index.html#!/aboutus#vision">-- Vision</option><option value="http://localhost:6001/index.html#!/aboutus#mission">-- Mission</option><option value="http://localhost:6001/index.html#!/aboutus#approach">-- Our student approach</option><option value="http://localhost:6001/index.html#!/aboutus#values">-- Values</option><option value="http://localhost:6001/index.html#!/aboutus#namelogo">- Our name and logo</option><option value="http://localhost:6001/index.html#!/aboutus#people">- Our people</option><option value="http://localhost:6001/index.html#!/aboutus#policies">- First door policies</option><option value="http://localhost:6001/index.html#!/pd#intro">Professional development</option><option value="http://localhost:6001/index.html#!/pd#inspired">- The inspired educator</option><option value="http://localhost:6001/index.html#!/pd#observing">- Observation, documentation, planning and evaluating</option><option value="http://localhost:6001/index.html#!/pd#environment">- Environment and experiences</option><option value="http://localhost:6001/index.html#!/pd#coop">- Developing cooperative behaviour</option><option value="http://localhost:6001/index.html#!/pd#evaluation">- Evaluation and reflective practice</option><option value="http://localhost:6001/index.html#!/pd#children">- Children at risk</option><option value="http://localhost:6001/index.html#!/pd#risk">- Identify and manage risk</option><option value="http://localhost:6001/index.html#!/pd#customised">- Customised workshop</option><option value="http://localhost:6001/index.html#!/courses#intro">Accredited training</option><option value="http://localhost:6001/index.html#!/courses#childrenservices">- Diploma of Early Childhood Education and Care</option><option value="http://localhost:6001/index.html#!/courses#diploma_management">- Diploma of Management </option><option value="http://localhost:6001/index.html#!/courses#certivtraining">- Certificate IV in Training and Assessment</option><option value="http://localhost:6001/index.html#!/resources#motivation">Resources</option><option value="http://localhost:6001/index.html#!/resources#motivation">- Motivation</option><option value="http://localhost:6001/index.html#!/resources#earlychildhood">- Early childhood</option><option value="http://localhost:6001/index.html#!/resources#learningorganisations">- Learning organisations</option><option value="http://localhost:6001/index.html#!/resources#learning">- Learning</option><option value="http://localhost:6001/index.html#!/resources#leadership">- Leadership and Management</option><option value="http://localhost:6001/index.html#!/contactus">Contact us</option></select></div></div><div class="clear"></div></div>
+      <div id="studentLogin--" class="pull-right span2">  <button id="wisenetLogin" class="btn btn-warning btn-mini
+  pull-right">STUDENT LOGIN</button>
+
+</div>
+    </div>
+
+    <div class="fixedbar row">
+      <div id="fixedmenu--" class=""><div class="ie-dropdown-fix"> <div id="navigation"><ul id="nav" class="menu"><li><a href="index.html#!/home#welcome" id="home#welcome" class="active">Home</a><ul class=""><li><a href="index.html#!/home#specialists" class="scroll" id="home#specialists">Specialists in Early Childhood training and development</a></li><li><a href="index.html#!/home#engaging" class="scroll" id="home#engaging">Engaging resources and environments</a></li><li><a href="index.html#!/home#mentor" class="scroll" id="home#mentor">Your personal mentor </a></li><li><a href="index.html#!/home#constructive" class="scroll" id="home#constructive">Constructive and timely assessment</a></li><li><a href="index.html#!/home#quiz" class="scroll" id="home#quiz">Quiz: discover your preferred learning style</a></li></ul></li><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">About us</a><ul class=""><li><a href="index.html#!/aboutus#vision" class="scroll" id="aboutus#vision">Our company</a><ul class=""><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">Vision</a></li><li><a href="index.html#!/aboutus#mission" id="aboutus#mission">Mission</a></li><li><a href="index.html#!/aboutus#approach" id="aboutus#approach">Our student approach</a></li><li><a href="index.html#!/aboutus#values" id="aboutus#values">Values</a></li></ul></li><li><a href="index.html#!/aboutus#namelogo" class="scroll" id="aboutus#namelogo">Our name and logo</a></li><li><a href="index.html#!/aboutus#people" class="scroll" id="aboutus#people">Our people</a></li><li><a href="index.html#!/aboutus#policies" class="scroll" id="aboutus#policies">First door policies</a></li></ul></li><li><a href="index.html#!/pd#intro" id="pd#intro">Professional development</a><ul class=""><li><a href="index.html#!/pd#inspired" class="scroll" id="pd#inspired">The inspired educator</a></li><li><a href="index.html#!/pd#observing" class="scroll" id="pd#observing">Observation, documentation, planning and evaluating</a></li><li><a href="index.html#!/pd#environment" class="scroll" id="pd#environment">Environment and experiences</a></li><li><a href="index.html#!/pd#coop" class="scroll" id="pd#coop">Developing cooperative behaviour</a></li><li><a href="index.html#!/pd#evaluation" class="scroll" id="pd#evaluation">Evaluation and reflective practice</a></li><li><a href="index.html#!/pd#children" class="scroll" id="pd#children">Children at risk</a></li><li><a href="index.html#!/pd#risk" class="scroll" id="pd#risk">Identify and manage risk</a></li><li><a href="index.html#!/pd#customised" class="scroll" id="pd#customised">Customised workshop</a></li></ul></li><li><a href="index.html#!/courses#intro" id="courses#intro">Accredited training</a><ul class=""><li><a href="index.html#!/courses#childrenservices" class="scroll" id="courses#childrenservices">Diploma of Early Childhood Education and Care</a></li><li><a href="index.html#!/courses#diploma_management" class="scroll" id="courses#diploma_management">Diploma of Management </a></li><li><a href="index.html#!/courses#certivtraining" class="scroll" id="courses#certivtraining">Certificate IV in Training and Assessment</a></li></ul></li><li><a href="index.html#!/resources#motivation" id="resources#motivation">Resources</a><ul class=""><li><a href="index.html#!/resources#motivation" class="scroll" id="resources#motivation">Motivation</a></li><li><a href="index.html#!/resources#earlychildhood" class="scroll" id="resources#earlychildhood">Early childhood</a></li><li><a href="index.html#!/resources#learningorganisations" class="scroll" id="resources#learningorganisations">Learning organisations</a></li><li><a href="index.html#!/resources#learning" class="scroll" id="resources#learning">Learning</a></li><li><a href="index.html#!/resources#leadership" class="scroll" id="resources#leadership">Leadership and Management</a></li></ul></li><li><a href="index.html#!/contactus" class="scroll" id="contactus">Contact us</a></li></ul></div></div><div class="clear"></div></div>
+      <div id="studentLogin--" class="pull-right span2">  <button id="wisenetLogin" class="btn btn-warning btn-mini
+  pull-right">STUDENT LOGIN</button>
+
+</div>
+    </div>
+
+    <div class="ng-view"><div class="row ng-scope"> 
+  <div id="sidebar--" class="span3" style=""><fixscroll data-ng-transclude="" style="top: 40px; position: fixed; width: 400px; "> 
+  <div ng-class="getPageClass" id="greendoor" class="ng-scope doorlinks-home"> 
+    <div class="doorlinks"> 
+      <div class="heading ng-binding" ng-bind-html-unsafe="page.heading"></div>
+      <ul>
+	<!-- ngRepeat: link in page.links --><div ng-repeat="link in page.links" class="ng-scope">
+	<li ng-class="isSelected(link.route)" class="selected">
+	  <a ng-href="/index.html#!/home#welcome" class="ng-binding" href="/index.html#!/home#welcome">Welcome</a>
+	  <ul> 
+	    <!-- ngRepeat: sublink in link.sub -->
+	  </ul>	
+	</li>
+	</div><div ng-repeat="link in page.links" class="ng-scope">
+	<li ng-class="isSelected(link.route)">
+	  <a ng-href="/index.html#!/home#specialists" class="ng-binding" href="/index.html#!/home#specialists">Specialists in Early Childhood training and development</a>
+	  <ul> 
+	    <!-- ngRepeat: sublink in link.sub -->
+	  </ul>	
+	</li>
+	</div><div ng-repeat="link in page.links" class="ng-scope">
+	<li ng-class="isSelected(link.route)">
+	  <a ng-href="/index.html#!/home#engaging" class="ng-binding" href="/index.html#!/home#engaging">Engaging resources and environments</a>
+	  <ul> 
+	    <!-- ngRepeat: sublink in link.sub -->
+	  </ul>	
+	</li>
+	</div><div ng-repeat="link in page.links" class="ng-scope">
+	<li ng-class="isSelected(link.route)">
+	  <a ng-href="/index.html#!/home#mentor" class="ng-binding" href="/index.html#!/home#mentor">Your personal mentor </a>
+	  <ul> 
+	    <!-- ngRepeat: sublink in link.sub -->
+	  </ul>	
+	</li>
+	</div><div ng-repeat="link in page.links" class="ng-scope">
+	<li ng-class="isSelected(link.route)">
+	  <a ng-href="/index.html#!/home#constructive" class="ng-binding" href="/index.html#!/home#constructive">Constructive and timely assessment</a>
+	  <ul> 
+	    <!-- ngRepeat: sublink in link.sub -->
+	  </ul>	
+	</li>
+	</div><div ng-repeat="link in page.links" class="ng-scope">
+	<li ng-class="isSelected(link.route)">
+	  <a ng-href="/index.html#!/home#quiz" class="ng-binding" href="/index.html#!/home#quiz">Quiz: discover your preferred learning style</a>
+	  <ul> 
+	    <!-- ngRepeat: sublink in link.sub -->
+	  </ul>	
+	</li>
+	</div>
+      </ul>
+      <div class="subtext ng-binding" ng-bind-html-unsafe="page.subtext"></div>
+    </div> 
+  </div> 
+</fixscroll>
+
+</div>
+  <div ng-show="isShow('welcome')" id="slideShow--" class="span9"><div class="flexslider"><ul class="slides"><li style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; -webkit-transition-property: opacity; -webkit-transition-duration: 5s; -webkit-transition-timing-function: ease; -webkit-transition-delay: initial; opacity: 1; z-index: 2; " class="flex-active-slide"><img src="images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; -webkit-transition-property: opacity; -webkit-transition-duration: 5s; -webkit-transition-timing-function: ease; -webkit-transition-delay: initial; z-index: 1; "><img src="images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; -webkit-transition-property: opacity; -webkit-transition-duration: 5s; -webkit-transition-timing-function: ease; -webkit-transition-delay: initial; z-index: 1; "><img src="images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; -webkit-transition-property: opacity; -webkit-transition-duration: 5s; -webkit-transition-timing-function: ease; -webkit-transition-delay: initial; z-index: 1; "><img src="images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> <ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div></div>   
+  
+  <div ng-show="!(isShow('welcome'))" class="span9 inline-image embed-container ratio-tabimage " style="display: none; ">     
+    <img class="" ng-src="images/slides/tab_professional_development.jpg" src="images/slides/tab_professional_development.jpg">
+  </div>
+  
+  <div class="row">     
+    <div id="homeContents--" class="span7"><div scroll="" id="welcome"></div>
+<div ng-show="isShow('welcome')">
+  <div id="welcome--"><h2>Are you ready for a professional career in <br>Early Childhood?&nbsp;</h2>
+<p><strong>Welcome to First Door,</strong> and congratulations for seeking opportunity in a career that influences lives.&nbsp;</p>
+<p>The National Quality Framework has empowered our industry to rise up to the challenge of being professional educators and educational leaders.&nbsp;First Door specialises in Early Childhood training, aligning educators and leaders to their role based on the National Quality Framework.</p>
+<p>We encourage you to ‘open your door’ towards capability in your role, and to create a fulfilling career with opportunity. Stand out with your skills, knowledge and ability, and enjoy the rewards of your role.</p>
+<p>First Door connects, supports, engages and inspires students with:<strong><br></strong></p>
+<ul>
+<li>a personal mentor for study support and a monthly meeting to guide you into achieving best workplace practice</li>
+<li>engaging resources and workshops that relate to the National Quality Framework</li>
+<li>meaningful assessment with timely and constructive feedback</li>
+</ul>
+<h3><strong><em>Contact us now, to develop your professional capability and <br>career opportunities. PHONE 3103 2336</em></strong></h3></div>
+</div>
+
+<div scroll="" id="specialists"></div>
+<div ng-show="isShow('specialists')" style="display: none; ">
+  <div id="specialists--"><h2>Specialists in Early Childhood training and development</h2>
+<p>First Door specialises in delivering meaningful training, inspiration and active learning within the Early Childhood and Outside School Hours Care sector. Our training and professional development is focused on&nbsp;aligning educators to their role based on the National Quality Framework. In addition to offering accredited training in the Diploma of Early Childhood Education and Care, we promote the need to create learning organisations where each centre or service operates with skilled mentors and an effective educational leader. First Door also provides training in units from the Diploma of Management and Certificate lV in Training and Assessment to build capability in mentoring and leadership&nbsp;</p>
+<p><a href="index.html#!/pd?page=intro">Professional development workshops</a>&nbsp;<br>We deliver interactive professional development that encompasses the National Quality Framework combining relevant theory with practical work related experiences.</p>
+<p><a href="index.html#!/courses">Accredited training </a><br>Our application to the Australian Skills Quality Authority has been submitted to become a Registered Training Organisation (RTO). Accredited training is subject to registration and will only proceed once First Door is registered as a RTO.</p></div>
+</div>
+
+
+<div scroll="" id="engaging"></div>
+<div ng-show="isShow('engaging')" style="display: none; ">
+  <div id="engaging--"><h2>Engaging resources and environments</h2>
+<h3>Engaging resources</h3>
+<p>We are committed to ensuring our resources are relevant and meaningful combining learning with real work experiences. First Door prepares the student workbook for each unit to ensure practical work-based activities and assessment tasks that allow students to practice and understand theory.</p>
+<h3>Engaging learning environments</h3>
+<p>First Door creates learning environments that connect learning and people through:</p>
+<ul>
+<li>face to face workshops</li>
+<li>First Door social media communities</li>
+<li>workplace mentoring</li>
+</ul></div>
+</div>
+
+
+<div scroll="" id="mentor"></div>
+<div ng-show="isShow('mentor')" style="display: none; ">
+  <div id="mentor--"><h2>Your personal mentor</h2>
+<p>First Door connects each student with an industry experienced and qualified trainer as your personal mentor. Your personal mentor is available for study support and to provide workplace mentoring relevant to the current unit of study.<br><br>We undertake to provide each student with an arranged monthly workplace mentoring meeting. Where this is not possible, due to the location of the student's workplace, then a monthly skype or facetime meeting is arranged between student and mentor. This meeting allows for:</p>
+<ul>
+<li>review of the student's previous assessment and feedback</li>
+<li>thirty minutes workplace observation and assessment</li>
+<li>fifteen minutes to provide constructive feedback</li>
+<li>assistance with understanding of the current workbook and assessment activities</li>
+<li>guidance, inspiration and support for each student<br><br></li>
+</ul></div>
+</div>
+
+
+<div scroll="" id="constructive"></div>
+<div ng-show="isShow('constructive')" style="display: none; ">
+  <div id="constructive--"><h2>Constructive and timely assessment</h2>
+<p>Assessment is the process of gathering evidence to determine the competency of each student based on the National accredited training requirements.&nbsp;First Door produces each unit's assessment workbook to ensure assessment questions/activities are relevant to the student’s workplace experiences. We strive to provide each student with authentic learning and meaningful assessment.</p>
+<p>Student assessment is completed in the individual unit's&nbsp;<strong><em>Workplace Activities and Assessment Workbook</em></strong></p>
+<p>First Door assessment comprises of two parts:</p>
+<ol>
+<li><strong>Practical workplace activities:</strong>
+<ul>
+<li>evidence through the student’s<em>&nbsp;account of workplace experiences</em>&nbsp;that demonstrates the student’s required knowledge and ability to use the theory of the unit.</li>
+<li>evidence of a student’s&nbsp;<em>practical skills</em>&nbsp;relating to the theory of the unit. A workplace supervisor and/or First Door mentor assesses practical skills to ensure student competency in workplace practice.</li>
+<li>attachment of student's evidence through their&nbsp;<em>workplace documentation</em>&nbsp;such as learning stories and in their reflective writing.</li>
+</ul>
+</li>
+</ol><ol start="2">
+<li><strong>Assessment tasks:</strong></li>
+</ol>
+<p>Wherever possible, assessment tasks contained in the workbook are completed by students as a computer document and submitted to First Door by email.&nbsp;</p>
+<p>First Door undertakes to return student workbooks and assessment to the student&nbsp;<strong>within fourteen days of receipt.</strong>&nbsp;Assessment feedback is provided to guide a student on their progress and address any areas of difficulty.</p></div>
+</div>
+
+
+<div scroll="" id="quiz"></div>
+<div ng-show="isShow('quiz')" style="display: none; ">
+  <div id="quiz--"><h2>DISCOVER YOUR PREFERRED LEARNING STYLE</h2>
+<p>Read each question and for each one write down either a, b or c for which is most like you.</p>
+<h3>Question 1</h3>
+<p>I prefer lessons where:</p>
+<blockquote>
+<pre><code>a) we can discuss things
+b) there is something to look at e.g. pictures, charts, videos
+c) we can do something practical or move around
+</code></pre>
+</blockquote>
+<h3>Question 2</h3>
+<p>When I am working or listening I often find myself:</p>
+<blockquote>
+<pre><code>a) listening to music or singing to myself 
+b) doodling
+c) fiddling with things like a pen, or fidgeting
+</code></pre>
+</blockquote>
+<h3>Question 3</h3>
+<p>When learning a new skill, I prefer:</p>
+<blockquote>
+<pre><code>a) to listen to someone explain to me how to do it
+b) to watch someone demonstrate how to do it
+c) to just get on and do it
+</code></pre>
+</blockquote>
+<h3>Question 4</h3>
+<p>The type of puzzle/game I like is:</p>
+<blockquote>
+<pre><code>a) “Name That Tune”
+b)  “Spot the Difference’
+c)  “Rubik’s Cube”
+</code></pre>
+</blockquote>
+<h3>Question 5</h3>
+<p>I would prefer to:</p>
+<blockquote>
+<pre><code>a) listen to a story
+b) read a story
+c) be active or be outdoors
+</code></pre>
+</blockquote>
+<h3>Question 6</h3>
+<p>I have a good memory for:</p>
+<blockquote>
+<pre><code>a) people’s names
+b) people’s faces
+c) learning physical skills
+</code></pre>
+</blockquote>
+<h3>Question 7</h3>
+<p>I prefer teachers who:</p>
+<blockquote>
+<pre><code>a) explain things to me
+b) use diagrams to show me things
+c) who demonstrate and get me to do perform the task
+</code></pre>
+</blockquote>
+<h3>Question 8</h3>
+<p>On a long journey I like to:</p>
+<blockquote>
+<pre><code>a) listen to music or chat to fellow travellers
+b) read a book or look at the scenery
+c) take regular breaks so that we can stop and I can move about
+</code></pre>
+</blockquote>
+<h3>Question 9</h3>
+<p>When I am discussing something:</p>
+<blockquote>
+<pre><code>a) I sometimes use words my friends don’t know
+b) I visualise the topic of discussion
+c) I use my hands a lot when I talk
+</code></pre>
+</blockquote>
+<h3>Question 10</h3>
+<p>I am good at:</p>
+<blockquote>
+<pre><code>a) listening
+b) visualising
+c) making things
+</code></pre>
+</blockquote>
+<h2>The Results</h2>
+<p>Use these quiz results as a guide only—not as a fixed label. They can help you to discover ways that you learn best; they can also help you to experiment with new and different strategies and skills.</p>
+<h2>If you scored mostly A’s then you are an AUDITORY learner</h2>
+<p><em>Auditory learners tend to benefit most from traditional teaching techniques. Many auditory learners tend to learn best when the trainer presents information by talking to their students. Regulating voice tone, inflection, and body language will help all students maintain interest and attention. Auditory learners succeed when directions are read aloud, speeches are required, or information is presented and requested verbally.</em></p>
+<p><em>Learning Suggestions for Auditory Learners</em></p>
+<p>Using word association to remember facts and lines</p>
+<ul>
+<li>Recording lectures</li>
+<li>Watching videos</li>
+<li>Repeating facts with eyes closed</li>
+<li>Participating in group discussions</li>
+<li>Using audiotapes for language practice</li>
+<li>Taping notes after writing them</li>
+</ul>
+<h2>If you scored mostly B’s then you are a VISUAL learner</h2>
+<p><em>Some students rely upon a visual learning style: "Show me and I'll understand." Visual learners benefit from diagrams, charts, pictures, films, and written directions. These students will value to-do lists, assignment logs, and written notes. Many of these techniques, however, also benefit kinaesthetic learners.</em></p>
+<p><em>Learning Suggestions for Visual Learners</em></p>
+<ul>
+<li>Draw a map of events in history or draw scientific process</li>
+<li>Make outlines of everything</li>
+<li>Copy what's on the board</li>
+<li>Ask the teacher to diagram</li>
+<li>Diagram sentences and mind maps</li>
+<li>Take notes, make lists, use post-it notes and place these in prominent places</li>
+<li>Watch relevant videos</li>
+<li>Colour code words</li>
+<li>Outline reading</li>
+<li>Use flashcards</li>
+<li>Use highlighters, circle words, underline</li>
+</ul>
+<h2>If you scored mostly C’s then you are a KINAESTHETIC learner</h2>
+<p><em>Kinaesthetic learners are most successful when totally engaged with the learning activity. They acquire information fastest when participating in activity based learning, tactile learning or with hands-on teaching techniques.</em></p>
+<p><em>Learning Suggestions for Kinaesthetic Learners</em></p>
+<ul>
+<li>Studying in short blocks</li>
+<li>Role playing</li>
+<li>Taking field trips, visiting museums</li>
+<li>Studying with others</li>
+<li>Using memory games</li>
+<li>Using flash cards to memorize</li>
+<li>Using motion in study, for example: walk and talk/read your notes, pass a small ball from one hand to the other or use a yo-yo while studying</li>
+<li>Chew gum while studying, if appropriate</li>
+</ul></div>
+</div>
+
+</div>
+    <div id="rightBar--" class="span2 ng-binding"><!-- <fixscrollright data-ng-transclude="">  -->
+  <!-- AddToAny BEGIN -->
+  <a class="a2a_dd" href="http://www.addtoany.com/share_save#url=http%3A%2F%2Fwww.firstdoor.com.au&amp;title=Firstdoor%20-%20Leaders%20in%20developing%20capability&amp;description="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"></a>
+  <script type="text/javascript">
+    var a2a_config = a2a_config || {};
+    a2a_config.linkurl = "http://www.firstdoor.com.au";
+    a2a_config.onclick = 1;
+  </script>
+  <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
+
+
+
+  <form name="loginFormRight" action="#" method="POST" class="ng-pristine ng-valid">
+    
+<br>
+    <h4><b ng-bind-html-unsafe="getContactUsText()" class="ng-binding">Request your First Door student handbook now, or phone us. We’re here to help.</b></h4>
+    <div ng-show="!sent">
+      <label class="form-label ">Name<span class="form-required">*</span></label>
+      <div class="controls controls-row control-group ">
+	
+	<input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required="">
+	<input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required="">
+      </div>
+      
+      <label class="form-label">Email<span class="form-required">*</span></label>
+      
+      <div class="control-group ">
+	<input class="span2" type="email" id="email" name="email" required=""><br>
+      </div>
+      
+      <label class="form-label">Message<span class="form-required">*</span></label>
+      
+      <div class="control-group ">
+	<textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
+      </div> 
+      <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
+      <div id="captchadiv" class=" recaptcha_nothad_incorrect_sol recaptcha_isnot_showing_audio"><div id="recaptcha_area"><table id="recaptcha_table" class="recaptchatable recaptcha_theme_red"> <tbody><tr> <td colspan="6" class="recaptcha_r1_c1"></td> </tr> <tr> <td class="recaptcha_r2_c1"></td> <td colspan="4" class="recaptcha_image_cell"><div id="recaptcha_image" style="width: 300px; height: 57px; "><img style="display:block;" alt="reCAPTCHA challenge image" height="57" width="300" src="http://www.google.com/recaptcha/api/image?c=03AHJ_VuviuzE-v7ROAIIU17mAEIej0H9YlOXZUH9XfVBddPX_uygOtCiXvmxl6USBdtIX34OLADVyGaK6D6lR99FYXrzmn_BP7YuRzHbnS3m5UsVy3Dimic_46QzH8dyfSQTXpndFBTeHFcm-nyMfH-Yiyhp7KHy8oyym1wgRcaokExaW4oeQXpg"></div></td> <td class="recaptcha_r2_c2"></td> </tr> <tr> <td rowspan="6" class="recaptcha_r3_c1"></td> <td colspan="4" class="recaptcha_r3_c2"></td> <td rowspan="6" class="recaptcha_r3_c3"></td> </tr> <tr> <td rowspan="3" class="recaptcha_r4_c1" height="49"> <div class="recaptcha_input_area"> <span id="recaptcha_challenge_field_holder" style="display: none; "><input type="hidden" name="recaptcha_challenge_field" id="recaptcha_challenge_field" value="03AHJ_VuviuzE-v7ROAIIU17mAEIej0H9YlOXZUH9XfVBddPX_uygOtCiXvmxl6USBdtIX34OLADVyGaK6D6lR99FYXrzmn_BP7YuRzHbnS3m5UsVy3Dimic_46QzH8dyfSQTXpndFBTeHFcm-nyMfH-Yiyhp7KHy8oyym1wgRcaokExaW4oeQXpg"></span><input name="recaptcha_response_field" id="recaptcha_response_field" type="text" autocorrect="off" autocapitalize="off" placeholder="Type the two words" autocomplete="off"> <span id="recaptcha_privacy" class="recaptcha_only_if_privacy"><a href="http://www.google.com/intl/en/policies/" target="_blank">Privacy &amp; Terms</a></span> </div> </td> <td rowspan="4" class="recaptcha_r4_c2"></td> <td><a id="recaptcha_reload_btn" title="Get a new challenge" href="javascript:Recaptcha.reload();"><img id="recaptcha_reload" width="25" height="17" src="http://www.google.com/recaptcha/api/img/red/refresh.gif" alt="Get a new challenge"></a></td> <td rowspan="4" class="recaptcha_r4_c4"></td> </tr> <tr> <td><a id="recaptcha_switch_audio_btn" class="recaptcha_only_if_image" title="Get an audio challenge" href="javascript:Recaptcha.switch_type('audio');"><img id="recaptcha_switch_audio" width="25" height="16" alt="Get an audio challenge" src="http://www.google.com/recaptcha/api/img/red/audio.gif"></a><a id="recaptcha_switch_img_btn" class="recaptcha_only_if_audio" title="Get a visual challenge" href="javascript:Recaptcha.switch_type('image');"><img id="recaptcha_switch_img" width="25" height="16" alt="Get a visual challenge" src="http://www.google.com/recaptcha/api/img/red/text.gif"></a></td> </tr> <tr> <td><a id="recaptcha_whatsthis_btn" title="Help" href="http://www.google.com/recaptcha/help?c=03AHJ_VuviuzE-v7ROAIIU17mAEIej0H9YlOXZUH9XfVBddPX_uygOtCiXvmxl6USBdtIX34OLADVyGaK6D6lR99FYXrzmn_BP7YuRzHbnS3m5UsVy3Dimic_46QzH8dyfSQTXpndFBTeHFcm-nyMfH-Yiyhp7KHy8oyym1wgRcaokExaW4oeQXpg&amp;hl=en-GB" target="_blank"><img id="recaptcha_whatsthis" width="25" height="16" src="http://www.google.com/recaptcha/api/img/red/help.gif" alt="Help"></a></td> </tr> <tr> <td class="recaptcha_r7_c1"></td> <td class="recaptcha_r8_c1"></td> </tr> </tbody></table> </div></div> 
+    </div>
+    <div ng-show="sent" class="well" style="display: none; ">
+      Thanks for contacting First Door. We will be in touch within the next 24 hours.
+    </div>
+  </form> 
+   
+  
+  
+<!-- </fixscrollright> -->
+</div>
+    
+  </div>   
+</div> 
+</div>
+  </div>
+
+  <div id="scroll-to-top"><a id="bla" hef="#" title="Go to
+                                                      Top"></a></div>
+
+  <div id="bottomContainer" class="container">
+    <div id="bottomBar">
+      <div id="bottomRow" class="row container">
+        <!-- <div class="span"></div>  -->
+        <div id="footer1--" class="span3"><div class="footer-headline"><h4>Connect</h4></div>
+<div class="connectblock">
+  <div class="verticalline">
+    <span class="connect-title">First Door</span><br>
+    <span class="connect-sub">Training and development</span>
+  </div>
+
+  <ul class="social-icons">
+    <li class="facebook"><a href="https://www.facebook.com/firstdoortraining">Facebook</a></li>
+    <li class="twitter"><a href="https://twitter.com/FIRSTDOOR1" target="_blank">Twitter</a></li>
+    <!-- <li class="skype"><a href="#" target="_blank">Skype</a></li> -->
+    <!-- <li class="googleplus"><a href="#" target="_blank">Google+</a></li> -->
+    <li class="linkedin"><a href="http://www.linkedin.com/company/first-door-training-&amp;-development-pty-ltd?report%2Esuccess=se2U8YjzSfSLqmrvJWfkzmUYKl6uKkphatxlAbbto9OkvCyhhsMCP1nNWIEQv6pq2D50iVxJ" target="_blank">Linkedin</a></li>
+    <li class="pintrest"><a href="http://pinterest.com/firstdoor" target="_blank">Pintrest</a></li>
+  </ul>
+
+</div>
+<p></p>
+</div>
+        <div id="footer2--" class="span3"><div class="footer-headline"><h4>Documents</h4></div>
+<div class="connect-sub">
+  <ul>
+    <li> <a href="documents/Policies and Procedures May13.pdf">Policies and Procedures</a>
+     </li> 
+    <li> <a href="documents/PRIVACY POLICY.pdf">Privacy policy</a>
+     </li> 
+    <li> <a href="documents/FirstDoor_StudentHandbook.pdf">Student handbook</a>
+     </li> 
+   </ul> 
+</div> 
+
+
+</div>
+        <div id="footer3--" class="span3"><div class="footer-headline"><h4>Contact First Door</h4></div>
+<div class="connect-sub">
+  <strong>p:</strong> 0433 114 153  or<br>
+  <strong>p:</strong> 0437 870 932<br>
+  <strong>e:</strong> <a href="mailto:admin@firstdoor.com.au">admin@firstdoor.com.au</a><br>
+  <strong>w:</strong> <a href="http://www.firstdoor.com.au">www.firstdoor.com.au</a><br>
+</div>
+
+
+</div>
+        <div id="footer4--" class="span2"><div class="footer-headline"><h4>Legal</h4></div>
+<div class="connect-sub">
+  ©2013 First Door<br>
+  ABN: 4916 1108 596
+</div>
+
+
+</div>
+      </div>
+
+    </div>
+    <div id="footerBottom--" class="row pagination-centered">Website by <a href="mailto:michieljoris@gmail.com">michieljoris</a>
+
+Graphic design by <a href="http://migraphicfolio.com" target="_blank">MiGraphic</a>
+</div>
+
+    <div id="feedback--"></div>
+
+  </div>
+</div>
+<script type="text/javascript" src="js/es5-shim.js"></script><script type="text/javascript" src="js/jquery-1.9.1.min.js"></script><script type="text/javascript" src="js/noconsole.js"></script><script type="text/javascript" src="js/angular-1.1.4/angular.min.js"></script><script type="text/javascript" src="js/modernizr.js"></script><script type="text/javascript" src="js/selectnav.js"></script><script type="text/javascript" src="js/bootstrap.js"></script><script type="text/javascript" src="js/ui-bootstrap-tpls-0.2.0.js"></script><script type="text/javascript" src="js/epiceditor.min.js"></script><script type="text/javascript" src="js/myjs.js"></script><script type="text/javascript" src="js/controllers.js"></script><script type="text/javascript" src="js/filebrowserCntl.js"></script><script type="text/javascript" src="js/videos.js"></script><script type="text/javascript" src="js/resourcesCntl.js"></script><script type="text/javascript" src="js/router.js"></script><script type="text/javascript" src="js/jquery.cslider.js"></script><script type="text/javascript" src="js/jquery.tabSlideOut.v1.3.js"></script><script type="text/javascript" src="js/feedback.js"></script>
+<script type="text/javascript" src="js/recaptcha_ajax.js"></script><script type="text/javascript" src="js/jquery.easing.1.3.js"></script><script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+
+
+<script type="text/javascript" src="js/showhide.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41077363-1', 'firstdoor.com.au');
+  ga('send', 'pageview');
+
+</script>
+
+	
+	 
+<iframe src="about:blank" style="height: 0px; width: 0px; visibility: hidden; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; ">This frame prevents back/forward cache problems in Safari.</iframe><div id="stcpDiv" style="position: absolute; top: -1999px; left: -1988px; ">ShareThis Copy and Paste</div><iframe id="stSegmentFrame" name="stSegmentFrame" src="http://seg.sharethis.com/getSegment.php?purl=http%3A%2F%2Flocalhost%3A6001%2F&amp;jsref=&amp;rnd=1381803421369" frameborder="0" scrolling="no" width="0px" height="0px" style="display:none;"></iframe><div id="stwrapper" class="stwrapper" style="visibility: hidden; top: -999px; left: -999px; width: 500px; z-index: 89999999; "><div class="stCloseNew2"></div><iframe allowtransparency="true" id="stLframe" class="stLframe" name="stLframe" frameborder="0" scrolling="no" width="500px" height="430px" style="top: 0px; left: 0px; " src="http://edge.sharethis.com/share5x/index.f892a6aa31a083abf7347ed52d17f406.html"></iframe></div><div style="height: 100%; width: 100%; background-color: rgb(0, 0, 0); opacity: 0.6; position: fixed; display: none; left: 0px; top: 0px; z-index: 89999990; " id="stOverlay"></div></body></html>
