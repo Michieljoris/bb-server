@@ -6,11 +6,12 @@
     "description": "A bare bones http server, with forwarding to couchdb.",
     "repository": {
 	"type": "git",
-	"url": "git://github.com/michieljoris/http-server.git"
+	"url": "git://github.com/michieljoris/bb-server.git"
     },
     "keywords": [
 	"cli",
-	"command"
+	"command",
+	"server"
     ],
     "dependencies": {
 	"cachejs": "*",
