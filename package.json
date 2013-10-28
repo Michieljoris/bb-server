@@ -38,17 +38,9 @@
         "mysql": "0.9.6",
         "bytes": "*",
         "fs-extra": "0.3.x",
-        "less": "*",
-        "stylus": "*",
-        "jade": "*",
-        "marked": "*",
-        "coffeescript-compiler": "*",
-        "uglify-js2": "*",
-        "html-minifier": "*",
-        "csso": "*",
-        "clean-css": "*",
-        "sweet.js": "*",
-        "regenerator": "*"
+        "recaster": "*",
+        "url_washer": "*",
+        "imageopti": "*"
     },
     "devDependencies": {
         "fs-extra": "0.3.x",
