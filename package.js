@@ -95,24 +95,13 @@ module.exports = {
 	"colors": "*",
 	"optimist": "0.2.x",
 	"portfinder": "~0.2.1",
-	"node-markdown": "0.1.x",
 	"forever-monitor": "1.2.x",
 	"mime": "1.2.x",
 	"mysql": "0.9.6",
 	"bytes": "*",
         "fs-extra": "0.3.x",
-        //for packager:
-         less: "*",
-         stylus: "*",
-         jade: "*",
-         marked: "*",
-         "coffeescript-compiler": "*",
-         "uglify-js2": "*",
-         "html-minifier": "*",
-         csso: "*",
-         "clean-css": "*",
-         "sweet.js": "*",
-         "regenerator": "*"
+        "escape-html": "1.0.x",
+        "recaster": "*"
     },
     // What dependencies are useful only for developers?
     // Installed when we `npm install` in our working directory, but not 

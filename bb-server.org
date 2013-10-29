@@ -1,16 +1,31 @@
-
 ** bb-server
+*** considerations 
+memory cache
+disk cache
+separate cache out?
+
+crawlbots
+modified since
+sending out cache headers
+cache busting (stripping stamp)
+recast files
+optimize images
+authentication
+logs
+cors
+security
+
+
+
+Don't have a favicon.ico in the rootfolder, but add it to the server
+options so you can easily control cache header expire
+
 *** other servers:   
  https://github.com/mjijackson/mach  
  Simplicity: straightforward mapping of HTTP requests to JavaScript function calls
 Streaming: request and response bodies can be streamed
 Composability: middleware composes easily using promises
 Robust: Promises propagate errors up the call stack, simplifying error handling
-*** use nodemon!!   
-    nodemon will watch the files in the directory that nodemon was
-    started, and if they change, it will automatically restart your
-    node application.
-  https://github.com/rem
 *** crawlers
 **** send real 404's
      http://prerender.io/server
@@ -118,7 +133,6 @@ http://www.sitepoint.com/headless-webkit-and-phantomjs/
     https://github.com/apiengine/seoserver
     
     
-    
 *** images
     http://tinypng.org/
     http://www.smushit.com/ysmush.it/
@@ -156,67 +170,6 @@ Resize them:
  https://npmjs.org/package/imagemin
  https://npmjs.org/package/grunt-pngmin
  
-*** transpile 
-    
-*** cache    
-**** static cache layer (serve a number of statics from memory)
-http://www.senchalabs.org/connect/staticCache.html
-**** cache in couchdb?
-     
-*** minify and gzip!
-   threshold for gzipping 
-**** uglify 
-**** minify css and html 
-Maybe also minify css and html?
-https://github.com/kangax/html-minifier
-Top of npm list:
-https://github.com/GoalSmashers/clean-css
-Lot of docs:
-http://bem.info/tools/csso/install/
-Port of yui compressor
-https://github.com/fmarcia/UglifyCSS
-
-
-
-*** Keep logs!!!   
-    http://logio.org/
-**** clean up dichotomy of log and silent    
-   Should have status out and error out and server out  
-    http://www.senchalabs.org/connect/logger.html
-**** use winston and its transport ipv file, also has logrotation
-**** logrotation:
-    You can use logrotate which is included in most Linux distributions and is used for rotating system log files, as well as used by other software like Apache.
-
-Add a file to /etc/logrotate.d/
-
-/path/to/server.log {
-  daily         # how often to rotate
-  rotate 10     # max num of log files to keep
-  missingok     # don't panic if the log file doesn't exist
-  notifempty    # ignore empty files
-  compress      # compress rotated log file with gzip
-  sharedscripts # no idea what it does, but it's in all examples
-  copytruncate  # needed for forever to work properly
-  dateext       # adds date to filename 
-  dateformat %Y-%m-%d.
-}
-http://www.thegeekstuff.com/2010/07/logrotate-examples/
-    
-**** server reporting
-***** access server logs in browser?    
-    https://github.com/ethanl/connect-browser-logger
-    add a get handler for example /__logs and serve page with stats
-    possibly only when authorized using persona for example
-***** -report to console:
-https://github.com/ethanl/connect-browser-logger
-***** -airbrake like, so post info somewhere
-- use loggly 
-*** test and clean up forwarder!!    
-    I put it in a module, but is not tested yet
-*** replace markdown with marked
-    Githhub Flavored Markdown and fast:
-https://npmjs.org/package/marked
-or have a general transform plugin based on mime type? 
 *** security!!! 
   http://www.adambarth.com/papers/2008/barth-jackson-mitchell-b.pdf
   http://shiflett.org/articles/session-hijacking
@@ -279,18 +232,69 @@ http://mahoney.eu/2012/05/23/couchdb-cookie-authentication-nodejs-nano/#.UbAdzqB
     https://github.com/troygoode/node-cors
     send a bunch of headers and respond to options method when
     enabled. Use couchdb setup as an example for settings
-*** always send index.html when requesting non-file
+*** option for spa: 
+always send index.html when requesting non-file
 when serving spa and you don't want to use #! you always serve
 index.html and then let the app sort out the routing.
 http://docs.angularjs.org/guide/dev_guide.services.$location
-*** serve fancy dir
+*** sign in with
+    google, facebook, linkedin, github, persona, twitter, basic
+    to start of with, incorporate persona into server
+    
+*** TODO
+**** Keep logs!!!   
+    
+    //TODO merge request logs with the console log
+    http://logio.org/
+**** clean up dichotomy of log and silent    
+   Should have status out and error out and server out  
+    http://www.senchalabs.org/connect/logger.html
+**** use winston and its transport ipv file, also has logrotation
+**** logrotation:
+    You can use logrotate which is included in most Linux distributions and is used for rotating system log files, as well as used by other software like Apache.
+
+Add a file to /etc/logrotate.d/
+
+/path/to/server.log {
+  daily         # how often to rotate
+  rotate 10     # max num of log files to keep
+  missingok     # don't panic if the log file doesn't exist
+  notifempty    # ignore empty files
+  compress      # compress rotated log file with gzip
+  sharedscripts # no idea what it does, but it's in all examples
+  copytruncate  # needed for forever to work properly
+  dateext       # adds date to filename 
+  dateformat %Y-%m-%d.
+}
+http://www.thegeekstuff.com/2010/07/logrotate-examples/
+    
+**** server reporting
+***** access server logs in browser?    
+    https://github.com/ethanl/connect-browser-logger
+    add a get handler for example /__logs and serve page with stats
+    possibly only when authorized using persona for example
+***** -report to console:
+https://github.com/ethanl/connect-browser-logger
+***** -airbrake like, so post info somewhere
+- use loggly , or newrelic
+**** serve fancy dir
 http://www.senchalabs.org/connect/directory.html
 with icons, json as json, html as html, js as js, possibly with
 highlighting etc, show hidden files?
 
-*** sign in with
-    google, facebook, linkedin, github, persona, twitter, basic
-    to start of with, incorporate persona into server
-*** send script that listens to sockets and refreshes browser
-    ala livereload perhaps
+**** test and clean up forwarder!!    
+    I put it in a module, but is not tested yet
+
+**** send script that listens to sockets and refreshes browser
+    ala livereload perhaps, skewer??
     
+
+*** ??
+**** cache in couchdb?
+**** threshold for gzipping?
+**** use nodemon?   
+    nodemon will watch the files in the directory that nodemon was
+    started, and if they change, it will automatically restart your
+    node application.
+  https://github.com/rem
+   

@@ -32,15 +32,13 @@
         "colors": "*",
         "optimist": "0.2.x",
         "portfinder": "~0.2.1",
-        "node-markdown": "0.1.x",
         "forever-monitor": "1.2.x",
         "mime": "1.2.x",
         "mysql": "0.9.6",
         "bytes": "*",
         "fs-extra": "0.3.x",
-        "recaster": "*",
-        "url_washer": "*",
-        "imageopti": "*"
+        "escape-html": "1.0.x",
+        "recaster": "*"
     },
     "devDependencies": {
         "fs-extra": "0.3.x",
