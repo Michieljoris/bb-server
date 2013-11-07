@@ -36,9 +36,10 @@
         "mime": "1.2.x",
         "mysql": "0.9.6",
         "bytes": "*",
-        "fs-extra": "0.3.x",
+        "fs-extra": "*",
         "escape-html": "1.0.x",
-        "recaster": "*"
+        "recaster": "*",
+        "MD5": "*"
     },
     "devDependencies": {
         "fs-extra": "0.3.x",
