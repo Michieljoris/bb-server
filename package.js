@@ -104,7 +104,8 @@ module.exports = {
         "recaster": "*",
         "MD5": "*",
         "url_washer": "*",
-        "dougs_vow": "*"
+        "dougs_vow": "*",
+        extend: "*"
     },
     // What dependencies are useful only for developers?
     // Installed when we `npm install` in our working directory, but not 
