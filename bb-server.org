@@ -1,6 +1,6 @@
 ** bb-server
 *** considerations 
-memory cache
+    memory cache
 disk cache
 separate cache out?
 
@@ -8,14 +8,25 @@ crawlbots
 modified since
 sending out cache headers
 cache busting (stripping stamp)
+
 recast files
 optimize images
+
 authentication
 logs
 cors
 security
 
+Hardcoded requests for static resources should be stamped with the
+resources last modified data (in htm-builder). When the resource
+changes, the site will have to be rebuilt, but it will garantue that
+the requests for files that changeed and only them will get through to
+bb-server
 
+Dynamic requests for static resources from client can also be
+timestamped, they will be sent out with max-age > 0, this only makes
+sens when the stamp is tied to another file that gives them a fixed
+stamp to attach, for example in index.html;
 
 Don't have a favicon.ico in the rootfolder, but add it to the server
 options so you can easily control cache header expire
