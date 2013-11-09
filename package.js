@@ -102,7 +102,9 @@ module.exports = {
         "fs-extra": "*",
         "escape-html": "1.0.x",
         "recaster": "*",
-        "MD5": "*"
+        "MD5": "*",
+        "url_washer": "*",
+        "dougs_vow": "*"
     },
     // What dependencies are useful only for developers?
     // Installed when we `npm install` in our working directory, but not 

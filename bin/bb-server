@@ -20,10 +20,10 @@ if (argv.h || argv.help) {
         "  -h --https         Start https server",
         "  -s --sessions      Enable sessions (adds sessions to req)",
         "  -w --websocket     Turn on websocket server",
-        "  -c --cache         Enable cache",
+        "  -c --cache         Enable cache headers",
         "  --bust             Strip . __bust__<date> from request paths [true]",
         "  -z --zip           compress response if requested and possible",
-        "  -m --minify        minify resonse value if possible", 
+        "  -m --minify        minify response value if possible", 
         "  -t --transpile     transpile file before sending it ", 
 	
         "  --bot              Respond to bot requests with a prerendered page",
