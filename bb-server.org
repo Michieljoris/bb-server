@@ -1,5 +1,7 @@
 ** bb-server
 *** considerations 
+    load diff of (js files) instead of whole file?
+    share js files between server and client?
     memory cache
 disk cache
 separate cache out?
