@@ -1,23 +1,44 @@
 bb-server
 ===========
 
-Basic node server with forwarding to couchdb to get around the
-Access-Control-Allow-Origin, cobbled together from a few basic html
-servers written by other people. The couchdb forwarding comes from a
-cloudant faq, the commandline interface from
-[http-server](https://github.com/nodeapps/http-server), the basic
-server I've forgotten where it came from. 
+Caveat: this server needs more testing and is not production ready.
 
-I've adapted it here and there to suit my purposes which is to have a quick
-and dirty node html server. You can have this server forward requests
-to a couchdb server, which is handy because now you can interface with
-a couchdb that's from a different origin than your website/app.
+Basic server, configurable by setting commandline options or by
+requiring it. The options can then be passed to the server as an
+object.
 
-You can plugin your own GET and POST handlers triggered by route.
+It's basicically a static assets server however over time I've
+rewritten it a couple of times to add some more features. 
 
-This server is a raw server, it only requires the http and url network modules
-to function. The commandline interface requires a few more utility
-modules.
+I am aiming for simplicity. The server can be started without any
+options and will serve up its working directory. Any features required
+can be turned on by setting options. The whole app is around 2000
+lines including comments, the main logic for serving files less than
+400.
+
+Some features:
+
+* Caching of all static resources, in memory (LRU) and on disk.
+
+* Transpiling, minifying and compressing of these assets on the fly,
+combine this with caching and only modified assets will be transformed
+on a request.
+
+* Prerendering based on fragment, hashbangs and bot requests. These are
+also cached then.
+
+* Serves a single page application
+
+* Start a websocket and/or a https server alongside your http server
+
+* Support for sessions
+
+* You can plugin your own GET and POST handlers triggered by route.
+
+* Deals with favicon.ico requests
+
+* Customized logging of all requests to a log file
+
 
 To install clone it, cd into the directory and do:
  
@@ -27,37 +48,18 @@ Then ./bin/bb-server to run it.
 
 Or do:
 
-	npm install -g bb
+	npm install -g bb-server
 	
 Then bb-server to run.
 
 You can also install it directly from npm:
 
-	nmp install bb-server
+	npm install bb-server
 	
 Though that might not be the most recent version.	
 	  
-Commandline usage: 
-
-bb-server [path] [options],
-
-	    options:
-          -p --port          Port to use [HTTPSERVER_PORT || 8080]",
-          -a --address       Address to use [HTTPSERVER_IPADDR || 0.0.0.0]",
-          -b --block         Block directory contents",
-          -i --index         Show index.htm[l] when present in directory",
-          -f --forward       Forward url/prefix to target",
-          --prefix           [db]",
-          --target           [http://localhost:5984]",
-          --file             load options from .json file",
-          --secure           start https server",
-          -m                 Don't convert .md or .markdown files to html",
-          -w                 Turn on websocket server"
-          -s --silent        Suppress log messages from output",
-          -h --help          Print this list and exit."
-		  
-		  
+Execute bb-server -h for a list of command line options.
 		  
 See the example_server.js file for an example of requiring the server
-in your own module. You can then also plugin your own post and get handlers.
+in your own module and documentation for most of the options. 
 

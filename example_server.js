@@ -10,6 +10,8 @@ var server = require('./lib/bb-server.js')
  
 //TODO: limit sending of files to certain mimetypes and/or extensions
 //TODO: option to not send mimeless files found in allowable directories.
+//TODO: send certain files directly, bypassing cache with certain
+//cache control headings, so we can send big files etc
 var options = { 
     //Serve all files relative to this root. Defaults to './'.
     root: './'
@@ -56,7 +58,7 @@ var options = {
     //toggle the following tree options to true to enable recasting,
     //all three default to false
     ,transpile: false 
-    ,minify: true //html, js and css
+    ,minify: false //html, js and css
     ,zip: false //compress when enconding is accepted by client
     //or for more finegrained control define the recast option instead:
     // ,recast: {  transpile: ['jade', 'less', 'stylus', 'sweetjs',
@@ -67,33 +69,51 @@ var options = {
     //             verbose: true
     //          }
     
+    //the server can prerender requests from bots and/or requests for
+    //fragment and hashbang urls. For any prerendering to occur the
+    //following option needs to be true. Defaults to false.
+    ,prerender: false 
+    //specify a path for phantomjs or set it to truthy. In the last
+    //case the server will use the phantomjs module's path or as a
+    //last resort 'phantomjs'. Defaults to false.
+    ,phantomPath: false
+    //if phantomPath is not valid the server will call on the external
+    //seoServer.Assign an url. Defaults to false. 
+    ,seoServer: false
+    //if true any request for a fragment will be prerendered.
+    ,fragment: false
+    //if both bot and hashbang are true requests from bots for
+    //hashbang url will be prerendered
+    ,hashbang: false
+    ,bot: false
+    //if spa is true all requests that don't seem to be requests for a
+    //file with a mimetype are redirected to a request for just one
+    //file. By default this is index.html, but a different filename
+    //can get assigned to spa. If bot is true, this redirection does
+    //not happen but instead the page gets prerendered. But using a
+    //fragment meta tag in your spa file and turning fragment on and
+    //bot of might be a better way to go. Defaults to false.
+    ,spa: false
+    //forward requests with a certain prefix in the path to another server
     // "forward": [
     //     { "prefix": "local",
     //       "target": "http://localhost:5984" },
     //     { "prefix": "iris",
     //       "target": "https://somedb.iriscouch.com"}
     // ]
-    // ,"silent": false
-    // ,"port": 7090
-    // ,cacheSettings: {
-    //     mimeType: {
-    //         'js': { "max-age": "1m" }
-    //         ,'css': { "max-age": "0m" }
-    //         ,'json': { "max-age": "0m" }
-    //         ,'png': { "max-age": "0m" }
-    //         ,'jpeg': { "max-age": "0m" }
-    //         ,'txt': { "max-age": "0m"
-};
-    //         ,'ico': { "max-age": "0m" }
-    // }}
+    //If method and path match the functin will be called with [req, res].
     // ,postHandlers: {
-    //     // "/sendmail" : testMail
+    //     "/testPost" : testPost
     // }
-    
+    //If method and path match the function will be called with [req, res].
     // ,getHandlers: {
     //     "/testget" : testGet,
-    //     "/testGet" : testGet
     // }
+    //start a https server
+    ,https: false
+    //start a websocket server
+    ,wsServer: false
+    //attaches session data to requests
     // ,sessions: {
     //     expires: 30
     //     // ,store: 'mysql'
@@ -102,12 +122,15 @@ var options = {
     //     //     //options for mysql, memory doesn't need any
     //     // }
     // }
+    // see lib/logger.js for more info. Basically logging all requests to a file.
     // ,log: {
     //     'format': '',  //Format string, see below for tokens,
     //     'stream': '',  //Output stream, defaults to _stdout_
     //     'buffer': '', //Buffer duration, defaults to 1000ms when _true_
     //     'immediate': ''  //Write log line on request instead of response (for response times)
+    //silence output on the commandline
+    ,"silent": false
     // }
-// };
+};
 
 server.go(options);
