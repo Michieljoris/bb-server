@@ -46,6 +46,11 @@ var options = {
     //   other: { expiresIn: '0m'}
     // }
     ,cache: false 
+    //set to true to remove timestamps from request paths before
+    //processing them. This also enables cache control for the
+    //response to these requests. See previous options. Defaults to
+    //false.
+    ,bust: false
     // files can be transformed (recast) before being sent to the
     // client. If the cache is turned on this will only happen the
     // first time the file is requested. After that the recast file

@@ -7,7 +7,7 @@ Basic server, configurable by setting commandline options or by
 requiring it. The options can then be passed to the server as an
 object.
 
-It's basicically a static assets server however over time I've
+It's basically a static assets server however over time I've
 rewritten it a couple of times to add some more features. 
 
 I am aiming for simplicity. The server can be started without any
