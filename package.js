@@ -89,11 +89,10 @@ module.exports = {
     // **NOTE:** We don't have any dependencies for this module. See the
     // `devDependencies` block for the way to include dependencies.
     "dependencies": {
-        "cachejs": "*",
 	"websocket": "1.0.x",
-	"nodemailer": "0.5.x",
+	"nodemailer": "0.5.x", 
 	"colors": "*",
-	"optimist": "0.2.x",
+	"optimist": "0.2.x", //0.6.0
 	"portfinder": "~0.2.1",
 	"forever-monitor": "1.2.x",
 	"mime": "1.2.x",
@@ -101,11 +100,12 @@ module.exports = {
 	"bytes": "*",
         "fs-extra": "*",
         "escape-html": "1.0.x",
+        "MD5": "*", //1.1.0
+        extend: "*", //1.2.1
         "recaster": "*",
-        "MD5": "*",
+        "cachejs": "*",
         "url_washer": "*",
-        "dougs_vow": "*",
-        extend: "*"
+        "dougs_vow": "*"
     },
     // What dependencies are useful only for developers?
     // Installed when we `npm install` in our working directory, but not 
