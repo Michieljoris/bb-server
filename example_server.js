@@ -34,7 +34,7 @@ var options = {
     //[d]ays, [w]eeks or [y]ears). Defaults to the favicon.ico bundled
     //with the server with a max age of 1 hour.
     ,favicon: {
-        path:  './favicon.ico',
+        path:  '/home/michieljoris/www/sites/firstdoor/www/favicon.ico',
         maxAge: '1h' 
     }
     //control caching of resources in terms of what cache-control
@@ -63,7 +63,7 @@ var options = {
     //toggle the following tree options to true to enable recasting,
     //all three default to false
     ,transpile: false 
-    ,minify: true //html, js and css
+    ,minify: false //html, js and css
 
     ,zip: false //compress when enconding is accepted by client
     //or for more finegrained control define the recast option instead:
@@ -78,16 +78,16 @@ var options = {
     //the server can prerender requests from bots and/or requests for
     //fragment and hashbang urls. For any prerendering to occur the
     //following option needs to be true. Defaults to false.
-    ,prerender: false 
+    ,prerender: true 
     //specify a path for phantomjs or set it to truthy. In the last
     //case the server will use the phantomjs module's path or as a
     //last resort 'phantomjs'. Defaults to false.
-    ,phantomPath: false
+    ,phantomPath: true
     //if phantomPath is not valid the server will call on the external
     //seoServer.Assign an url. Defaults to false. 
     ,seoServer: false
     //if true any request for a fragment will be prerendered.
-    ,fragment: false
+    ,fragment: true
     //if both bot and hashbang are true requests from bots for
     //hashbang url will be prerendered
     ,hashbang: false
