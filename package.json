@@ -1,58 +1,58 @@
 {
-    "name": "bb-server",
-    "description": "A bare bones http server",
-    "version": "0.4.0",
-    "homepage": "https://github.com/michieljoris/bb-server",
-    "keywords": [
-        "server"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/michieljoris/bb-server.git"
-    },
-    "author": {
-        "name": "Michiel van Oosten",
-        "email": "mail@axion5.net",
-        "url": "http://blog.axion5.net/"
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://github.com/michieljoris/url_washer/blob/master/LICENSE.txt"
-        }
-    ],
-    "main": "lib/bb-server",
-    "engines": {
-        "node": ">= 0.10.x"
-    },
-    "dependencies": {
-        "cachejs": "*",
-        "websocket": "1.0.x",
-        "nodemailer": "0.5.x",
-        "colors": "*",
-        "optimist": "0.2.x",
-        "portfinder": "~0.2.1",
-        "forever-monitor": "1.2.x",
-        "mime": "1.2.x",
-        "mysql": "0.9.6",
-        "bytes": "*",
-        "fs-extra": "*",
-        "escape-html": "1.0.x",
-        "recaster": "*",
-        "MD5": "*",
-        "url_washer": "*",
-        "dougs_vow": "*",
-        "extend": "*"
-    },
-    "devDependencies": {
-        "fs-extra": "0.3.x",
-        "doccoh": "0.4.1"
-    },
-    "private": false,
-    "scripts": {
-        "start": "./bin/bb-server"
-    },
-    "bin": {
-        "bb-server": "./bin/bb-server"
+  "name": "bb-server",
+  "description": "A bare bones http server",
+  "version": "0.4.0",
+  "homepage": "https://github.com/michieljoris/bb-server",
+  "keywords": [
+    "server"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michieljoris/bb-server.git"
+  },
+  "author": {
+    "name": "Michiel van Oosten",
+    "email": "mail@axion5.net",
+    "url": "http://blog.axion5.net/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/michieljoris/url_washer/blob/master/LICENSE.txt"
     }
+  ],
+  "main": "lib/bb-server",
+  "engines": {
+    "node": ">= 0.10.x"
+  },
+  "dependencies": {
+    "websocket": "1.0.x",
+    "nodemailer": "0.5.x",
+    "colors": "*",
+    "optimist": "0.2.x",
+    "portfinder": "~0.2.1",
+    "forever-monitor": "1.2.x",
+    "mime": "1.2.x",
+    "mysql": "0.9.6",
+    "bytes": "*",
+    "fs-extra": "*",
+    "escape-html": "1.0.x",
+    "MD5": "*",
+    "extend": "*",
+    "recaster": "*",
+    "cachejs": "*",
+    "url_washer": "*",
+    "dougs_vow": "*"
+  },
+  "devDependencies": {
+    "fs-extra": "0.3.x",
+    "doccoh": "0.4.1"
+  },
+  "private": false,
+  "scripts": {
+    "start": "./bin/bb-server"
+  },
+  "bin": {
+    "bb-server": "./bin/bb-server"
+  }
 }

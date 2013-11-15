@@ -14,7 +14,7 @@ var server = require('./lib/bb-server.js')
 //cache control headings, so we can send big files etc
 var options = { 
     //Serve all files relative to this root. Defaults to './'.
-    root: './'
+    root: '/home/michieljoris/www/sites/firstdoor/www'
     //if not assigned defaults to 8080. If that port's not available
     //the server will try to 8081 and so on.
     ,port: 9000
@@ -63,7 +63,8 @@ var options = {
     //toggle the following tree options to true to enable recasting,
     //all three default to false
     ,transpile: false 
-    ,minify: false //html, js and css
+    ,minify: true //html, js and css
+
     ,zip: false //compress when enconding is accepted by client
     //or for more finegrained control define the recast option instead:
     // ,recast: {  transpile: ['jade', 'less', 'stylus', 'sweetjs',

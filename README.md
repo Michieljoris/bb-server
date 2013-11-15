@@ -1,14 +1,14 @@
 bb-server
 ===========
 
-Caveat: this server needs more testing and is not production ready.
+Status: still testing features and getting rid of little bugs.
 
 Basic server, configurable by setting commandline options or by
 requiring it. The options can then be passed to the server as an
 object.
 
 It's basically a static assets server however over time I've
-rewritten it a couple of times to add some more features. 
+rewritten it a couple of times and added some more features. 
 
 I am aiming for simplicity. The server can be started without any
 options and will serve up its working directory. Any features required
@@ -39,6 +39,9 @@ also cached then.
 
 * Customized logging of all requests to a log file
 
+* Cache busting by automatically removing stamps
+
+You can also use npm however that might not be the latest version.
 
 To install clone it, cd into the directory and do:
  
@@ -56,10 +59,28 @@ You can also install it directly from npm:
 
 	npm install bb-server
 	
-Though that might not be the most recent version.	
 	  
 Execute bb-server -h for a list of command line options.
 		  
 See the example_server.js file for an example of requiring the server
 in your own module and documentation for most of the options. 
 
+
+TODO:
+* optimize images on the fly
+* api/ui for viewing/retrieving server logs and status
+* rewrite async logic using generators and promises
+* make sure to send 404's when prerendering generates a 404 page
+* bots are regexed, however you could consult a database (
+  https://github.com/GUI/uas-parser) and or even idenity googlebot by
+  ip
+* security
+* send cors headers?
+* add auth support (sign in with google, github etc)
+* unify log messages into one system
+* serve fancy dir
+* send script to refresh browser from emacs, or on save etc
+
+Ideas:
+* send diffs of files?
+* share js files between server and client
