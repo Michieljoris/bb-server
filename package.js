@@ -35,7 +35,7 @@ module.exports = {
     // [npm](http://npmjs.org) enforces the X.Y.Z semantic version 
     // scheme that is described at [http://semver.org/](http://semver.org/)
     // and we should follow this versioning for our package.
-    "version": "0.4.0",
+    "version": "0.4.1",
     // URL to the homepage for this package.
     "homepage": "https://github.com/michieljoris/bb-server",
     // An array of keywords used to describe this package to search engines,
@@ -102,7 +102,7 @@ module.exports = {
         "escape-html": "1.0.x",
         "MD5": "*", //1.1.0
         extend: "*", //1.2.1
-        "recaster": "*",
+        "recaster": "*", //0.2.1
         "cachejs": "*",
         "url_washer": "*",
         "dougs_vow": "*"
