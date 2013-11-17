@@ -14,7 +14,8 @@ var server = require('./lib/bb-server.js')
 //cache control headings, so we can send big files etc
 var options = { 
     //Serve all files relative to this root. Defaults to './'.
-    root: '/home/michieljoris/www/sites/firstdoor/www'
+    // root: '/home/michieljoris/www/sites/firstdoor/www'
+    root: '/home/michieljoris/www/sites/greenglass/www'
     //if not assigned defaults to 8080. If that port's not available
     //the server will try to 8081 and so on.
     ,port: 9000
