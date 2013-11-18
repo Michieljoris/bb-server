@@ -79,11 +79,11 @@ var options = {
     //the server can prerender requests from bots and/or requests for
     //fragment and hashbang urls. For any prerendering to occur the
     //following option needs to be true. Defaults to false.
-    ,prerender: true 
+    ,prerender:false 
     //specify a path for phantomjs or set it to truthy. In the last
     //case the server will use the phantomjs module's path or as a
     //last resort 'phantomjs'. Defaults to false.
-    ,phantomPath: true
+    ,phantomPath: false
     //if phantomPath is not valid the server will call on the external
     //seoServer.Assign an url. Defaults to false. 
     ,seoServer: false
