@@ -1,6 +1,7 @@
 ** bb-server
 *** considerations 
     load diff of (js files) instead of whole file?
+    http://dinosrc.it/?utm_source=javascriptweekly&utm_medium=email
     share js files between server and client?
     memory cache
 disk cache
@@ -14,7 +15,7 @@ cache busting (stripping stamp)
 recast files
 optimize images
 
-authentication
+autheøtication
 logs
 cors
 security
