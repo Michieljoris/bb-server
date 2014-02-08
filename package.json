@@ -26,6 +26,7 @@
         "node": ">= 0.10.x"
     },
     "dependencies": {
+        "uglify-js": "*",
         "websocket": "1.0.x",
         "nodemailer": "0.5.x",
         "colors": "*",

@@ -89,6 +89,7 @@ module.exports = {
     // **NOTE:** We don't have any dependencies for this module. See the
     // `devDependencies` block for the way to include dependencies.
     "dependencies": {
+        "uglify-js": "*",
 	"websocket": "1.0.x",
 	"nodemailer": "0.5.x", 
 	"colors": "*",
