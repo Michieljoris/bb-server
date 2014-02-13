@@ -26,7 +26,6 @@
         "node": ">= 0.10.x"
     },
     "dependencies": {
-        "uglify-js": "*",
         "websocket": "1.0.x",
         "nodemailer": "0.5.x",
         "colors": "*",
@@ -36,17 +35,16 @@
         "mime": "1.2.x",
         "mysql": "0.9.6",
         "bytes": "*",
-        "fs-extra": "*",
+        "fs-extra": "0.8.x",
         "escape-html": "1.0.x",
         "MD5": "*",
         "extend": "*",
         "recaster": "*",
-        "cachejs": "*",
+        "cachejs": "0.1.x",
         "url_washer": "*",
         "dougs_vow": "*"
     },
     "devDependencies": {
-        "fs-extra": "0.3.x",
         "doccoh": "0.4.1"
     },
     "private": false,

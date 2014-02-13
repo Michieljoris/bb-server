@@ -89,7 +89,6 @@ module.exports = {
     // **NOTE:** We don't have any dependencies for this module. See the
     // `devDependencies` block for the way to include dependencies.
     "dependencies": {
-        "uglify-js": "*",
 	"websocket": "1.0.x",
 	"nodemailer": "0.5.x", 
 	"colors": "*",
@@ -98,15 +97,15 @@ module.exports = {
 	"forever-monitor": "1.2.x",
 	"mime": "1.2.x",
 	"mysql": "0.9.6",
-	"bytes": "*",
-        "fs-extra": "*",
+	"bytes": "0.2.x",
+        "fs-extra": "0.8.x",
         "escape-html": "1.0.x",
-        "MD5": "*", //1.1.0
-        extend: "*", //1.2.1
-        "recaster": "*", //0.2.1
-        "cachejs": "*",
-        "url_washer": "*",
-        "dougs_vow": "*"
+        "MD5": "1.1.x", //1.1.0
+        extend: "1.2.x", //1.2.1
+        "recaster": "0.2.x", //0.2.1
+        "cachejs": "0.1.x",
+        "url_washer": "0.2.x",
+        "dougs_vow": "0.1.x"
     },
     // What dependencies are useful only for developers?
     // Installed when we `npm install` in our working directory, but not 

@@ -15,9 +15,8 @@ var server = require('./lib/bb-server.js')
 var options = { 
     //Serve all files relative to this root. Defaults to './'.
     root: '/home/michieljoris/www/sites/firstdoor/www'
-    // root: '/home/michieljoris/www/sites/greenglass/www'
     //if not assigned defaults to 8080. If that port's not available
-    //the server will try to 8081 and so on.
+    //the server will try 8081 and so on.
     ,port: 9000
     // Assign true to allow listing of directories when the path in
     // the url matches a path on the server relative to the
@@ -28,19 +27,32 @@ var options = {
     // over instead of the directory listing. Assign a string to look
     // for and send a different default file. Defaults to false and to
     // 'index.html' if assigned true.
-    ,index: false
+    ,index: true
+    
     //if a request for /favicon comes in send the favicon found in the
     //path specified (relative to where this script is executed from), 
     //with a cache control setting of maxAge (in [m]inutes, [h]ours,
     //[d]ays, [w]eeks or [y]ears). Defaults to the favicon.ico bundled
     //with the server with a max age of 1 hour.
     ,favicon: {
-        path:  '/home/michieljoris/www/sites/firstdoor/www/favicon.ico',
+        path:  './favicon.ico',
         maxAge: '1h' 
     }
+    
+    // see lib/logger.js for more info. Basically logging all requests to a file.
+    // ,log: true
+    ,log: {
+        'format': 'dev',  //Format string: default, short, tiny, dev, or custom token string
+        // 'stream': 'mylog.txt',  //Output stream, defaults to _stdout_
+        // 'buffer': '', //Buffer duration, defaults to 1000ms when _true_
+        'immediate': ''  //Write log line on request instead of response (false for response times)
+       }
+    //silence (debug) output on the commandline
+    ,"quiet": false
     //control caching of resources in terms of what cache-control
     //headers are sent out with them and how long resources are kept
     //in the server cache. If true defaults to:
+    //(m)inutes, (h)ours, (d)ays, (w)weeks, (y)ears
     //
     // { stamped: { expiresIn: '1y' },
     //   prerender: { expiresIn: '1d'},
@@ -63,44 +75,46 @@ var options = {
     
     //toggle the following tree options to true to enable recasting,
     //all three default to false
-    ,transpile: false 
-    ,minify: false //html, js and css
+    // ,transpile: false 
+    // ,minify: true //html, js and css
 
-    ,zip: false //compress when enconding is accepted by client
+    // ,zip: true //compress when enconding is accepted by client
     //or for more finegrained control define the recast option instead:
-    // ,recast: {  transpile: ['jade', 'less', 'stylus', 'sweetjs',
-    //                         'typescript', 'coffeescript',
-    //                         'markdown', 'regenerators'], 
-    //             minify: ['js', 'css', 'html'],
-    //             zip: /text|javascript|json/, //regex on the mimetype
-    //             verbose: true
-    //          }
+    ,recast: {
+        transpile: ['jade', 'less', 'stylus', 'sweetjs',
+                    'typescript', 'coffeescript',
+                    'markdown', 'regenerators'], 
+        // transpile: [], 
+        
+        // minify: [],
+        minify: ['js', 'css'],
+        zip: /text|javascript|json/ //regex on the mimetype
+        ,verbose: false
+    }
     
-    //the server can prerender requests from bots and/or requests for
-    //fragment and hashbang urls. For any prerendering to occur the
-    //following option needs to be true. Defaults to false.
-    ,prerender:false 
-    //specify a path for phantomjs or set it to truthy. In the last
-    //case the server will use the phantomjs module's path or as a
-    //last resort 'phantomjs'. Defaults to false.
-    ,phantomPath: false
-    //if phantomPath is not valid the server will call on the external
-    //seoServer.Assign an url. Defaults to false. 
-    ,seoServer: false
-    //if true any request for a fragment will be prerendered.
-    ,fragment: true
-    //if both bot and hashbang are true requests from bots for
-    //hashbang url will be prerendered
-    ,hashbang: false
-    ,bot: false
-    //if spa is true all requests that don't seem to be requests for a
-    //file with a mimetype are redirected to a request for just one
-    //file. By default this is index.html, but a different filename
-    //can get assigned to spa. If bot is true, this redirection does
-    //not happen but instead the page gets prerendered. But using a
-    //fragment meta tag in your spa file and turning fragment on and
-    //bot of might be a better way to go. Defaults to false.
+    //if spa is true all requests that don't seem to be requests for a file with
+    //a mimetype are redirected to a request for just one file. By default this
+    //is index.html, but a different filename can get assigned to spa. Use a
+    //fragment meta tag in your spa file, or use hashbang in your urls to have
+    //google crawl _escaped_fragment_ urls.
     ,spa: false
+    
+    //the server can prerender requests for _escaped_fragment_ urls. For any
+    // prerendering to occur the following option needs to be true. Defaults to
+    // false. If set to true, better turn on caching as well, otherwise it will
+    // try to prerender the page for every _escaped_fragment_ request, Also
+    // either enable phantomPath or seoServer
+    ,prerender:true 
+    
+    //specify a path for phantomjs or set it to truthy. In the last case the
+    //server will use the phantomjs module's path or as a last resort
+    //'phantomjs'. If falsy, or the phantomjs executable is not found, the
+    //seoServer will be called upon.
+    ,phantomPath: true
+    //if phantomPath is not valid the server will call on the external
+    //seoServer. Assign an url. Defaults to false. 
+    ,seoServer: false
+    
     //forward requests with a certain prefix in the path to another server
     // "forward": [
     //     { "prefix": "local",
@@ -129,14 +143,6 @@ var options = {
     //     //     //options for mysql, memory doesn't need any
     //     // }
     // }
-    // see lib/logger.js for more info. Basically logging all requests to a file.
-    // ,log: {
-    //     'format': '',  //Format string, see below for tokens,
-    //     'stream': '',  //Output stream, defaults to _stdout_
-    //     'buffer': '', //Buffer duration, defaults to 1000ms when _true_
-    //     'immediate': ''  //Write log line on request instead of response (for response times)
-    //silence output on the commandline
-    ,"silent": false
     // }
 };
 
