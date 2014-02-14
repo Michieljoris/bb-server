@@ -58,7 +58,7 @@ var options = {
     //   prerender: { expiresIn: '1d'},
     //   other: { expiresIn: '0m'}
     // }
-    ,cache: false 
+    ,cache: true 
     //set to true to remove timestamps from request paths before
     //processing them. This also enables cache control for the
     //response to these requests. See previous options. Defaults to
@@ -80,17 +80,17 @@ var options = {
 
     // ,zip: true //compress when enconding is accepted by client
     //or for more finegrained control define the recast option instead:
-    ,recast: {
-        transpile: ['jade', 'less', 'stylus', 'sweetjs',
-                    'typescript', 'coffeescript',
-                    'markdown', 'regenerators'], 
-        // transpile: [], 
+    // ,recast: {
+    //     transpile: ['jade', 'less', 'stylus', 'sweetjs',
+    //                 // 'typescript', 'coffeescript',
+    //                 'markdown' ], 
+    //     // transpile: [], 
         
-        // minify: [],
-        minify: ['js', 'css'],
-        zip: /text|javascript|json/ //regex on the mimetype
-        ,verbose: false
-    }
+    //     // minify: [],
+    //     minify: ['js', 'css']
+    //     ,zip: /text|javascript|json/ //regex on the mimetype
+    //     ,verbose: true
+    // }
     
     //if spa is true all requests that don't seem to be requests for a file with
     //a mimetype are redirected to a request for just one file. By default this

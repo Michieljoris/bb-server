@@ -35,7 +35,7 @@ module.exports = {
     // [npm](http://npmjs.org) enforces the X.Y.Z semantic version 
     // scheme that is described at [http://semver.org/](http://semver.org/)
     // and we should follow this versioning for our package.
-    "version": "0.4.2",
+    "version": "0.4.3",
     // URL to the homepage for this package.
     "homepage": "https://github.com/michieljoris/bb-server",
     // An array of keywords used to describe this package to search engines,
@@ -105,7 +105,8 @@ module.exports = {
         "recaster": "0.2.x", //0.2.1
         "cachejs": "0.1.x",
         "url_washer": "0.2.x",
-        "dougs_vow": "0.1.x"
+        "dougs_vow": "0.1.x",
+        "node_cloudflare": "0.0.2"
     },
     // What dependencies are useful only for developers?
     // Installed when we `npm install` in our working directory, but not 
