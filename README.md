@@ -1,6 +1,8 @@
 bb-server
 ===========
 
+In the process of rewriting....
+
 Status: still testing features and getting rid of little bugs.
 
 Basic server, configurable by setting commandline options or by

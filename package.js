@@ -148,6 +148,11 @@ module.exports = {
     // ,"preferGlobal": "true"
 };
 
+var pjs = require('./package.json');
+var v = pjs.version;
+var s = v.split('.');
+v = [s[0],s[1],parseInt(s[2]) + 1].join('.');
+module.exports.version = v;
 
 // Small script used to write the package.json file out from the package.js
 // file.
@@ -165,5 +170,6 @@ fs.writeJSONFile("package.json", packagejson, function(err){
     else {
         console.log("package.json written successfully.");
         console.log("");
+        console.log(packagejson);
     }
 });

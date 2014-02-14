@@ -144,6 +144,18 @@ var options = {
     //     // }
     // }
     // }
+    //server api path:
+    ,api: '_api'
+    //use persona to authenticate
+    ,persona: true
+    ,emails: ['mail@axion5.net']
+    //
+    //enable server api:
+    ,sitemap: true
+    ,html_builder: true
+    ,clear_cache: true
+    ,files: true
+    ,stats: true
 };
 
 server.go(options);

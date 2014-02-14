@@ -178,16 +178,27 @@ timestamped, they will be sent out with max-age > 0, this only makes
 sens when the stamp is tied to another file that gives them a fixed
 stamp to attach, for example in index.html;
 
-** sitemap
 ** spa 
 always send index.html when requesting non-file
 when serving spa and you don't want to use #! you always serve
 index.html and then let the app sort out the routing.
 http://docs.angularjs.org/guide/dev_guide.services.$location
    
+** add sitemap to firstdoor site
+** put up firstdoor.axion5.com and use cloudflare
+  update npm and git: bb-server url_washer cachejs recaster phantom-xml 
+  sync bb4 branch of firstdoor to linode
+  add forever task
+
+
 
 ** sessions and authentication
+*** sign in with
+    google, facebook, linkedin, github, persona, twitter, basic
+    to start of with, incorporate persona into server
     
+** api
+   
 
 ** websocket and https server
 ** forwarder: test and clean up!!
@@ -262,7 +273,6 @@ http://mahoney.eu/2012/05/23/couchdb-cookie-authentication-nodejs-nano/#.UbAdzqB
    
    
 * more features
-
 ** rewrite phantomjs script to use a server iso console.log
    http://stackoverflow.com/questions/20751999/phantomjs-interprocess-communication
    https://github.com/ariya/phantomjs/wiki/API-Reference-WebServer
@@ -303,6 +313,20 @@ https://github.com/ethanl/connect-browser-logger
 ** cache in couchdb?
 ** separate cache out?
 ** api/uis for server status and logs
+*** __assets
+app that lets authorized users play around with the file system of
+websites, or possibly of the whole hard drive.
+So, uploading and downloading files, rebuild site using html-builder,
+downloading snapshots, uploading snapshots
+
+Maybe even edit js and css and html and the recipe files , as I do it
+locally, but using ace editor.  
+
+For more sophisticated system you could use placeholders for static
+assets and fill these buckets in some kind of manager. Maybe store these
+assets in CouchDB. You get to back it up easily through replication,
+and easy retrieval and role based write/read access. And you can share
+the assets with other sites then as well. 
 ** enable cors
      https://github.com/agrueneberg/Corser
      https://github.com/troygoode/node-cors
@@ -319,11 +343,6 @@ highlighting etc, show hidden files?
 ** load diff of (js files) instead of whole file?
     share js files between server and client?
     
-    
-** authentication
-*** sign in with
-    google, facebook, linkedin, github, persona, twitter, basic
-    to start of with, incorporate persona into server
     
     
 * good to know     
