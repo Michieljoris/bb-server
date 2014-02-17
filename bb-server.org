@@ -1,5 +1,7 @@
 bb-server
 * features (implemented)
+** cookieless domains
+   http://www.ravelrumba.com/blog/static-cookieless-domain/
 ** logging   
 *** logrotation:
     You can use logrotate which is included in most Linux distributions and is
@@ -165,6 +167,7 @@ https://github.com/fmarcia/UglifyCSS
 ** modified-since
    
    
+   
 ** cache busting  
    
 Hardcoded requests for static resources should be stamped with the
@@ -186,20 +189,18 @@ http://docs.angularjs.org/guide/dev_guide.services.$location
    
 ** add sitemap to firstdoor site
 ** put up firstdoor.axion5.com and use cloudflare
-  update npm and git: bb-server url_washer cachejs recaster phantom-xml 
+  update npm and git: bb-server url_washer cachejs recaster phantom-sitemap
   sync bb4 branch of firstdoor to linode
   add forever task
 
-
-
 ** sessions and authentication
+*** send cache-control private when using sessions!!
 *** sign in with
     google, facebook, linkedin, github, persona, twitter, basic
     to start of with, incorporate persona into server
     
-** api
-   
-
+** set cache control=private when using sessions!!
+    
 ** websocket and https server
 ** forwarder: test and clean up!!
      I put it in a module, but is not tested yet
@@ -260,7 +261,7 @@ https://github.com/jed/keygrip
 http://mahoney.eu/2012/05/23/couchdb-cookie-authentication-nodejs-nano/#.UbAdzqBCAWM
 ***** csrf
      look at connect middleware for implementation 
-     
+      
      
 ** mail functionality
 ** check and fix:    
@@ -346,6 +347,23 @@ highlighting etc, show hidden files?
     
     
 * good to know     
+** caching  
+*** cookieless domains
+    proxies will not cache a response to a request that has a Cookie header!!!
+    When they are cached, which they shouldn't be, there are security
+    implications!! Also, browsers add the cookie to all requests, increasing
+    latency for the site.  When serving cookies, set cache-control to private!!
+    When serving statics, cookieless resources from a subdomain, make sure to
+    redirect example.com to www.example.com so that the browser doesn't receive
+    set-cookie from the global domain, and don't set cookies on the client with
+    domain *.example.com, also make sure any 3rd party js doesn't set cookies
+    with a global domain.
+    https://developers.google.com/speed/docs/best-practices/caching?csw=1#LeverageProxyCaching
+    https://developers.google.com/speed/docs/best-practices/request#ServeFromCookielessDomain
+    http://webmasters.stackexchange.com/questions/1772/how-do-i-set-up-a-cookie-less-domain
+    https://drupal.org/node/1896610 Drupal specific //Good one:
+    http://stackoverflow.com/questions/9334393/proxy-cacheing-what-about-cookies
+   
 ** server performance testing 			  :server:performance:report:
    http://serverbear.com/compare/dedicated
    http://loadimpact.com/load-test/pavetheway.axion5.net-c2385151073ea37a4613c972ddd55d9b

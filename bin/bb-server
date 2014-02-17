@@ -21,7 +21,7 @@ if (argv.h || argv.help) {
         "  -s --sessions      Enable sessions (adds sessions to req)",
         "  -w --websocket     Turn on websocket server",
         "  -c --cache         Enable cache headers",
-        "  --bust             Strip . __bust__<date> from request paths [true]",
+        "  --stamp             Strip stamp from request paths [false]",
         "  -z --zip           compress response if requested and possible",
         "  -m --minify        minify response value if possible", 
         "  -t --transpile     transpile file before sending it ", 
