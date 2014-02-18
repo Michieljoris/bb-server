@@ -79,7 +79,7 @@ var options = {
     // updated and stays cached, up the length property by 1
     // }
     
-    //iles can be transformed (recast) before being sent to the
+    //files can be transformed (recast) before being sent to the
     // client. If the cache is turned on this will only happen the
     // first time the file is requested. After that the recast file
     // will be sent from the cache. Only when the mtime of the
