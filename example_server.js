@@ -53,31 +53,32 @@ var options = {
     //control caching of resources in terms of what cache-control headers are
     //sent out with them and how long resources are kept in the server cache. If
     //true defaults to ((m)inutes, (h)ours, (d)ays, (w)weeks, (y)ears):
-    ,cache: false 
-    // { stamped: { expiresIn: '1y' },
-    //   prerender: { expiresIn: '1d'},
-    //static resources, should be served from cookieless domain:
+    // ,cache: true 
+    ,cache: {
+        stamped: { expiresIn: '0d' },
+        prerender: { expiresIn: '1d'},
+        //static resources, should be served from cookieless domain:
     
-    //     css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf midi
-    // mid ttf eot woff svg svgz webp docx xlsx xls pptx ps
-    //but possibly not when going through cloudflare:
-    // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
-    //   docs: { expiresIn: '1d', ['pdf','doc','docx'] },
-    //   other: { expiresIn: '0m'}
-    // }
+        //     css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf midi
+        // mid ttf eot woff svg svgz webp docx xlsx xls pptx ps
+        //but possibly not when going through cloudflare:
+        // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
+        // docs: { expiresIn: '1d', ['pdf','doc','docx'] },
+        other: { expiresIn: '0m'}
+    }
     
-    //set to true to remove stamp from request paths before
-    //processing them. This also enables cache control for the
-    //response to these requests. See previous options. Defaults to
-    //false. 
-    ,stamp: false
-    // ,stamp: {
-    //     prefix: '' // or for example: 'stamp-'
-    //     ,length: 10  //32 for m5 and 40 for sha1, but set to 10 by default
+    //if set to true to the server will try to remove a stamp from request paths
+    //before processing them. This also enables cache control for the response
+    //to these requests. See previous options.
+    // Defaults to false.  ,
+    // ,stamp: false
+    ,stamp: {
+        prefix: '__' // or for example: 'stamp-'
+        ,length: 10  //32 for md5 and 40 for sha1, but set to 10 by default
     // set length to 13 if you use mtime create the stamp for a resource
-    // if 10 is not long is enough, in other words, if a resource is not
+    // if 10 is not long enough, in other words, if a resource is not
     // updated and stays cached, up the length property by 1
-    // }
+    }
     
     //files can be transformed (recast) before being sent to the
     // client. If the cache is turned on this will only happen the
