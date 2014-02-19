@@ -55,15 +55,16 @@ var options = {
     //true defaults to ((m)inutes, (h)ours, (d)ays, (w)weeks, (y)ears):
     // ,cache: true 
     ,cache: {
-        stamped: { expiresIn: '0d' },
+        stamped: { expiresIn: '1y' },
         prerender: { expiresIn: '1d'},
         //static resources, should be served from cookieless domain:
     
-        //     css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf midi
-        // mid ttf eot woff svg svgz webp docx xlsx xls pptx ps
+        // "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
+        // "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
         //but possibly not when going through cloudflare:
         // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
-        // docs: { expiresIn: '1d', ['pdf','doc','docx'] },
+        "pdf doc docx": { expiresIn: "2h" },
+        // docs: { expiresIn: '1d', ext: ['pdf','doc','docx'] },
         other: { expiresIn: '0m'}
     }
     
@@ -138,6 +139,19 @@ var options = {
     //     { "prefix": "iris",
     //       "target": "https://somedb.iriscouch.com"}
     // ]
+    
+    ,postHandlers: {
+        // "/" : save
+        "/contactus_form" : sendMail
+        // ,"/contactus_form" : testSendMail
+        }
+    ,getHandlers: {
+        "/sync": sync,
+        "/dropbox_authorize": dropbox_authorize,
+        "/dropbox_connect": dropbox_connect
+    }
+    
+    
     //If method and path match the functin will be called with [req, res].
     // ,postHandlers: {
     //     "/testPost" : testPost

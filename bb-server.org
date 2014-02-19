@@ -166,8 +166,6 @@ https://github.com/fmarcia/UglifyCSS
     
 ** modified-since
    
-   
-   
 ** cache busting  
    
 Hardcoded requests for static resources should be stamped with the
@@ -181,6 +179,9 @@ timestamped, they will be sent out with max-age > 0, this only makes
 sens when the stamp is tied to another file that gives them a fixed
 stamp to attach, for example in index.html;
 
+   
+carry over mtime to cache.js
+hash to store cache items should of stamp -AND- key!!
 ** spa 
 always send index.html when requesting non-file
 when serving spa and you don't want to use #! you always serve
@@ -193,6 +194,8 @@ http://docs.angularjs.org/guide/dev_guide.services.$location
   sync bb4 branch of firstdoor to linode
   add forever task
 
+  
+  
 ** sessions and authentication
 *** send cache-control private when using sessions!!
 *** sign in with
@@ -313,7 +316,20 @@ https://github.com/ethanl/connect-browser-logger
 ** test windows
 ** cache in couchdb?
 ** separate cache out?
-** api/uis for server status and logs
+** needs authentication, sessions, cookieless domains:   
+       ,api: '_api'
+    //use persona to authenticate
+    ,persona: true
+    ,emails: ['mail@axion5.net']
+    //
+    //enable server api:
+    ,sitemap: true
+    ,html_builder: true
+    ,clear_cache: true
+    ,files: true
+    ,stats: true
+
+*** api/uis for server status and logs
 *** __assets
 app that lets authorized users play around with the file system of
 websites, or possibly of the whole hard drive.
