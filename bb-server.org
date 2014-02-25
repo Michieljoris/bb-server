@@ -356,7 +356,10 @@ highlighting etc, show hidden files?
 
 ** send script that listens to sockets and refreshes browser
       ala livereload perhaps
-      
+      https://www.npmjs.org/package/script-injector
+      https://github.com/chrisdickinson/sse-stream
+      https://developer.mozilla.org/en-US/docs/Server-sent_events/Using_server-sent_events
+      https://github.com/chrisdickinson/beefy/blob/master/lib/server.js
 ** load diff of (js files) instead of whole file?
     share js files between server and client?
     
