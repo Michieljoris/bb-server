@@ -23,7 +23,7 @@ Some features:
 this with caching and only modified assets will be transformed on a request.
 
 * Prerendering. A phantomjs rendered version of a page will be served if page
-comes with a query for an _escaped_fragment_  These are also cached then.
+comes with a query for an escaped fragment. These are also cached then.
 
 * Can serves a single page application
 
@@ -49,7 +49,7 @@ The server works really well as a development server since it will only
 transform and send files that have changed, and sends a 304 otherwise.
 
 If you turn caching and stamps on, and stamp your requests (as
-[html-builder](html://github.com/michieljoris/html-builder) does) does) the
+[html-builder](http://github.com/michieljoris/html-builder) does) does) the
 server will only get hit for unstamped files, such as a index.html file, and any
 files that have not been cached by the browser or internet. And even then it
 will get the files from its memory and disk caches if the resource has not been
@@ -59,7 +59,7 @@ The difference between this server and other build tools is that files are only
 transformed once they are requested, not when the resource gets saved. This is
 not inefficient because the resulting js/css/html file is cached by the browser,
 proxies on the net and ultimately by the server itself using a
-[LRU cache](html://github.com/michieljoris/cachejs) memory cache. If it's not in
+[LRU cache](http://github.com/michieljoris/cachejs) memory cache. If it's not in
 its memory cache it will get it from its disk cache, and if not there either
 only then will the server retransform the file. For instance from source.coffee,
 to source.js to source.js (minified) to source.js (gzipped).
