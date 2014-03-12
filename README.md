@@ -1,35 +1,31 @@
 bb-server
 ===========
 
-In the process of rewriting....
-
 Status: still testing features and getting rid of little bugs.
 
-Basic server, configurable by setting commandline options or by
-requiring it. The options can then be passed to the server as an
-object.
+Basic server, configurable by setting commandline options or by requiring
+it. The options can then be passed to the server as an object.
 
-It's basically a static assets server however over time I've
-rewritten it a couple of times and added some more features. 
+It's basically a static assets server however over time I've rewritten it a
+couple of times and added some more features.
 
-I am aiming for simplicity. The server can be started without any
-options and will serve up its working directory. Any features required
-can be turned on by setting options. The whole app is around 2000
-lines including comments, the main logic for serving files less than
-400.
+I am aiming for simplicity. The server can be started without any options and
+will serve up its working directory. Any features required can be turned on by
+setting options. The whole app is around 2000 lines including comments, the main
+logic for serving files less than 400.
 
 Some features:
+-----
 
 * Caching of all static resources, in memory (LRU) and on disk.
 
-* Transpiling, minifying and compressing of these assets on the fly,
-combine this with caching and only modified assets will be transformed
-on a request.
+* Transpiling, minifying and compressing of these assets on the fly, combine
+this with caching and only modified assets will be transformed on a request.
 
-* Prerendering based on fragment, hashbangs and bot requests. These are
-also cached then.
+* Prerendering. A phantomjs rendered version of a page will be served if page
+comes with a query for an _escaped_fragment_  These are also cached then.
 
-* Serves a single page application
+* Can serves a single page application
 
 * Start a websocket and/or a https server alongside your http server
 
@@ -42,6 +38,47 @@ also cached then.
 * Customized logging of all requests to a log file
 
 * Cache busting by automatically removing stamps
+
+* Standard server features such as setting cache headers and giving a 304
+  response to a if-not-modified-since header.
+  
+* Most options can be set on the command line, all of them using a json configuration
+  file. 
+  
+The server works really well as a development server since it will only
+transform and send files that have changed, and sends a 304 otherwise.
+
+If you turn caching and stamps on, and stamp your requests (as
+[html-builder](html://github.com/michieljoris/html-builder) does) does) the
+server will only get hit for unstamped files, such as a index.html file, and any
+files that have not been cached by the browser or internet. And even then it
+will get the files from its memory and disk caches if the resource has not been
+changed since it was cached by bb-server.
+
+The difference between this server and other build tools is that files are only
+transformed once they are requested, not when the resource gets saved. This is
+not inefficient because the resulting js/css/html file is cached by the browser,
+proxies on the net and ultimately by the server itself using a
+[LRU cache](html://github.com/michieljoris/cachejs) memory cache. If it's not in
+its memory cache it will get it from its disk cache, and if not there either
+only then will the server retransform the file. For instance from source.coffee,
+to source.js to source.js (minified) to source.js (gzipped).
+
+The cool thing is that you can request for instance coffee files directly in
+your html, as long as you set the type, for instance:
+
+    <script type="text/javascript" src="scripts/test.coffee"></script>
+	
+Same goes for for instance sass and jade files. You could even serve a
+index.jade file by default, just set the index option to 'index.jade'.
+
+There's not much difference between production and development mode, except
+perhaps you don't want to minify your assets when developing.
+
+To play around with the server set up a [scaffold](https://github.com/michieljoris/scaffold).
+	
+Install
+----
 
 You can also use npm however that might not be the latest version.
 
@@ -61,28 +98,29 @@ You can also install it directly from npm:
 
 	npm install bb-server
 	
-	  
 Execute bb-server -h for a list of command line options.
 		  
-See the example_server.js file for an example of requiring the server
-in your own module and documentation for most of the options. 
-
+See the example_server.js file for an example of requiring the server in your
+own module and documentation for most of the options.
 
 TODO:
+* transforming is one to one at the moment. When a transform depends on multiple
+  files to produce the requested file (like sass) changes in the dependent files won't
+  trigger a recompile (see
+  [brocoli](http://www.solitr.com/blog/2014/02/broccoli-first-release/)). This
+  could be fixed however.
 * optimize images on the fly
 * api/ui for viewing/retrieving server logs and status
 * rewrite async logic using generators and promises
 * make sure to send 404's when prerendering generates a 404 page
-* bots are regexed, however you could consult a database (
-  https://github.com/GUI/uas-parser) and or even idenity googlebot by
-  ip
 * security
 * send cors headers?
-* add auth support (sign in with google, github etc)
-* unify log messages into one system
+* add auth support (sign in with google, github, persona etc)
+* unify log messages into one system, use logrotate and/or winston
 * serve fancy dir
 * send script to refresh browser from emacs, or on save etc
 
 Ideas:
 * send diffs of files?
 * share js files between server and client
+

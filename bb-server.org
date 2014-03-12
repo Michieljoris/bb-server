@@ -296,12 +296,17 @@ or use winston or bunyan to get json output, then query it..
 *** -report to console:
 https://github.com/ethanl/connect-browser-logger
 *** -airbrake like, so post info somewhere
-    airbrake: error reporting https://airbrake.io/languages
-    loggly: collect logs
-    newrelic: system reporting
-    http://logio.org/
+    The best:
     https://www.splunkstorm.com/storm/deployment/settings/c941c94c91fe11e3a144123139097a14
-    https://papertrailapp.com/
+    loggly: collect logs
+    //run your own realtime log forwarder server:
+    http://logio.org/
+    
+    Other:
+    airbrake: error reporting https://airbrake.io/languages //paid
+    newrelic: system reporting //same as longview and opensource one
+    https://papertrailapp.com/ //gem won't build
+    
     https://github.com/mnutt/hummingbird
     http://docs.strongloop.com/display/DOC/StrongOps
     https://github.com/lorenwest/node-monitor
