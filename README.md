@@ -104,6 +104,10 @@ See the example_server.js file for an example of requiring the server in your
 own module and documentation for most of the options.
 
 TODO:
+* enable source maps, you can then use browserify, which bundles all files
+  together, but makes writing modular javascript possible.
+* or use google closure compiler for module management
+* or wait for ES6...
 * transforming is one to one at the moment. When a transform depends on multiple
   files to produce the requested file (like sass) changes in the dependent files won't
   trigger a recompile (see
@@ -119,6 +123,7 @@ TODO:
 * unify log messages into one system, use logrotate and/or winston
 * serve fancy dir
 * send script to refresh browser from emacs, or on save etc
+* see bb-server.org
 
 Ideas:
 * send diffs of files?
