@@ -100,7 +100,10 @@ var options = {
     ,recast: {
         transpile: ['jade', 'less', 'stylus', 'sweetjs',
                     // 'typescript', 'coffeescript',
-                    'markdown' ], 
+                    'markdown',
+                    'denodify',
+                    'regenerators'
+                   ], 
         // transpile: [],  //TODO add all current supported file types
         
         // minify: [],
@@ -142,13 +145,13 @@ var options = {
     
     ,postHandlers: {
         // "/" : save
-        "/contactus_form" : sendMail
+        // "/contactus_form" : sendMail
         // ,"/contactus_form" : testSendMail
         }
     ,getHandlers: {
-        "/sync": sync,
-        "/dropbox_authorize": dropbox_authorize,
-        "/dropbox_connect": dropbox_connect
+        // "/sync": sync,
+        // "/dropbox_authorize": dropbox_authorize,
+        // "/dropbox_connect": dropbox_connect
     }
     
     
@@ -160,6 +163,7 @@ var options = {
     // ,getHandlers: {
     //     "/testget" : testGet,
     // }
+    //needs testing:
     //start a https server
     ,https: false
     //start a websocket server
@@ -174,6 +178,7 @@ var options = {
     //     // }
     // }
     // }
+    //not implemented yet:
     //server api path:
     ,api: '_api'
     //use persona to authenticate

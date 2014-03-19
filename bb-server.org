@@ -277,6 +277,8 @@ http://mahoney.eu/2012/05/23/couchdb-cookie-authentication-nodejs-nano/#.UbAdzqB
    
    
 * more features
+** streaming of all resources
+** rename defaultHandler to fileHandler or staticHandler
 ** rewrite phantomjs script to use a server iso console.log
    http://stackoverflow.com/questions/20751999/phantomjs-interprocess-communication
    https://github.com/ariya/phantomjs/wiki/API-Reference-WebServer
@@ -318,9 +320,9 @@ https://github.com/ethanl/connect-browser-logger
     https://github.com/trentm/node-bunyan
 *** clean up dichotomy of log and silent    
   Should have status out and error out and server out  
-** test windows
+** test in mswindows
 ** cache in couchdb?
-** separate cache out?
+** separate cache out from the bb-server app?
 ** needs authentication, sessions, cookieless domains:   
        ,api: '_api'
     //use persona to authenticate
@@ -369,6 +371,11 @@ highlighting etc, show hidden files?
     share js files between server and client?
     
     
+** more options about sending files or not:    
+*** limit sending of files to certain mimetypes and/or extensions
+*** option to not send mimeless files found in allowable directories.
+*** send certain files directly, bypassing cache with certain
+     
     
 * good to know     
 ** caching  
