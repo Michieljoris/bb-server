@@ -45,6 +45,8 @@ comes with a query for an escaped fragment. These are also cached then.
 * Most options can be set on the command line, all of them using a json configuration
   file. 
   
+* Wrapping of js files from a modules directory to denodify them.
+
 The server works really well as a development server since it will only
 transform and send files that have changed, and sends a 304 otherwise.
 
@@ -104,10 +106,7 @@ See the example_server.js file for an example of requiring the server in your
 own module and documentation for most of the options.
 
 TODO:
-* enable source maps, you can then use browserify, which bundles all files
-  together, but makes writing modular javascript possible.
-* or use google closure compiler for module management
-* or wait for ES6...
+* enable source maps
 * transforming is one to one at the moment. When a transform depends on multiple
   files to produce the requested file (like sass) changes in the dependent files won't
   trigger a recompile (see
