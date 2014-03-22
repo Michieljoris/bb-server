@@ -1,7 +1,7 @@
 {
   "name": "bb-server",
   "description": "A bare bones http server",
-  "version": "0.4.12",
+  "version": "0.4.13",
   "homepage": "https://github.com/michieljoris/bb-server",
   "keywords": [
     "server"
@@ -48,11 +48,12 @@
   },
   "devDependencies": {
     "fs-extra": "0.3.x",
-    "doccoh": "0.4.1"
+    "docco": "*"
   },
   "private": false,
   "scripts": {
-    "start": "./bin/bb-server"
+    "start": "./bin/bb-server",
+    "docs": "node node_modules/.bin/docco ./example-server.js"
   },
   "bin": {
     "bb-server": "./bin/bb-server"

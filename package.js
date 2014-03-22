@@ -120,8 +120,9 @@ module.exports = {
     // * **fs-extra**: Mixin for the fs (filesystem) module.
     // * **doccoh**: Documentation utility for this code.
     "devDependencies": {
-        "fs-extra": "0.3.x",
-        "doccoh": "0.4.1"
+        "fs-extra": "0.3.x"
+        // "doccoh": "0.4.1"
+        ,"docco": "*"
     },
     // Should this package be prevented from accidental publishing by npm?
     // The default is false (not hidden), but I include this here for doc
@@ -141,6 +142,7 @@ module.exports = {
     //     npm run-script dist
     "scripts": {
 	"start": "./bin/bb-server"
+        ,"docs": "node node_modules/.bin/docco ./example-server.js"
     }
     //commandline:
     ,"bin": {
