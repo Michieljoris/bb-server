@@ -77,7 +77,12 @@ index.jade file by default, just set the index option to 'index.jade'.
 There's not much difference between production and development mode, except
 perhaps you don't want to minify your assets when developing.
 
-To play around with the server set up a [js-project](https://github.com/michieljoris/js-project).
+To play around with the server set up a
+[js-project](https://github.com/michieljoris/js-project).
+
+See the example-server.js file for an example of requiring the server in your
+own module and [documentation](http://rawgithub.com/Michieljoris/bb-server/master/docs/example-server.html) for all of the options.
+
 	
 Install
 ----
@@ -102,9 +107,6 @@ You can also install it directly from npm:
 	
 Execute bb-server -h for a list of command line options.
 		  
-See the example-server.js file for an example of requiring the server in your
-own module and [documentation](http://rawgithub.com/Michieljoris/bb-server/master/docs/example-server.html) for most of the options.
-
 TODO:
 * enable source maps
 * transforming is one to one at the moment. When a transform depends on multiple

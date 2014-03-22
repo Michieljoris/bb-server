@@ -383,6 +383,91 @@ highlighting etc, show hidden files?
      
     
 * good to know     
+** enabling https
+   create certificate signing request:
+  openssl req -nodes -new -newkey rsa:2048 -keyout yourdomain.com.key -out yourdomain.com.csr 
+  You end up with a private key and a certificate signing request
+  Then either sign it yourself:
+  openssl x509 -req -days 365 -in yourdomain.com.csr -signkey yourdomain.com.key -out yourdomain.com.crt
+  Or submit to comodo or other commercial certificate provider 
+  http://www.tigase.org/content/creating-and-loading-server-certificate-pem-files
+    
+  
+** enabling persona
+*** enable persona 
+Enabled sessions with default options if sessions is not defined.
+***   Add script tags
+   <script src="https://login.persona.org/include.js"></script>
+   <script src="scripts/persona.js"></script> //uses angular httpRequest
+   
+***   signing in and out
+    $scope.signout = function($event) {
+        $event.preventDefault();
+        console.log('Logging out');
+        navigator.id.logout();
+        
+    };
+    $scope.signin = function($event) {
+        $event.preventDefault();
+        console.log('Logging in');
+        navigator.id.request();
+    };
+   
+***   persona.js
+function initPersona($scope, $http) {
+    var currentUser = cookie.get('persona');
+    if (currentUser) $scope.signedIn = currentUser;
+ 
+    navigator.id.watch({
+        loggedInUser: currentUser,
+        onlogin: function(assertion) {
+            
+            // A user has logged in! Here you need to:
+            // 1. Send the assertion to your backend for verification and to create a session.
+            // 2. Update your UI.
+            console.log('posting /signin');
+            $http({ 
+                method: 'POST',
+                url: '/signin', // This is a URL on your website.
+                data: {assertion: assertion} })
+                .success(function(data, status, headers, config) {
+                    $scope.signedIn = data.email;
+                    // $scope.$apply(;
+                    cookie.set('persona', data.email);
+                    console.log('Posted signin. It was a success', data);
+                })
+                .error(function(data, status, headers, config) {
+                    cookie.remove('persona');
+                    navigator.id.logout();
+                    console.log('Posted signin. Failure', data, status);
+                    alert("Sign in failure: " + data.reason);
+                });
+        },
+        onlogout: function() {
+            // A user has logged out! Here you need to:
+            // Tear down the user's session by redirecting the user or making a call to your backend.
+            // Also, make sure loggedInUser will get set to null on the next page load.
+            // (That's a literal JavaScript null. Not false, 0, or undefined. null.)
+            console.log('posting /signout');
+            $http({
+                method: 'POST',
+                url: '/signout'})
+                .success(function(data, status, headers, config) {
+                    cookie.remove('persona');
+                    $scope.signedIn = false;
+                    console.log('signout post success', data);
+                })
+                .error(function(data, status, headers, config) {
+                    cookie.remove('persona');
+                    navigator.id.logout();
+                    $scope.signedIn = false;
+                    alert("Sign out failure: " + data.reason);
+                });
+
+        }
+    });
+}
+   
 ** caching  
 *** cookieless domains
     proxies will not cache a response to a request that has a Cookie header!!!

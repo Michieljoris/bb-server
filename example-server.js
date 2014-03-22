@@ -102,14 +102,22 @@ var options = {
                     // 'typescript', 'coffeescript',
                     'markdown',
                     'denodify',
-                    'regenerators'
+                    'regenerators',
+                    'inject'
                    ], 
         // transpile: [],  //TODO add all current supported file types
         
+        //inject a script into html files
         // minify: [],
         minify: ['js', 'css' ] //js, css, html
         ,zip: /text|javascript|json/ //regex on the mimetype
         ,verbose: true
+        
+        //options for settings above
+        ,inject: {
+            refresh: ['index.html']
+        }
+        
     }
     
     //if spa is true all requests that don't seem to be requests for a file with
@@ -165,10 +173,15 @@ var options = {
     // }
     //needs testing:
     //start a https server
-    ,https: false
+    ,https: {
+        privatekey: 'certs/yourdomain.com.key',
+        certificate: 'certs/yourdomain.com.crt'
+    }
     //start a websocket server
     ,wsServer: false
+    
     //attaches session data to requests
+    //expires in minutes
     // ,sessions: {
     //     expires: 30
     //     // ,store: 'mysql'
@@ -178,14 +191,15 @@ var options = {
     //     // }
     // }
     // }
-    //not implemented yet:
+    
     //server api path:
-    ,api: '_api'
+    ,api: '__api'
     //use persona to authenticate
-    ,persona: true
-    ,emails: ['mail@axion5.net']
-    //
-    //enable server api:
+    ,persona: {
+        authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
+        ,verbose: true 
+    } 
+    //not implemented yet
     ,sitemap: true
     ,html_builder: true
     ,clear_cache: true
