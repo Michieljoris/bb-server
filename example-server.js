@@ -113,10 +113,13 @@ var options = {
         ,zip: /text|javascript|json/ //regex on the mimetype
         ,verbose: true
         
-        //options for settings above
-        ,inject: {
-            refresh: ['index.html']
-        }
+        //options for settings above, 
+        // ,inject: {
+        // only one script can be injected, 'reload'. Functionality is not yet
+        // there to add multiple, or custom functions. Could be easily added,
+        // but don't see the need as of yet
+        //     'index.html': ['reload']
+        // }
         
     }
     
@@ -162,16 +165,20 @@ var options = {
         // "/dropbox_connect": dropbox_connect
     }
     
+    //start a websocket server and register handlers
+    //One built-in handler is reload, include it as a string, otherwise list a home-made module
+    //For an example of a handler see lib/reload.js
     
-    //If method and path match the functin will be called with [req, res].
-    // ,postHandlers: {
-    //     "/testPost" : testPost
-    // }
-    //If method and path match the function will be called with [req, res].
-    // ,getHandlers: {
-    //     "/testget" : testGet,
-    // }
-    //needs testing:
+    // ,wsHandlers:  [ 'reload' ]
+    
+    ,verbose: false
+    
+    //Convenience setting. When true inject will be added to the transpilers,
+    //set to inject the reload script into index.html and the reload handler
+    //added to wsHandlers with the result that the server will respond to
+    //"reload" messages and send a message to connected browsers to reload
+    ,reload: true
+    
     //start a https server
     ,https: {
         privatekey: 'certs/yourdomain.com.key',

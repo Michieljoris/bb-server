@@ -29,6 +29,12 @@ comes with a query for an escaped fragment. These are also cached then.
 
 * Start a websocket and/or a https server alongside your http server
 
+* Add message and close handlers for the websocket server
+
+* Inject scripts into browser (not fully implemented)
+
+* Option to inject reload script will refresh the browser on reload msg.
+
 * Support for sessions
 
 * You can plugin your own GET and POST handlers triggered by route.
@@ -46,6 +52,9 @@ comes with a query for an escaped fragment. These are also cached then.
   file. 
   
 * Wrapping of js files from a modules directory to denodify them.
+
+* Implementation of server side of persona. Example angular version of client
+  side included. 
 
 The server works really well as a development server since it will only
 transform and send files that have changed, and sends a 304 otherwise.

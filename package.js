@@ -89,7 +89,8 @@ module.exports = {
     // **NOTE:** We don't have any dependencies for this module. See the
     // `devDependencies` block for the way to include dependencies.
     "dependencies": {
-	"websocket": "1.0.x",
+	// "websocket": "1.0.x",
+        "ws": "0.4.x",
 	"nodemailer": "0.5.x", 
 	"colors": "*",
 	"optimist": "0.2.x", //0.6.0

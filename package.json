@@ -1,7 +1,7 @@
 {
   "name": "bb-server",
   "description": "A bare bones http server",
-  "version": "0.4.14",
+  "version": "0.4.15",
   "homepage": "https://github.com/michieljoris/bb-server",
   "keywords": [
     "server"
@@ -26,7 +26,7 @@
     "node": ">= 0.10.x"
   },
   "dependencies": {
-    "websocket": "1.0.x",
+    "ws": "0.4.x",
     "nodemailer": "0.5.x",
     "colors": "*",
     "optimist": "0.2.x",
