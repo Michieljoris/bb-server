@@ -31,7 +31,7 @@ comes with a query for an escaped fragment. These are also cached then.
 
 * Add message and close handlers for the websocket server
 
-* Inject scripts into browser (not fully implemented)
+* Inject scripts into browser 
 
 * Option to inject reload script will refresh the browser on reload msg.
 
