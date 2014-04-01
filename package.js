@@ -103,7 +103,7 @@ module.exports = {
         "escape-html": "1.0.x",
         "MD5": "1.1.x", //1.1.0
         extend: "1.2.x", //1.2.1
-        "recaster": "0.2.x", //0.2.1
+        "recaster": "0.3.x", //0.2.1
         "cachejs": "0.1.x",
         "url_washer": "0.2.x",
         "dougs_vow": "0.1.x",

@@ -12,6 +12,7 @@ var server = require('./lib/bb-server.js')
 //TODO: option to not send mimeless files found in allowable directories.
 //TODO: send certain files directly, bypassing cache with certain
 //cache control headings, so we can send big files etc
+
 var options = { 
     //Serve all files relative to this root. Defaults to './'.
     root: '/home/michieljoris/www/sites/firstdoor/www'
@@ -205,6 +206,7 @@ var options = {
     ,persona: {
         authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
         ,verbose: true 
+        ,audience: "www.firstdoor.com.au"
     } 
     //not implemented yet
     ,sitemap: true

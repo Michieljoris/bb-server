@@ -1,7 +1,7 @@
 {
   "name": "bb-server",
   "description": "A bare bones http server",
-  "version": "0.4.15",
+  "version": "0.4.18",
   "homepage": "https://github.com/michieljoris/bb-server",
   "keywords": [
     "server"
@@ -39,7 +39,7 @@
     "escape-html": "1.0.x",
     "MD5": "1.1.x",
     "extend": "1.2.x",
-    "recaster": "0.2.x",
+    "recaster": "0.3.x",
     "cachejs": "0.1.x",
     "url_washer": "0.2.x",
     "dougs_vow": "0.1.x",
