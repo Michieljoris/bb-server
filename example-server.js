@@ -174,10 +174,13 @@ var options = {
     
     ,verbose: false
     
-    //Convenience setting. When true inject will be added to the transpilers,
-    //set to inject the reload script into index.html and the reload handler
-    //added to wsHandlers with the result that the server will respond to
-    //"reload" messages and send a message to connected browsers to reload
+    //Convenience setting. When true inject will be added to the
+    //transpilers, set to inject the reload script into index.html and
+    //the reload handler added to wsHandlers with the result that the
+    //server will respond to "reload" messages and send a message to
+    //connected browsers to reload. Reload can be string such as
+    //'index.html', and that will be the file the reload script will
+    //be injected into. If true defaults to 'index.html'.
     ,reload: true
     
     //start a https server
