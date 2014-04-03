@@ -53,7 +53,7 @@ module.exports = {
     "author": {
         "name": "Michiel van Oosten",
         "email": "mail@axion5.net",
-        "url": "http://blog.axion5.net/"
+        "url": "http://www.axion5.net/"
     },
     // What licenses govern this code, and where is the license associated
     // with this code?
@@ -63,7 +63,7 @@ module.exports = {
     "licenses": [
         {
             "type": "MIT",
-            "url": "http://github.com/michieljoris/url_washer/blob/master/LICENSE.txt"
+            "url": "http://github.com/michieljoris/bb-server/blob/master/LICENSE.txt"
         }
     ],
     // If there is a file that should be loaded when require()ing this 

@@ -1,7 +1,7 @@
 {
   "name": "bb-server",
   "description": "A bare bones http server",
-  "version": "0.4.20",
+  "version": "0.4.21",
   "homepage": "https://github.com/michieljoris/bb-server",
   "keywords": [
     "server"
@@ -13,12 +13,12 @@
   "author": {
     "name": "Michiel van Oosten",
     "email": "mail@axion5.net",
-    "url": "http://blog.axion5.net/"
+    "url": "http://www.axion5.net/"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/michieljoris/url_washer/blob/master/LICENSE.txt"
+      "url": "http://github.com/michieljoris/bb-server/blob/master/LICENSE.txt"
     }
   ],
   "main": "lib/bb-server",
