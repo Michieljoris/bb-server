@@ -1,34 +1,44 @@
 /*global __dirname:false require:false*/
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
+var server = require('bb-server'),
 
-var server = require('./lib/bb-server.js')
+    sendMail = require("./firstDoorSendMail.js")
+    // ,testSendMail = require("./testSendMail.js")
+    // ,sync = require("./sync.js")
+    // ,dropbox_authorize = require("./dropbox_authorize.js")
+    // ,dropbox_connect = require("./dropbox_connect.js")
+    ,editor_save = require('./editor_save.js')
     // testMail = require("./testSendMail"),
     // testGet = require("./testGet")
 ;
 
  
+var develop_mode = process.env.DEVELOP; 
+console.log('develop mode', develop_mode);
+// develop_mode = false;
 //TODO: limit sending of files to certain mimetypes and/or extensions
 //TODO: option to not send mimeless files found in allowable directories.
 //TODO: send certain files directly, bypassing cache with certain
 //cache control headings, so we can send big files etc
-
 var options = { 
     //Serve all files relative to this root. Defaults to './'.
-    root: '/home/michieljoris/www/sites/firstdoor/www'
+    root: './www'
     //if not assigned defaults to 8080. If that port's not available
     //the server will try 8081 and so on.
-    ,port: 9000
+    ,port: 9001
+    
     // Assign true to allow listing of directories when the path in
     // the url matches a path on the server relative to the
     // root. Assign an array of paths to limit listing to the listed
     // paths (relative to the root) eg. ['/lib']. Defaults to true. 
-    ,dir: true
+    ,dir: false
+    
     // If index.html is found in an allowable directory it is sent
     // over instead of the directory listing. Assign a string to look
     // for and send a different default file. Defaults to false and to
     // 'index.html' if assigned true.
-    ,index: true
+    ,index: "index.html"
     
     //if a request for /favicon comes in send the favicon found in the
     //path specified (relative to where this script is executed from), 
@@ -36,7 +46,7 @@ var options = {
     //[d]ays, [w]eeks or [y]ears). Defaults to the favicon.ico bundled
     //with the server with a max age of 1 hour.
     ,favicon: {
-        path:  './favicon.ico',
+        path:  './www/favicon.ico',
         maxAge: '1h' 
     }
     
@@ -54,19 +64,18 @@ var options = {
     //control caching of resources in terms of what cache-control headers are
     //sent out with them and how long resources are kept in the server cache. If
     //true defaults to ((m)inutes, (h)ours, (d)ays, (w)weeks, (y)ears):
-    // ,cache: true 
-    ,cache: {
+    // ,cache: false
+    ,cache: develop_mode ? false : {
         stamped: { expiresIn: '1y' },
         prerender: { expiresIn: '1d'},
         //static resources, should be served from cookieless domain:
-    
         // "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
         // "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
         //but possibly not when going through cloudflare:
         // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
         "pdf doc docx": { expiresIn: "2h" },
-        // docs: { expiresIn: '1d', ext: ['pdf','doc','docx'] },
         other: { expiresIn: '0m'}
+        // cacheDir: "./cache"
     }
     
     //if set to true to the server will try to remove a stamp from request paths
@@ -99,29 +108,20 @@ var options = {
     // ,zip: true //compress when enconding is accepted by client
     //or for more finegrained control define the recast option instead:
     ,recast: {
-        transpile: ['jade', 'less', 'stylus', 'sweetjs',
-                    // 'typescript', 'coffeescript',
-                    'markdown',
-                    'denodify',
-                    'regenerators',
-                    'inject'
-                   ], 
-        // transpile: [],  //TODO add all current supported file types
+        // transpile: ['jade', 'less', 'stylus', 'sweetjs',
+        //             // 'typescript', 'coffeescript',
+        //              'inject',
+        //              'denodify',
+        //             'markdown' ], 
+        transpile: []  //TODO add all current supported file types
         
-        //inject a script into html files
-        // minify: [],
-        minify: ['js', 'css' ] //js, css, html
-        ,zip: /text|javascript|json/ //regex on the mimetype
-        ,verbose: true
+        ,minify: !develop_mode ? ['js', 'css' ] : [] //js, css, html
+        ,zip:!develop_mode ? /text|javascript|json/ : ''//regex on the mimetype
+        ,verbose: develop_mode
         
-        //options for settings above, 
         // ,inject: {
-        // only one script can be injected, 'reload'. Functionality is not yet
-        // there to add multiple, or custom functions. Could be easily added,
-        // but don't see the need as of yet
-        //     'index.html': ['reload']
+        //     'index.html': ['test']
         // }
-        
     }
     
     //if spa is true all requests that don't seem to be requests for a file with
@@ -129,7 +129,7 @@ var options = {
     //is index.html, but a different filename can get assigned to spa. Use a
     //fragment meta tag in your spa file, or use hashbang in your urls to have
     //google crawl _escaped_fragment_ urls.
-    ,spa: false
+    ,spa: true
     
     //the server can prerender requests for _escaped_fragment_ urls. For any
     // prerendering to occur the following option needs to be true. Defaults to
@@ -155,9 +155,10 @@ var options = {
     //       "target": "https://somedb.iriscouch.com"}
     // ]
     
+    //If method and path match the functin will be called with [req, res].
     ,postHandlers: {
-        // "/" : save
-        // "/contactus_form" : sendMail
+        "/__api/save" : editor_save,
+        "/contactus_form" : sendMail
         // ,"/contactus_form" : testSendMail
         }
     ,getHandlers: {
@@ -166,52 +167,47 @@ var options = {
         // "/dropbox_connect": dropbox_connect
     }
     
+    
     //start a websocket server and register handlers
     //One built-in handler is reload, include it as a string, otherwise list a home-made module
     //For an example of a handler see lib/reload.js
-    
     // ,wsHandlers:  [ 'reload' ]
     
-    ,verbose: false
-    
-    //Convenience setting. When true inject will be added to the
-    //transpilers, set to inject the reload script into index.html and
-    //the reload handler added to wsHandlers with the result that the
-    //server will respond to "reload" messages and send a message to
-    //connected browsers to reload. Reload can be string such as
-    //'index.html', and that will be the file the reload script will
-    //be injected into. If true defaults to 'index.html'.
-    ,reload: true
+    ,verbose: true
+    //Convenience setting. When true inject will be added to the transpilers,
+    //set to inject the reload script into index.html and the reload handler
+    //added to wsHandlers with the result that the server will respond to
+    //"reload" messages and send a message to connected browsers to reload
+    ,reload: develop_mode ? true : false
+    //host for the websocket to connect to from the client
+    // ,host: 'localhost'
     
     //start a https server
-    ,https: {
-        privatekey: 'certs/yourdomain.com.key',
-        certificate: 'certs/yourdomain.com.crt'
-    }
-    //start a websocket server
-    ,wsServer: false
+    // ,https: {
+    //     privatekey: 'certs/yourdomain.com.key',
+    //     certificate: 'certs/yourdomain.com.crt'
+    // }
     
     //attaches session data to requests
-    //expires in minutes
-    // ,sessions: {
-    //     expires: 30
-    //     // ,store: 'mysql'
-    //     ,store: 'memory'
-    //     // ,storeOpts: {
-    //     //     //options for mysql, memory doesn't need any
-    //     // }
-    // }
-    // }
+    ,sessions: {
+        expires:30 
+        
+        // ,store: 'mysql'
+        ,store: 'memory'
+        // ,storeOpts: {
+        //     //options for mysql, memory doesn't need any
+        // }
+    }
+    //use persona to authenticate
+    ,persona: {
+        authorized: ['mail@axion5.net', 'andrea@firstdoor.com.au']
+        ,verbose: true 
+        ,audience: develop_mode ? "localhost:9001" : "www.firstdoor.com.au" 
+    } 
     
     //server api path:
     ,api: '__api'
-    //use persona to authenticate
-    ,persona: {
-        authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
-        ,verbose: true 
-        ,audience: "www.firstdoor.com.au"
-    } 
-    //not implemented yet
+    //enable server api, not implemented yet
     ,sitemap: true
     ,html_builder: true
     ,clear_cache: true
