@@ -108,7 +108,7 @@ module.exports = {
         "url_washer": "0.2.x",
         "dougs_vow": "0.1.x",
         "node_cloudflare": "0.0.2"
-        // "script-injector": "0.1.*"
+        // "script-injector": "0.1.x"
     },
     // What dependencies are useful only for developers?
     // Installed when we `npm install` in our working directory, but not 
