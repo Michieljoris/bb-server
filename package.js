@@ -121,7 +121,7 @@ module.exports = {
     // * **fs-extra**: Mixin for the fs (filesystem) module.
     // * **doccoh**: Documentation utility for this code.
     "devDependencies": {
-        "fs-extra": "0.3.x"
+        "fs-extra": "0.8.x"
         // "doccoh": "0.4.1"
         ,"docco": "*"
     },
