@@ -1,0 +1,246 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/michieljoris/bin/node',
+1 verbose cli   '/home/michieljoris/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@1.4.9
+3 info using node@v0.10.28
+4 verbose node symlink /home/michieljoris/bin/node
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /home/michieljoris/.npm/3a52ce78-.lock
+11 verbose tar pack [ '/home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball /home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz
+13 verbose folder .
+14 info prepublish bb-server@0.4.32
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. /home/michieljoris/.npm/1f1177db-tar.lock
+17 silly lockFile c142fb67-70302-0-7507807691581547-tmp-tgz tar:///home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz
+18 verbose lock tar:///home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz /home/michieljoris/.npm/c142fb67-70302-0-7507807691581547-tmp-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile c142fb67-70302-0-7507807691581547-tmp-tgz tar:///home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz
+22 silly lockFile c142fb67-70302-0-7507807691581547-tmp-tgz tar:///home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz
+23 verbose tar unpack /home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz
+24 silly lockFile 0a1fc585-ris-npm-bb-server-0-4-32-package tar:///home/michieljoris/.npm/bb-server/0.4.32/package
+25 verbose lock tar:///home/michieljoris/.npm/bb-server/0.4.32/package /home/michieljoris/.npm/0a1fc585-ris-npm-bb-server-0-4-32-package.lock
+26 silly lockFile c142fb67-70302-0-7507807691581547-tmp-tgz tar:///home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz
+27 verbose lock tar:///home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz /home/michieljoris/.npm/c142fb67-70302-0-7507807691581547-tmp-tgz.lock
+28 silly gunzTarPerm modes [ '755', '644' ]
+29 silly gunzTarPerm extractEntry package.json
+30 silly gunzTarPerm modified mode [ 'package.json', 488, 492 ]
+31 silly gunzTarPerm extractEntry .npmignore
+32 silly gunzTarPerm modified mode [ '.npmignore', 488, 492 ]
+33 silly gunzTarPerm extractEntry README.md
+34 silly gunzTarPerm modified mode [ 'README.md', 488, 492 ]
+35 silly gunzTarPerm extractEntry example-server.js
+36 silly gunzTarPerm modified mode [ 'example-server.js', 488, 492 ]
+37 silly gunzTarPerm extractEntry package.js
+38 silly gunzTarPerm modified mode [ 'package.js', 488, 492 ]
+39 silly gunzTarPerm extractEntry certificate.pem
+40 silly gunzTarPerm modified mode [ 'certificate.pem', 488, 492 ]
+41 silly gunzTarPerm extractEntry docs/docco.css
+42 silly gunzTarPerm modified mode [ 'docs/docco.css', 488, 492 ]
+43 silly gunzTarPerm extractEntry docs/example-server.html
+44 silly gunzTarPerm modified mode [ 'docs/example-server.html', 488, 492 ]
+45 silly gunzTarPerm extractEntry docs/public/fonts/aller-bold.eot
+46 silly gunzTarPerm modified mode [ 'docs/public/fonts/aller-bold.eot', 488, 492 ]
+47 silly gunzTarPerm extractEntry docs/public/fonts/aller-bold.ttf
+48 silly gunzTarPerm modified mode [ 'docs/public/fonts/aller-bold.ttf', 488, 492 ]
+49 silly gunzTarPerm extractEntry docs/public/fonts/aller-bold.woff
+50 silly gunzTarPerm modified mode [ 'docs/public/fonts/aller-bold.woff', 488, 492 ]
+51 silly gunzTarPerm extractEntry docs/public/fonts/aller-light.eot
+52 silly gunzTarPerm modified mode [ 'docs/public/fonts/aller-light.eot', 488, 492 ]
+53 silly gunzTarPerm extractEntry docs/public/fonts/aller-light.ttf
+54 silly gunzTarPerm modified mode [ 'docs/public/fonts/aller-light.ttf', 488, 492 ]
+55 silly gunzTarPerm extractEntry docs/public/fonts/aller-light.woff
+56 silly gunzTarPerm modified mode [ 'docs/public/fonts/aller-light.woff', 488, 492 ]
+57 silly gunzTarPerm extractEntry docs/public/fonts/novecento-bold.eot
+58 silly gunzTarPerm modified mode [ 'docs/public/fonts/novecento-bold.eot', 488, 492 ]
+59 silly gunzTarPerm extractEntry docs/public/fonts/novecento-bold.ttf
+60 silly gunzTarPerm modified mode [ 'docs/public/fonts/novecento-bold.ttf', 488, 492 ]
+61 silly gunzTarPerm extractEntry docs/public/fonts/novecento-bold.woff
+62 silly gunzTarPerm modified mode [ 'docs/public/fonts/novecento-bold.woff', 488, 492 ]
+63 silly gunzTarPerm extractEntry docs/public/stylesheets/normalize.css
+64 silly gunzTarPerm modified mode [ 'docs/public/stylesheets/normalize.css', 488, 492 ]
+65 silly gunzTarPerm extractEntry tryout/wsclient.js
+66 silly gunzTarPerm modified mode [ 'tryout/wsclient.js', 488, 492 ]
+67 silly gunzTarPerm extractEntry tryout/script-injector.js
+68 silly gunzTarPerm modified mode [ 'tryout/script-injector.js', 488, 492 ]
+69 silly gunzTarPerm extractEntry tryout/test.js
+70 silly gunzTarPerm modified mode [ 'tryout/test.js', 488, 492 ]
+71 silly gunzTarPerm extractEntry tryout/cookie.js
+72 silly gunzTarPerm modified mode [ 'tryout/cookie.js', 488, 492 ]
+73 silly gunzTarPerm extractEntry tryout/readJSON.js
+74 silly gunzTarPerm modified mode [ 'tryout/readJSON.js', 488, 492 ]
+75 silly gunzTarPerm extractEntry tryout/testdatelength.js
+76 silly gunzTarPerm modified mode [ 'tryout/testdatelength.js', 488, 492 ]
+77 silly gunzTarPerm extractEntry tryout/testobj.js
+78 silly gunzTarPerm modified mode [ 'tryout/testobj.js', 488, 492 ]
+79 silly gunzTarPerm extractEntry tryout/testzombie.js
+80 silly gunzTarPerm modified mode [ 'tryout/testzombie.js', 488, 492 ]
+81 silly gunzTarPerm extractEntry tryout/utils.js
+82 silly gunzTarPerm modified mode [ 'tryout/utils.js', 488, 492 ]
+83 silly gunzTarPerm extractEntry tryout/websocket.js
+84 silly gunzTarPerm modified mode [ 'tryout/websocket.js', 488, 492 ]
+85 silly gunzTarPerm extractEntry tryout/testcache.js
+86 silly gunzTarPerm modified mode [ 'tryout/testcache.js', 488, 492 ]
+87 silly gunzTarPerm extractEntry tryout/test.html
+88 silly gunzTarPerm modified mode [ 'tryout/test.html', 488, 492 ]
+89 silly gunzTarPerm extractEntry tryout/PRIVACY POLICY.pdf
+90 silly gunzTarPerm modified mode [ 'tryout/PRIVACY POLICY.pdf', 488, 492 ]
+91 silly gunzTarPerm extractEntry tryout/index.html
+92 silly gunzTarPerm modified mode [ 'tryout/index.html', 488, 492 ]
+93 silly gunzTarPerm extractEntry tryout/test.json
+94 silly gunzTarPerm modified mode [ 'tryout/test.json', 488, 492 ]
+95 silly gunzTarPerm extractEntry .projectile
+96 silly gunzTarPerm modified mode [ '.projectile', 488, 492 ]
+97 silly gunzTarPerm extractEntry lib/api.js
+98 silly gunzTarPerm modified mode [ 'lib/api.js', 488, 492 ]
+99 silly gunzTarPerm extractEntry lib/logger.js
+100 silly gunzTarPerm modified mode [ 'lib/logger.js', 488, 492 ]
+101 silly gunzTarPerm extractEntry lib/test.js
+102 silly gunzTarPerm modified mode [ 'lib/test.js', 488, 492 ]
+103 silly gunzTarPerm extractEntry lib/persona.js
+104 silly gunzTarPerm modified mode [ 'lib/persona.js', 488, 492 ]
+105 silly gunzTarPerm extractEntry lib/forwarder.js
+106 silly gunzTarPerm modified mode [ 'lib/forwarder.js', 488, 492 ]
+107 silly gunzTarPerm extractEntry lib/bb-server.js
+108 silly gunzTarPerm modified mode [ 'lib/bb-server.js', 488, 492 ]
+109 silly gunzTarPerm extractEntry lib/persona_server.js
+110 silly gunzTarPerm modified mode [ 'lib/persona_server.js', 488, 492 ]
+111 silly gunzTarPerm extractEntry lib/reload.js
+112 silly gunzTarPerm modified mode [ 'lib/reload.js', 488, 492 ]
+113 silly gunzTarPerm extractEntry lib/sendDir.js
+114 silly gunzTarPerm modified mode [ 'lib/sendDir.js', 488, 492 ]
+115 silly gunzTarPerm extractEntry lib/sendMisc.js
+116 silly gunzTarPerm modified mode [ 'lib/sendMisc.js', 488, 492 ]
+117 silly gunzTarPerm extractEntry lib/fileHandler.js
+118 silly gunzTarPerm modified mode [ 'lib/fileHandler.js', 488, 492 ]
+119 silly gunzTarPerm extractEntry lib/sessions.js
+120 silly gunzTarPerm modified mode [ 'lib/sessions.js', 488, 492 ]
+121 silly gunzTarPerm extractEntry lib/createServer.js
+122 silly gunzTarPerm modified mode [ 'lib/createServer.js', 488, 492 ]
+123 silly gunzTarPerm extractEntry lib/signin.js
+124 silly gunzTarPerm modified mode [ 'lib/signin.js', 488, 492 ]
+125 silly gunzTarPerm extractEntry lib/cache.js
+126 silly gunzTarPerm modified mode [ 'lib/cache.js', 488, 492 ]
+127 silly gunzTarPerm extractEntry lib/signout.js
+128 silly gunzTarPerm modified mode [ 'lib/signout.js', 488, 492 ]
+129 silly gunzTarPerm extractEntry lib/persona_client.js
+130 silly gunzTarPerm modified mode [ 'lib/persona_client.js', 488, 492 ]
+131 silly gunzTarPerm extractEntry lib/webSocketServer.js
+132 silly gunzTarPerm modified mode [ 'lib/webSocketServer.js', 488, 492 ]
+133 silly gunzTarPerm extractEntry lib/persona_include.js
+134 silly gunzTarPerm modified mode [ 'lib/persona_include.js', 488, 492 ]
+135 silly gunzTarPerm extractEntry lib/store/memory.js
+136 silly gunzTarPerm modified mode [ 'lib/store/memory.js', 488, 492 ]
+137 silly gunzTarPerm extractEntry lib/store/mysql.js
+138 silly gunzTarPerm modified mode [ 'lib/store/mysql.js', 488, 492 ]
+139 silly gunzTarPerm extractEntry lib/old/image.js
+140 silly gunzTarPerm modified mode [ 'lib/old/image.js', 488, 492 ]
+141 silly gunzTarPerm extractEntry lib/old/launder.js
+142 silly gunzTarPerm modified mode [ 'lib/old/launder.js', 488, 492 ]
+143 silly gunzTarPerm extractEntry lib/old/phantomjs-script.js
+144 silly gunzTarPerm modified mode [ 'lib/old/phantomjs-script.js', 488, 492 ]
+145 silly gunzTarPerm extractEntry lib/old/testcache.js
+146 silly gunzTarPerm modified mode [ 'lib/old/testcache.js', 488, 492 ]
+147 silly gunzTarPerm extractEntry lib/old/vow.js
+148 silly gunzTarPerm modified mode [ 'lib/old/vow.js', 488, 492 ]
+149 silly gunzTarPerm extractEntry lib/old/output.htm
+150 silly gunzTarPerm modified mode [ 'lib/old/output.htm', 488, 492 ]
+151 silly gunzTarPerm extractEntry lib/old/test/test1
+152 silly gunzTarPerm modified mode [ 'lib/old/test/test1', 488, 492 ]
+153 silly gunzTarPerm extractEntry lib/old/test/test2
+154 silly gunzTarPerm modified mode [ 'lib/old/test/test2', 488, 492 ]
+155 silly gunzTarPerm extractEntry lib/old/testph.html
+156 silly gunzTarPerm modified mode [ 'lib/old/testph.html', 488, 492 ]
+157 silly gunzTarPerm extractEntry mylog.txt
+158 silly gunzTarPerm modified mode [ 'mylog.txt', 488, 492 ]
+159 silly gunzTarPerm extractEntry privatekey.pem
+160 silly gunzTarPerm modified mode [ 'privatekey.pem', 488, 492 ]
+161 silly gunzTarPerm extractEntry bb-server.org
+162 silly gunzTarPerm modified mode [ 'bb-server.org', 488, 492 ]
+163 silly gunzTarPerm extractEntry bin/bb-server
+164 silly gunzTarPerm modified mode [ 'bin/bb-server', 488, 492 ]
+165 silly gunzTarPerm extractEntry bin/docs
+166 silly gunzTarPerm modified mode [ 'bin/docs', 488, 492 ]
+167 silly gunzTarPerm extractEntry favicon.ico
+168 silly gunzTarPerm modified mode [ 'favicon.ico', 488, 492 ]
+169 silly lockFile 0a1fc585-ris-npm-bb-server-0-4-32-package tar:///home/michieljoris/.npm/bb-server/0.4.32/package
+170 silly lockFile 0a1fc585-ris-npm-bb-server-0-4-32-package tar:///home/michieljoris/.npm/bb-server/0.4.32/package
+171 silly lockFile c142fb67-70302-0-7507807691581547-tmp-tgz tar:///home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz
+172 silly lockFile c142fb67-70302-0-7507807691581547-tmp-tgz tar:///home/michieljoris/tmp/npm-24846-6w7hRBnF/1416881770302-0.7507807691581547/tmp.tgz
+173 silly lockFile 3a52ce78- .
+174 silly lockFile 3a52ce78- .
+175 silly publish { name: 'bb-server',
+175 silly publish   description: 'A bare bones http server',
+175 silly publish   version: '0.4.32',
+175 silly publish   homepage: 'https://github.com/michieljoris/bb-server',
+175 silly publish   keywords: [ 'server' ],
+175 silly publish   repository:
+175 silly publish    { type: 'git',
+175 silly publish      url: 'https://github.com/michieljoris/bb-server.git' },
+175 silly publish   author:
+175 silly publish    { name: 'Michiel van Oosten',
+175 silly publish      email: 'mail@axion5.net',
+175 silly publish      url: 'http://www.axion5.net/' },
+175 silly publish   licenses:
+175 silly publish    [ { type: 'MIT',
+175 silly publish        url: 'http://github.com/michieljoris/bb-server/blob/master/LICENSE.txt' } ],
+175 silly publish   main: 'lib/bb-server',
+175 silly publish   engines: { node: '>= 0.10.x' },
+175 silly publish   dependencies:
+175 silly publish    { ws: '0.4.x',
+175 silly publish      nodemailer: '0.5.x',
+175 silly publish      colors: '*',
+175 silly publish      optimist: '0.2.x',
+175 silly publish      portfinder: '~0.2.1',
+175 silly publish      'forever-monitor': '1.2.x',
+175 silly publish      mime: '1.2.x',
+175 silly publish      mysql: '0.9.6',
+175 silly publish      bytes: '0.2.x',
+175 silly publish      'fs-extra': '0.8.x',
+175 silly publish      'escape-html': '1.0.x',
+175 silly publish      MD5: '1.1.x',
+175 silly publish      extend: '1.2.x',
+175 silly publish      recaster: '0.3.x',
+175 silly publish      cachejs: '0.1.x',
+175 silly publish      url_washer: '0.2.x',
+175 silly publish      dougs_vow: '0.1.x',
+175 silly publish      node_cloudflare: '0.0.2' },
+175 silly publish   devDependencies: { 'fs-extra': '0.8.x', docco: '*' },
+175 silly publish   private: false,
+175 silly publish   scripts:
+175 silly publish    { start: './bin/bb-server',
+175 silly publish      docs: 'node node_modules/.bin/docco ./example-server.js' },
+175 silly publish   bin: { 'bb-server': './bin/bb-server' },
+175 silly publish   readme: 'bb-server\n===========\n\nStatus: still testing features and getting rid of little bugs.\n\nBasic server, configurable by setting commandline options or by requiring\nit. The options can then be passed to the server as an object.\n\nIt\'s basically a static assets server however over time I\'ve rewritten it a\ncouple of times and added some more features.\n\nI am aiming for simplicity. The server can be started without any options and\nwill serve up its working directory. Any features required can be turned on by\nsetting options. The whole app is around 2000 lines including comments, the main\nlogic for serving files less than 400.\n\nSome features:\n-----\n\n* Caching of all static resources, in memory (LRU) and on disk.\n\n* Transpiling, minifying and compressing of these assets on the fly, combine\nthis with caching and only modified assets will be transformed on a request.\n\n* Prerendering. A phantomjs rendered version of a page will be served if page\ncomes with a query for an escaped fragment. These are also cached then.\n\n* Can serves a single page application\n\n* Start a websocket and/or a https server alongside your http server\n\n* Add message and close handlers for the websocket server\n\n* Inject scripts into browser \n\n* Option to inject reload script will refresh the browser on reload msg.\n\n* Support for sessions\n\n* You can plugin your own GET and POST handlers triggered by route.\n\n* Deals with favicon.ico requests\n\n* Customized logging of all requests to a log file\n\n* Cache busting by automatically removing stamps\n\n* Standard server features such as setting cache headers and giving a 304\n  response to a if-not-modified-since header.\n  \n* Most options can be set on the command line, all of them using a json configuration\n  file. \n  \n* Wrapping of js files from a modules directory to denodify them.\n\n* Implementation of server side of persona. Example angular version of client\n  side included. \n\nThe server works really well as a development server since it will only\ntransform and send files that have changed, and sends a 304 otherwise.\n\nIf you turn caching and stamps on, and stamp your requests (as\n[html-builder](http://github.com/michieljoris/html-builder) does) does) the\nserver will only get hit for unstamped files, such as a index.html file, and any\nfiles that have not been cached by the browser or internet. And even then it\nwill get the files from its memory and disk caches if the resource has not been\nchanged since it was cached by bb-server.\n\nThe difference between this server and other build tools is that files are only\ntransformed once they are requested, not when the resource gets saved. This is\nnot inefficient because the resulting js/css/html file is cached by the browser,\nproxies on the net and ultimately by the server itself using a\n[LRU cache](http://github.com/michieljoris/cachejs) memory cache. If it\'s not in\nits memory cache it will get it from its disk cache, and if not there either\nonly then will the server retransform the file. For instance from source.coffee,\nto source.js to source.js (minified) to source.js (gzipped).\n\nThe cool thing is that you can request for instance coffee files directly in\nyour html, as long as you set the type, for instance:\n\n    <script type="text/javascript" src="scripts/test.coffee"></script>\n\t\nSame goes for for instance sass and jade files. You could even serve a\nindex.jade file by default, just set the index option to \'index.jade\'.\n\nThere\'s not much difference between production and development mode, except\nperhaps you don\'t want to minify your assets when developing.\n\nTo play around with the server set up a\n[js-project](https://github.com/michieljoris/js-project).\n\nSee the example-server.js file for an example of requiring the server in your\nown module and [documentation](http://rawgithub.com/Michieljoris/bb-server/master/docs/example-server.html) for all of the options.\n\n\t\nInstall\n----\n\nYou can also use npm however that might not be the latest version.\n\nTo install clone it, cd into the directory and do:\n \n\tnpm install\n\nThen ./bin/bb-server to run it.\n\nOr do:\n\n\tnpm install -g bb-server\n\t\nThen bb-server to run.\n\nYou can also install it directly from npm:\n\n\tnpm install bb-server\n\t\nExecute bb-server -h for a list of command line options.\n\t\t  \nTODO:\n* enable source maps\n* transforming is one to one at the moment. When a transform depends on multiple\n  files to produce the requested file (like sass) changes in the dependent files won\'t\n  trigger a recompile (see\n  [brocoli](http://www.solitr.com/blog/2014/02/broccoli-first-release/)). This\n  could be fixed however.\n* optimize images on the fly\n* api/ui for viewing/retrieving server logs and status\n* rewrite async logic using generators and promises\n* make sure to send 404\'s when prerendering generates a 404 page\n* security\n* send cors headers?\n* add auth support (sign in with google, github, persona etc)\n* unify log messages into one system, use logrotate and/or winston\n* serve fancy dir\n* send script to refresh browser from emacs, or on save etc\n* see bb-server.org\n\nIdeas:\n* send diffs of files?\n* share js files between server and client\n\n',
+175 silly publish   readmeFilename: 'README.md',
+175 silly publish   bugs: { url: 'https://github.com/michieljoris/bb-server/issues' },
+175 silly publish   _id: 'bb-server@0.4.32',
+175 silly publish   _shasum: '5fe9c3182c2e74fcf6adb8499e97d2a19945bd4d',
+175 silly publish   _from: '.' }
+176 error need auth auth and email required for publishing
+176 error need auth You need to authorize this machine using `npm adduser`
+177 error System Linux 3.13.0-32-generic
+178 error command "/home/michieljoris/bin/node" "/home/michieljoris/bin/npm" "publish"
+179 error cwd /media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/mysrc/javascript/bb-server
+180 error node -v v0.10.28
+181 error npm -v 1.4.9
+182 error code ENEEDAUTH
+183 verbose exit [ 1, true ]
